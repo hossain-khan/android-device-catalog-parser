@@ -21,7 +21,7 @@ Here is a snapshot of parsed [CSV file](https://github.com/amardeshbd/android-de
 Device catalog can always be downloaded from the [Google Play Console](https://play.google.com/console/about/devicecatalog/)
 
 ### CSV
-Here is snapshot taken on October 2020
+Here is snapshot taken on November, 2020
 * https://github.com/amardeshbd/android-device-catalog-parser/blob/main/lib/src/test/resources/android-devices-catalog.csv
 
 ### JSON
