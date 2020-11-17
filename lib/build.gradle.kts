@@ -29,6 +29,10 @@ dependencies {
     // This dependency is used internally, and not exposed to consumers on their own compile classpath.
     implementation("com.google.guava:guava:29.0-jre")
 
+    // CSV Processor
+    // https://github.com/doyaaaaaken/kotlin-csv
+    implementation("com.github.doyaaaaaken:kotlin-csv-jvm:0.13.0")
+
     // Use the Kotlin test library.
     testImplementation("org.jetbrains.kotlin:kotlin-test")
 
