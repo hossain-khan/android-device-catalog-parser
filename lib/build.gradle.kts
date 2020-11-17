@@ -35,4 +35,7 @@ dependencies {
 
     // Use the Kotlin JUnit integration.
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit")
+
+    // Used for exporting converted data to JSON
+    testImplementation("com.google.code.gson:gson:2.8.6")
 }

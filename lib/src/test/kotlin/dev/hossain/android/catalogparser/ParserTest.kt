@@ -1,9 +1,15 @@
 package dev.hossain.android.catalogparser
 
+import com.google.gson.Gson
+import dev.hossain.android.catalogparser.models.AndroidDevice
+import java.io.File
+import java.nio.file.Path
+import java.nio.file.Paths
 import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
+
 
 /**
  * Tests the Android device catalog CSV parser.
@@ -70,8 +76,30 @@ class ParserTest {
     fun `given all catalog data is loaded then parsers all devices`() {
         val csvFileContent = javaClass.getResourceAsStream("/android-devices-catalog.csv").bufferedReader().readText()
 
-        val parsedDevices = sut.parseDeviceCatalogData(csvFileContent)
+        val parsedDevices: List<AndroidDevice> = sut.parseDeviceCatalogData(csvFileContent)
 
         assertTrue(parsedDevices.size > 1000, "Total parsed devices should be more than thousand")
+    }
+
+    @Test
+    fun `given parsed devices available - can converts to JSON`() {
+        val csvFileContent = javaClass.getResourceAsStream("/android-devices-catalog.csv").bufferedReader().readText()
+
+        val parsedDevices: List<AndroidDevice> = sut.parseDeviceCatalogData(csvFileContent)
+
+        val gson = Gson()
+        val convertedJson = gson.toJson(parsedDevices)
+
+        assertTrue(convertedJson.length > 1_000_000)
+
+        // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+        // Use following to write file to resources
+        /*val resourceDirectory: Path = Paths.get("src", "test", "resources")
+        val resDir = resourceDirectory.toFile()
+        assertTrue(resDir.absolutePath.endsWith("src/test/resources"))
+
+        val jsonFile: File = File(resDir, "android-devices-catalog-min.json")
+        jsonFile.writeText(convertedJson)*/
     }
 }
