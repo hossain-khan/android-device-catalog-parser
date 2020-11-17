@@ -1,26 +1,77 @@
 package dev.hossain.android.catalogparser
 
+import kotlin.test.BeforeTest
 import kotlin.test.Test
+import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
+/**
+ * Tests the Android device catalog CSV parser.
+ */
 class ParserTest {
-    private val testData: String = """
+    private lateinit var sut: Parser
+
+    @BeforeTest
+    fun setup() {
+        sut = Parser()
+    }
+
+    @Test
+    fun `given no csv header fails to parse devices`() {
+        val csvData: String = """
+        10.or,D,10or_D,2868-2874MB,Phone,Qualcomm MSM8917,720x1280,320,arm64-v8a;armeabi;armeabi-v7a,25;27,3.0
+        10.or,E,E,1857-2846MB,Phone,Qualcomm MSM8937,1080x1920,480,arm64-v8a;armeabi;armeabi-v7a,25;27,3.2
+        """.trimIndent()
+
+        val parsedDevices = sut.parseDeviceCatalogData(csvData)
+
+        assertEquals(0, parsedDevices.size)
+    }
+
+    @Test
+    fun `given valid csv data parses device list`() {
+        val csvData: String = """
         Manufacturer,Model Name,Model Code,RAM (TotalMem),Form Factor,System on Chip,Screen Sizes,Screen Densities,ABIs,Android SDK Versions,OpenGL ES Versions
         10.or,D,10or_D,2868-2874MB,Phone,Qualcomm MSM8917,720x1280,320,arm64-v8a;armeabi;armeabi-v7a,25;27,3.0
         10.or,E,E,1857-2846MB,Phone,Qualcomm MSM8937,1080x1920,480,arm64-v8a;armeabi;armeabi-v7a,25;27,3.2
-        10.or,G,G,2851-3582MB,Phone,Qualcomm MSM8953,1080x1920,480,arm64-v8a;armeabi;armeabi-v7a,25;27,3.2
-        10.or,10or_G2,G2,3742-5747MB,Phone,Qualcomm SDM636,1080x2246,480,arm64-v8a;armeabi;armeabi-v7a,27,3.2
-        3222222 Satelital,G706,G706,920MB,Tablet,Mediatek MT8321,600x1024,160,armeabi;armeabi-v7a,27,2.0
-    """.trimIndent()
+        """.trimIndent()
 
-    @Test
-    fun testParsing() {
-        val parser = Parser()
-        val parseDeviceCatalogData = parser.parseDeviceCatalogData(testData)
+        val parsedDevices = sut.parseDeviceCatalogData(csvData)
 
-        println(parseDeviceCatalogData)
-        assertTrue(parseDeviceCatalogData.size == 5, "someLibraryMethod should return 'true'")
+        assertEquals(2, parsedDevices.size)
     }
 
+    @Test
+    fun `given valid csv data row parses device attributes`() {
+        val csvData: String = """
+        Manufacturer,Model Name,Model Code,RAM (TotalMem),Form Factor,System on Chip,Screen Sizes,Screen Densities,ABIs,Android SDK Versions,OpenGL ES Versions
+        Google,Pixel 4 XL,coral,5466MB,Phone,Qualcomm SDM855,1440x3040,560,arm64-v8a;armeabi;armeabi-v7a,29;30,3.2
+        """.trimIndent()
 
+        val parsedDevices = sut.parseDeviceCatalogData(csvData)
+
+        assertEquals(1, parsedDevices.size)
+        val device = parsedDevices.first()
+
+        assertEquals("Google", device.manufacturer)
+        assertEquals("Pixel 4 XL", device.modelName)
+        assertEquals("coral", device.modelCode)
+        assertEquals("5466MB", device.ram)
+        assertEquals("Phone", device.formFactor)
+        assertEquals("Qualcomm SDM855", device.processorName)
+        assertEquals(listOf("1440x3040"), device.screenSizes)
+        assertEquals(listOf(560), device.screenDensities)
+        assertEquals("arm64-v8a;armeabi;armeabi-v7a", device.abis)
+        assertEquals(listOf(29, 30), device.sdkVersions)
+        assertEquals(listOf("3.2"), device.openGlEsVersions)
+    }
+
+    @Test
+    fun `given all catalog data is loaded then parsers all devices`() {
+        val csvFileContent = javaClass.getResourceAsStream("/android-devices-catalog.csv").bufferedReader().readText()
+
+        val parsedDevices = sut.parseDeviceCatalogData(csvFileContent)
+
+        assertTrue(parsedDevices.size > 1000, "Total parsed devices should be more than thousand")
+    }
 }
