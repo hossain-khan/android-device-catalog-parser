@@ -1,3 +1,6 @@
+![Kotlin CI with Gradle](https://github.com/amardeshbd/android-device-catalog-parser/workflows/Kotlin%20CI%20with%20Gradle/badge.svg) [![](https://jitpack.io/v/amardeshbd/android-device-catalog-parser.svg)](https://jitpack.io/#amardeshbd/android-device-catalog-parser)
+
+
 # android-device-catalog-parser
 Android Device catalog CSV parser that is available from Google Play developer console.
 
