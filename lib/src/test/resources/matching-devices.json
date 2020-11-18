@@ -1,0 +1,4824 @@
+[
+  {
+    "manufacturer": "Google",
+    "modelName": "Pixel 3",
+    "modelCode": "blueline",
+    "ram": "3546-3580MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm SDM845",
+    "screenSizes": [
+      "1080x2160"
+    ],
+    "screenDensities": [
+      440
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      28,
+      29,
+      30
+    ],
+    "openGlEsVersions": [
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Google",
+    "modelName": "Pixel 4 XL",
+    "modelCode": "coral",
+    "ram": "5466MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm SDM855",
+    "screenSizes": [
+      "1440x3040"
+    ],
+    "screenDensities": [
+      560
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      29,
+      30
+    ],
+    "openGlEsVersions": [
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Google",
+    "modelName": "Pixel 3 XL",
+    "modelCode": "crosshatch",
+    "ram": "3546-3580MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm SDM845",
+    "screenSizes": [
+      "1440x2789",
+      "1440x2960"
+    ],
+    "screenDensities": [
+      560
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      28,
+      29,
+      30
+    ],
+    "openGlEsVersions": [
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Google",
+    "modelName": "Pixel 4",
+    "modelCode": "flame",
+    "ram": "5466MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm SDM855",
+    "screenSizes": [
+      "1080x2280"
+    ],
+    "screenDensities": [
+      440
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      29,
+      30
+    ],
+    "openGlEsVersions": [
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Google",
+    "modelName": "Pixel 3a",
+    "modelCode": "sargo",
+    "ram": "3592-3593MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm SDM670",
+    "screenSizes": [
+      "1080x2220"
+    ],
+    "screenDensities": [
+      440
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      28,
+      29,
+      30
+    ],
+    "openGlEsVersions": [
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Google",
+    "modelName": "Pixel 2",
+    "modelCode": "walleye",
+    "ram": "3644-3656MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8998",
+    "screenSizes": [
+      "1080x1920"
+    ],
+    "screenDensities": [
+      420
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      26,
+      27,
+      28,
+      29,
+      30
+    ],
+    "openGlEsVersions": [
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Huawei",
+    "modelName": "HUAWEI P30 lite",
+    "modelCode": "HWMAR",
+    "ram": "3593-7547MB",
+    "formFactor": "Phone",
+    "processorName": "HiSilicon KIRIN710",
+    "screenSizes": [
+      "1080x2312",
+      "2312x1080"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      28,
+      29
+    ],
+    "openGlEsVersions": [
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "LGE",
+    "modelName": "LG G5",
+    "modelCode": "h1",
+    "ram": "1871-3798MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8996",
+    "screenSizes": [
+      "1440x2560"
+    ],
+    "screenDensities": [
+      640
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      23,
+      24,
+      26
+    ],
+    "openGlEsVersions": [
+      "3.1",
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "LGE",
+    "modelName": "LG G7 ThinQ",
+    "modelCode": "judyln",
+    "ram": "3644-3654MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm SDM845",
+    "screenSizes": [
+      "1440x3120"
+    ],
+    "screenDensities": [
+      560
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      26,
+      28,
+      29
+    ],
+    "openGlEsVersions": [
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "LGE",
+    "modelName": "LG G6",
+    "modelCode": "lucye",
+    "ram": "3777-3782MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8996",
+    "screenSizes": [
+      "1440x2672",
+      "1440x2880"
+    ],
+    "screenDensities": [
+      640
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      24,
+      26,
+      28
+    ],
+    "openGlEsVersions": [
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "LGE",
+    "modelName": "LG K20",
+    "modelCode": "lv517n",
+    "ram": "1372-1373MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8917",
+    "screenSizes": [
+      "720x1280"
+    ],
+    "screenDensities": [
+      320
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      24,
+      27
+    ],
+    "openGlEsVersions": [
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "LGE",
+    "modelName": "LG Q6",
+    "modelCode": "mh",
+    "ram": "2880-2891MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8940",
+    "screenSizes": [
+      "1080x2004",
+      "1080x2160"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      25,
+      27
+    ],
+    "openGlEsVersions": [
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "LGE",
+    "modelName": "LG Q6",
+    "modelCode": "mhn",
+    "ram": "2880-2892MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8940",
+    "screenSizes": [
+      "1080x2004",
+      "1080x2160",
+      "2160x1080"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      25,
+      27
+    ],
+    "openGlEsVersions": [
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "LGE",
+    "modelName": "LG G4",
+    "modelCode": "p1",
+    "ram": "2021-2837MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8992",
+    "screenSizes": [
+      "1440x2560"
+    ],
+    "screenDensities": [
+      640
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      22,
+      23,
+      24
+    ],
+    "openGlEsVersions": [
+      "3.1",
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Motorola",
+    "modelName": "moto e5 play",
+    "modelCode": "pettyl",
+    "ram": "863MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8917",
+    "screenSizes": [
+      "480x960"
+    ],
+    "screenDensities": [
+      240
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      27
+    ],
+    "openGlEsVersions": [
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Motorola",
+    "modelName": "moto e5 play",
+    "modelCode": "rjames_f",
+    "ram": "1862MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8917",
+    "screenSizes": [
+      "720x1280"
+    ],
+    "screenDensities": [
+      320
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      26
+    ],
+    "openGlEsVersions": [
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S7 Edge",
+    "modelCode": "SC-02H",
+    "ram": "3415-3720MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8996",
+    "screenSizes": [
+      "1080x1920",
+      "1440x2560"
+    ],
+    "screenDensities": [
+      480,
+      640
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      23,
+      24,
+      26
+    ],
+    "openGlEsVersions": [
+      "3.1",
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S8",
+    "modelCode": "SC-02J",
+    "ram": "3346-3361MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8998",
+    "screenSizes": [
+      "1080x2009",
+      "1080x2220"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      24,
+      26,
+      28
+    ],
+    "openGlEsVersions": [
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S9",
+    "modelCode": "SC-02K",
+    "ram": "3271-3581MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm SDM845",
+    "screenSizes": [
+      "1080x2009",
+      "1080x2220"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      26,
+      28,
+      29
+    ],
+    "openGlEsVersions": [
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy A20",
+    "modelCode": "SC-02M",
+    "ram": "2721-2725MB",
+    "formFactor": "Phone",
+    "processorName": "Samsung Exynos 7884B",
+    "screenSizes": [
+      "720x1560"
+    ],
+    "screenDensities": [
+      320
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      28,
+      29
+    ],
+    "openGlEsVersions": [
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S10",
+    "modelCode": "SC-03L",
+    "ram": "7469-7477MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm SM8150",
+    "screenSizes": [
+      "1080x2280"
+    ],
+    "screenDensities": [
+      420
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      28,
+      29
+    ],
+    "openGlEsVersions": [
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S4",
+    "modelCode": "SC-04E",
+    "ram": "1816-1819MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm APQ8064",
+    "screenSizes": [
+      "1080x1920"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      17,
+      18,
+      19,
+      21
+    ],
+    "openGlEsVersions": [
+      "2.0",
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S5",
+    "modelCode": "SC-04F",
+    "ram": "1703-1855MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8974",
+    "screenSizes": [
+      "1080x1920"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      19,
+      21,
+      23
+    ],
+    "openGlEsVersions": [
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S6",
+    "modelCode": "SC-05G",
+    "ram": "2676-2698MB",
+    "formFactor": "Phone",
+    "processorName": "Samsung Exynos 7420",
+    "screenSizes": [
+      "1440x2560"
+    ],
+    "screenDensities": [
+      640
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      21,
+      23,
+      24
+    ],
+    "openGlEsVersions": [
+      "3.1",
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S5",
+    "modelCode": "SCL23",
+    "ram": "1704-1856MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8974",
+    "screenSizes": [
+      "1080x1920"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      19,
+      21,
+      23
+    ],
+    "openGlEsVersions": [
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy A8",
+    "modelCode": "SCV32",
+    "ram": "1825-1833MB",
+    "formFactor": "Phone",
+    "processorName": "Samsung Exynos 5433",
+    "screenSizes": [
+      "1080x1920"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      22,
+      23,
+      24
+    ],
+    "openGlEsVersions": [
+      "3.1",
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S7 Edge",
+    "modelCode": "SCV33",
+    "ram": "3392-3420MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8996",
+    "screenSizes": [
+      "1080x1920",
+      "1440x2560"
+    ],
+    "screenDensities": [
+      480,
+      640
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      23,
+      24,
+      26
+    ],
+    "openGlEsVersions": [
+      "3.1",
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S8",
+    "modelCode": "SCV36",
+    "ram": "3346-3361MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8998",
+    "screenSizes": [
+      "1080x2009",
+      "1080x2220"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      24,
+      26,
+      28
+    ],
+    "openGlEsVersions": [
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S9",
+    "modelCode": "SCV38",
+    "ram": "3271-3581MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm SDM845",
+    "screenSizes": [
+      "1080x2009",
+      "1080x2220"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      26,
+      28,
+      29
+    ],
+    "openGlEsVersions": [
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S10",
+    "modelCode": "SCV41",
+    "ram": "7469-7477MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm SM8150",
+    "screenSizes": [
+      "1080x2280"
+    ],
+    "screenDensities": [
+      420
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      28,
+      29
+    ],
+    "openGlEsVersions": [
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy A20",
+    "modelCode": "SCV46",
+    "ram": "2721-2725MB",
+    "formFactor": "Phone",
+    "processorName": "Samsung Exynos 7884B",
+    "screenSizes": [
+      "720x1560"
+    ],
+    "screenDensities": [
+      320
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      28,
+      29
+    ],
+    "openGlEsVersions": [
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy A10e",
+    "modelCode": "a10e",
+    "ram": "1704-1708MB",
+    "formFactor": "Phone",
+    "processorName": "Samsung Exynos 7884B",
+    "screenSizes": [
+      "1560x720",
+      "720x1560"
+    ],
+    "screenDensities": [
+      320
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      28,
+      29
+    ],
+    "openGlEsVersions": [
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy A10e",
+    "modelCode": "a10ekx",
+    "ram": "1720-1724MB",
+    "formFactor": "Phone",
+    "processorName": "Samsung Exynos 7884B",
+    "screenSizes": [
+      "720x1560"
+    ],
+    "screenDensities": [
+      320
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      28,
+      29
+    ],
+    "openGlEsVersions": [
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy A20",
+    "modelCode": "a20",
+    "ram": "2720-2725MB",
+    "formFactor": "Phone",
+    "processorName": "Samsung Exynos 7884B",
+    "screenSizes": [
+      "720x1560"
+    ],
+    "screenDensities": [
+      280
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      28,
+      29
+    ],
+    "openGlEsVersions": [
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy A20",
+    "modelCode": "a20p",
+    "ram": "2704-2709MB",
+    "formFactor": "Phone",
+    "processorName": "Samsung Exynos 7904",
+    "screenSizes": [
+      "720x1560"
+    ],
+    "screenDensities": [
+      280
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      28,
+      29
+    ],
+    "openGlEsVersions": [
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy A50",
+    "modelCode": "a50",
+    "ram": "3585-5592MB",
+    "formFactor": "Phone",
+    "processorName": "Samsung Exynos 9610",
+    "screenSizes": [
+      "1080x2340"
+    ],
+    "screenDensities": [
+      420
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      28,
+      29
+    ],
+    "openGlEsVersions": [
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy A5",
+    "modelCode": "a53g",
+    "ram": "1891-1898MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8216",
+    "screenSizes": [
+      "720x1280"
+    ],
+    "screenDensities": [
+      320
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      19,
+      21,
+      23
+    ],
+    "openGlEsVersions": [
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy A5",
+    "modelCode": "a5lte",
+    "ram": "1891-1898MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8916",
+    "screenSizes": [
+      "720x1280"
+    ],
+    "screenDensities": [
+      320
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      19,
+      21,
+      23
+    ],
+    "openGlEsVersions": [
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy A5",
+    "modelCode": "a5ltechn",
+    "ram": "1891-1898MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8916",
+    "screenSizes": [
+      "720x1280"
+    ],
+    "screenDensities": [
+      320
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      19,
+      21,
+      23
+    ],
+    "openGlEsVersions": [
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy A5",
+    "modelCode": "a5ltectc",
+    "ram": "1891-1898MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8916",
+    "screenSizes": [
+      "720x1280"
+    ],
+    "screenDensities": [
+      320
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      19,
+      21,
+      23
+    ],
+    "openGlEsVersions": [
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy A5",
+    "modelCode": "a5ltezh",
+    "ram": "1891-1898MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8916",
+    "screenSizes": [
+      "720x1280"
+    ],
+    "screenDensities": [
+      320
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      19,
+      21
+    ],
+    "openGlEsVersions": [
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy A5",
+    "modelCode": "a5ltezt",
+    "ram": "1891-1898MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8916",
+    "screenSizes": [
+      "720x1280"
+    ],
+    "screenDensities": [
+      320
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      19,
+      21
+    ],
+    "openGlEsVersions": [
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy A5",
+    "modelCode": "a5ulte",
+    "ram": "1891-1898MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8916",
+    "screenSizes": [
+      "720x1280"
+    ],
+    "screenDensities": [
+      320
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      19,
+      21,
+      23
+    ],
+    "openGlEsVersions": [
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy A5",
+    "modelCode": "a5ultebmc",
+    "ram": "1891-1892MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8916",
+    "screenSizes": [
+      "720x1280"
+    ],
+    "screenDensities": [
+      320
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      21,
+      23
+    ],
+    "openGlEsVersions": [
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy A5",
+    "modelCode": "a5ultektt",
+    "ram": "1889-1890MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8916",
+    "screenSizes": [
+      "720x1280"
+    ],
+    "screenDensities": [
+      320
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      19,
+      21,
+      23
+    ],
+    "openGlEsVersions": [
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy A5",
+    "modelCode": "a5ultelgt",
+    "ram": "1889-1890MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8916",
+    "screenSizes": [
+      "720x1280"
+    ],
+    "screenDensities": [
+      320
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      19,
+      21,
+      23
+    ],
+    "openGlEsVersions": [
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy A5",
+    "modelCode": "a5ulteskt",
+    "ram": "1889-1890MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8916",
+    "screenSizes": [
+      "720x1280"
+    ],
+    "screenDensities": [
+      320
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      19,
+      21,
+      23
+    ],
+    "openGlEsVersions": [
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy A70",
+    "modelCode": "a70q",
+    "ram": "5514-7522MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm SM6150",
+    "screenSizes": [
+      "1080x2400"
+    ],
+    "screenDensities": [
+      420
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      28,
+      29
+    ],
+    "openGlEsVersions": [
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy A71",
+    "modelCode": "a71",
+    "ram": "5504-7499MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm SM7150",
+    "screenSizes": [
+      "1080x2400"
+    ],
+    "screenDensities": [
+      420
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      29
+    ],
+    "openGlEsVersions": [
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy A8",
+    "modelCode": "a8elte",
+    "ram": "1828-1839MB",
+    "formFactor": "Phone",
+    "processorName": "Samsung Exynos 5430",
+    "screenSizes": [
+      "1080x1920"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      22,
+      23
+    ],
+    "openGlEsVersions": [
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy A8",
+    "modelCode": "a8elteskt",
+    "ram": "1828-1838MB",
+    "formFactor": "Phone",
+    "processorName": "Samsung Exynos 5430",
+    "screenSizes": [
+      "1080x1920"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      22,
+      23,
+      24
+    ],
+    "openGlEsVersions": [
+      "3.0",
+      "3.1"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy A8",
+    "modelCode": "a8hplte",
+    "ram": "1826-1836MB",
+    "formFactor": "Phone",
+    "processorName": "Samsung Exynos 5433",
+    "screenSizes": [
+      "1080x1920"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      22,
+      23
+    ],
+    "openGlEsVersions": [
+      "3.1"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy A8",
+    "modelCode": "a8ltechn",
+    "ram": "1884-1885MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8939",
+    "screenSizes": [
+      "1080x1920"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      22,
+      23
+    ],
+    "openGlEsVersions": [
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S10e",
+    "modelCode": "beyond0",
+    "ram": "5400-5418MB",
+    "formFactor": "Phone",
+    "processorName": "Samsung Exynos 9820",
+    "screenSizes": [
+      "1080x2280"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      28,
+      29
+    ],
+    "openGlEsVersions": [
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S10e",
+    "modelCode": "beyond0q",
+    "ram": "5474-5482MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm SM8150",
+    "screenSizes": [
+      "1080x2280",
+      "2280x1080"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      28,
+      29
+    ],
+    "openGlEsVersions": [
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S10",
+    "modelCode": "beyond1",
+    "ram": "7407-7425MB",
+    "formFactor": "Phone",
+    "processorName": "Samsung Exynos 9820",
+    "screenSizes": [
+      "1080x2280",
+      "2280x1080"
+    ],
+    "screenDensities": [
+      420
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      28,
+      29
+    ],
+    "openGlEsVersions": [
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S10",
+    "modelCode": "beyond1q",
+    "ram": "953-7477MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm SM8150",
+    "screenSizes": [
+      "1080x2280"
+    ],
+    "screenDensities": [
+      420
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      28,
+      29
+    ],
+    "openGlEsVersions": [
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S8",
+    "modelCode": "dreamlte",
+    "ram": "3452-3679MB",
+    "formFactor": "Phone",
+    "processorName": "Samsung Exynos 8895",
+    "screenSizes": [
+      "1080x2009",
+      "1080x2220"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      24,
+      26,
+      28
+    ],
+    "openGlEsVersions": [
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S8",
+    "modelCode": "dreamlteks",
+    "ram": "3452-3679MB",
+    "formFactor": "Phone",
+    "processorName": "Samsung Exynos 8895",
+    "screenSizes": [
+      "1080x2009",
+      "1080x2220"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      24,
+      26,
+      28
+    ],
+    "openGlEsVersions": [
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S8",
+    "modelCode": "dreamqltecan",
+    "ram": "3347-3371MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8998",
+    "screenSizes": [
+      "1080x2009",
+      "1080x2220"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      24,
+      26,
+      28
+    ],
+    "openGlEsVersions": [
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S8",
+    "modelCode": "dreamqltechn",
+    "ram": "3347-3371MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8998",
+    "screenSizes": [
+      "1080x2009",
+      "1080x2220"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      24,
+      26,
+      28
+    ],
+    "openGlEsVersions": [
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S8",
+    "modelCode": "dreamqltecmcc",
+    "ram": "3347-3363MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8998",
+    "screenSizes": [
+      "1080x2009",
+      "1080x2220"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      24,
+      26,
+      28
+    ],
+    "openGlEsVersions": [
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S8",
+    "modelCode": "dreamqltesq",
+    "ram": "3347-3371MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8998",
+    "screenSizes": [
+      "1080x2009",
+      "1080x2220"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      24,
+      26,
+      28
+    ],
+    "openGlEsVersions": [
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S8",
+    "modelCode": "dreamqlteue",
+    "ram": "3347-3363MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8998",
+    "screenSizes": [
+      "1080x2009",
+      "1080x2220"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      24,
+      26,
+      28
+    ],
+    "openGlEsVersions": [
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy Tab A",
+    "modelCode": "gt510lte",
+    "ram": "1891MB",
+    "formFactor": "Tablet",
+    "processorName": "Qualcomm MSM8916",
+    "screenSizes": [
+      "768x1024"
+    ],
+    "screenDensities": [
+      160
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      21,
+      23,
+      25
+    ],
+    "openGlEsVersions": [
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy Tab A",
+    "modelCode": "gt510wifi",
+    "ram": "1424-1428MB",
+    "formFactor": "Tablet",
+    "processorName": "Qualcomm APQ8016",
+    "screenSizes": [
+      "768x1024"
+    ],
+    "screenDensities": [
+      160
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      21,
+      23,
+      25
+    ],
+    "openGlEsVersions": [
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy Tab A 8.0",
+    "modelCode": "gt58lte",
+    "ram": "1891-1892MB",
+    "formFactor": "Tablet",
+    "processorName": "Qualcomm MSM8916",
+    "screenSizes": [
+      "768x1024"
+    ],
+    "screenDensities": [
+      160
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      21,
+      23,
+      25
+    ],
+    "openGlEsVersions": [
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy Tab A",
+    "modelCode": "gt58ltechn",
+    "ram": "1892MB",
+    "formFactor": "Tablet",
+    "processorName": "Qualcomm MSM8916",
+    "screenSizes": [
+      "768x1024"
+    ],
+    "screenDensities": [
+      160
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      21,
+      23
+    ],
+    "openGlEsVersions": [
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy Tab A 8.0",
+    "modelCode": "gt58ltetmo",
+    "ram": "1892MB",
+    "formFactor": "Tablet",
+    "processorName": "Qualcomm MSM8916",
+    "screenSizes": [
+      "768x1024"
+    ],
+    "screenDensities": [
+      160
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      21
+    ],
+    "openGlEsVersions": [
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy Tab A 8.0",
+    "modelCode": "gt58wifi",
+    "ram": "1428-1429MB",
+    "formFactor": "Tablet",
+    "processorName": "Qualcomm APQ8016",
+    "screenSizes": [
+      "768x1024"
+    ],
+    "screenDensities": [
+      160
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      21,
+      23,
+      25
+    ],
+    "openGlEsVersions": [
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy Tab A 8.0",
+    "modelCode": "gt58wifichn",
+    "ram": "1428-1429MB",
+    "formFactor": "Tablet",
+    "processorName": "Qualcomm APQ8016",
+    "screenSizes": [
+      "768x1024"
+    ],
+    "screenDensities": [
+      160
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      21,
+      23
+    ],
+    "openGlEsVersions": [
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy Tab A",
+    "modelCode": "gt5note10wifi",
+    "ram": "1890-1891MB",
+    "formFactor": "Tablet",
+    "processorName": "Qualcomm APQ8016",
+    "screenSizes": [
+      "768x1024"
+    ],
+    "screenDensities": [
+      160
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      21,
+      23,
+      25
+    ],
+    "openGlEsVersions": [
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy Tab A",
+    "modelCode": "gt5note8lte",
+    "ram": "1890-1891MB",
+    "formFactor": "Tablet",
+    "processorName": "Qualcomm MSM8916",
+    "screenSizes": [
+      "768x1024"
+    ],
+    "screenDensities": [
+      160
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      21,
+      23,
+      25
+    ],
+    "openGlEsVersions": [
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy Tab A 8.0",
+    "modelCode": "gt5note8ltechn",
+    "ram": "1887-1892MB",
+    "formFactor": "Tablet",
+    "processorName": "Qualcomm MSM8916",
+    "screenSizes": [
+      "768x1024"
+    ],
+    "screenDensities": [
+      160
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      21,
+      23
+    ],
+    "openGlEsVersions": [
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy Tab A 8.0",
+    "modelCode": "gt5note8wifi",
+    "ram": "1935-1936MB",
+    "formFactor": "Tablet",
+    "processorName": "Qualcomm APQ8016",
+    "screenSizes": [
+      "768x1024"
+    ],
+    "screenDensities": [
+      160
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      21,
+      23
+    ],
+    "openGlEsVersions": [
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy Tab A 8.0",
+    "modelCode": "gt5note8wifichn",
+    "ram": "1936MB",
+    "formFactor": "Tablet",
+    "processorName": "Qualcomm APQ8016",
+    "screenSizes": [
+      "768x1024"
+    ],
+    "screenDensities": [
+      160
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      23
+    ],
+    "openGlEsVersions": [
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy Tab A",
+    "modelCode": "gta3xl",
+    "ram": "1758-2777MB",
+    "formFactor": "Tablet",
+    "processorName": "Samsung Exynos 7904",
+    "screenSizes": [
+      "1200x1920",
+      "1920x1200"
+    ],
+    "screenDensities": [
+      240
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      28,
+      29
+    ],
+    "openGlEsVersions": [
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy Tab A",
+    "modelCode": "gta3xlwifi",
+    "ram": "1878-2898MB",
+    "formFactor": "Tablet",
+    "processorName": "Samsung Exynos 7904",
+    "screenSizes": [
+      "1200x1920"
+    ],
+    "screenDensities": [
+      240
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      28,
+      29
+    ],
+    "openGlEsVersions": [
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy Tab A 8.0",
+    "modelCode": "gtasliteltecs",
+    "ram": "1844-1849MB",
+    "formFactor": "Tablet",
+    "processorName": "Qualcomm MSM8917",
+    "screenSizes": [
+      "800x1280"
+    ],
+    "screenDensities": [
+      213
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      27,
+      28,
+      29
+    ],
+    "openGlEsVersions": [
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy Tab A",
+    "modelCode": "gtaslitelteusc",
+    "ram": "1844-1849MB",
+    "formFactor": "Tablet",
+    "processorName": "Qualcomm MSM8917",
+    "screenSizes": [
+      "800x1280"
+    ],
+    "screenDensities": [
+      213
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      27,
+      28,
+      29
+    ],
+    "openGlEsVersions": [
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy Tab A 8.0",
+    "modelCode": "gtasliteltevzw",
+    "ram": "1844-1849MB",
+    "formFactor": "Tablet",
+    "processorName": "Qualcomm MSM8917",
+    "screenSizes": [
+      "1280x800",
+      "800x1280"
+    ],
+    "screenDensities": [
+      213
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      27,
+      28,
+      29
+    ],
+    "openGlEsVersions": [
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy Tab A",
+    "modelCode": "gtaxlqltespr",
+    "ram": "1803-1810MB",
+    "formFactor": "Tablet",
+    "processorName": "Qualcomm MSM8953",
+    "screenSizes": [
+      "1200x1920",
+      "1920x1200"
+    ],
+    "screenDensities": [
+      240
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      23,
+      24,
+      27
+    ],
+    "openGlEsVersions": [
+      "3.1",
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy Tab E 9.6",
+    "modelCode": "gtel3g",
+    "ram": "1454MB",
+    "formFactor": "Tablet",
+    "processorName": "Spreadtrum SC7730SE",
+    "screenSizes": [
+      "800x1280"
+    ],
+    "screenDensities": [
+      160
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      19
+    ],
+    "openGlEsVersions": [
+      "2.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy Tab E 9.6",
+    "modelCode": "gtelltevzw",
+    "ram": "1383-1384MB",
+    "formFactor": "Tablet",
+    "processorName": "Qualcomm MSM8916",
+    "screenSizes": [
+      "800x1280"
+    ],
+    "screenDensities": [
+      160
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      22,
+      23,
+      25
+    ],
+    "openGlEsVersions": [
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy Tab E 9.6",
+    "modelCode": "gtelwifichn",
+    "ram": "1454MB",
+    "formFactor": "Tablet",
+    "processorName": "Spreadtrum SC7730SE",
+    "screenSizes": [
+      "800x1280"
+    ],
+    "screenDensities": [
+      160
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      19
+    ],
+    "openGlEsVersions": [
+      "2.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy Tab E 9.6",
+    "modelCode": "gtelwifiue",
+    "ram": "1427-1428MB",
+    "formFactor": "Tablet",
+    "processorName": "Qualcomm APQ8016",
+    "screenSizes": [
+      "800x1280"
+    ],
+    "screenDensities": [
+      160
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      22,
+      23,
+      25
+    ],
+    "openGlEsVersions": [
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy Tab E 8.0",
+    "modelCode": "gteslteatt",
+    "ram": "1380-1392MB",
+    "formFactor": "Tablet",
+    "processorName": "Samsung Exynos 3475",
+    "screenSizes": [
+      "800x1280"
+    ],
+    "screenDensities": [
+      213
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      23,
+      25
+    ],
+    "openGlEsVersions": [
+      "3.1"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy Tab E 8.0",
+    "modelCode": "gtesltebmc",
+    "ram": "1380-1392MB",
+    "formFactor": "Tablet",
+    "processorName": "Samsung Exynos 3475",
+    "screenSizes": [
+      "800x1280"
+    ],
+    "screenDensities": [
+      213
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      23,
+      25
+    ],
+    "openGlEsVersions": [
+      "3.1"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy Tab E 8.0",
+    "modelCode": "gtesltelgt",
+    "ram": "1392MB",
+    "formFactor": "Tablet",
+    "processorName": "Samsung Exynos 3475",
+    "screenSizes": [
+      "800x1280"
+    ],
+    "screenDensities": [
+      213
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      22,
+      23
+    ],
+    "openGlEsVersions": [
+      "3.0",
+      "3.1"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy Tab E 8.0",
+    "modelCode": "gtesltetmo",
+    "ram": "1380-1392MB",
+    "formFactor": "Tablet",
+    "processorName": "Samsung Exynos 3475",
+    "screenSizes": [
+      "800x1280"
+    ],
+    "screenDensities": [
+      213
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      23,
+      25
+    ],
+    "openGlEsVersions": [
+      "3.1"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy Tab E 8.0",
+    "modelCode": "gtesltetw",
+    "ram": "1392MB",
+    "formFactor": "Tablet",
+    "processorName": "Samsung Exynos 3475",
+    "screenSizes": [
+      "800x1280"
+    ],
+    "screenDensities": [
+      213
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      22
+    ],
+    "openGlEsVersions": [
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy Tab E 8.0",
+    "modelCode": "gtesltevzw",
+    "ram": "1380-1392MB",
+    "formFactor": "Tablet",
+    "processorName": "Samsung Exynos 3475",
+    "screenSizes": [
+      "800x1280"
+    ],
+    "screenDensities": [
+      213
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      22,
+      23,
+      25
+    ],
+    "openGlEsVersions": [
+      "3.0",
+      "3.1"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy Tab E 8.0",
+    "modelCode": "gtesqltespr",
+    "ram": "1383-1384MB",
+    "formFactor": "Tablet",
+    "processorName": "Qualcomm MSM8916",
+    "screenSizes": [
+      "800x1280"
+    ],
+    "screenDensities": [
+      213
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      22,
+      23,
+      25
+    ],
+    "openGlEsVersions": [
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy Tab E 8.0",
+    "modelCode": "gtesqlteusc",
+    "ram": "1383-1384MB",
+    "formFactor": "Tablet",
+    "processorName": "Qualcomm MSM8916",
+    "screenSizes": [
+      "800x1280"
+    ],
+    "screenDensities": [
+      213
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      22,
+      23,
+      25
+    ],
+    "openGlEsVersions": [
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S7 edge",
+    "modelCode": "hero2lte",
+    "ram": "3533-3562MB",
+    "formFactor": "Phone",
+    "processorName": "Samsung Exynos 8890",
+    "screenSizes": [
+      "1080x1920",
+      "1440x2560"
+    ],
+    "screenDensities": [
+      480,
+      640
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      23,
+      24,
+      26
+    ],
+    "openGlEsVersions": [
+      "3.1",
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S7 Edge",
+    "modelCode": "hero2ltebmc",
+    "ram": "3534-3562MB",
+    "formFactor": "Phone",
+    "processorName": "Samsung Exynos 8890",
+    "screenSizes": [
+      "1440x2560"
+    ],
+    "screenDensities": [
+      480,
+      640
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      23,
+      24,
+      26
+    ],
+    "openGlEsVersions": [
+      "3.1",
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S7 Edge",
+    "modelCode": "hero2ltektt",
+    "ram": "3533-3562MB",
+    "formFactor": "Phone",
+    "processorName": "Samsung Exynos 8890",
+    "screenSizes": [
+      "1080x1920",
+      "1440x2560"
+    ],
+    "screenDensities": [
+      480,
+      640
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      23,
+      24,
+      26
+    ],
+    "openGlEsVersions": [
+      "3.1",
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S7 edge",
+    "modelCode": "hero2ltelgt",
+    "ram": "3533-3562MB",
+    "formFactor": "Phone",
+    "processorName": "Samsung Exynos 8890",
+    "screenSizes": [
+      "1080x1920",
+      "1440x2560"
+    ],
+    "screenDensities": [
+      480,
+      640
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      23,
+      24,
+      26
+    ],
+    "openGlEsVersions": [
+      "3.1",
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S7 Edge",
+    "modelCode": "hero2lteskt",
+    "ram": "3533-3562MB",
+    "formFactor": "Phone",
+    "processorName": "Samsung Exynos 8890",
+    "screenSizes": [
+      "1080x1920",
+      "1440x2560"
+    ],
+    "screenDensities": [
+      480,
+      640
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      23,
+      24,
+      26
+    ],
+    "openGlEsVersions": [
+      "3.1",
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S7 Edge",
+    "modelCode": "hero2qlteatt",
+    "ram": "3416-3721MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8996",
+    "screenSizes": [
+      "1440x2560"
+    ],
+    "screenDensities": [
+      480,
+      640
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      23,
+      24,
+      26
+    ],
+    "openGlEsVersions": [
+      "3.1",
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S7 Edge",
+    "modelCode": "hero2qltecctvzw",
+    "ram": "3416-3721MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8996",
+    "screenSizes": [
+      "1440x2560"
+    ],
+    "screenDensities": [
+      640
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      23,
+      24,
+      26
+    ],
+    "openGlEsVersions": [
+      "3.1",
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S7 edge",
+    "modelCode": "hero2qltechn",
+    "ram": "1871-3721MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8996",
+    "screenSizes": [
+      "1440x2560"
+    ],
+    "screenDensities": [
+      480,
+      640
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      23,
+      24,
+      26
+    ],
+    "openGlEsVersions": [
+      "3.1",
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S7 Edge",
+    "modelCode": "hero2qltespr",
+    "ram": "3416-3721MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8996",
+    "screenSizes": [
+      "1440x2560"
+    ],
+    "screenDensities": [
+      480,
+      640
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      23,
+      24,
+      26
+    ],
+    "openGlEsVersions": [
+      "3.1",
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S7 Edge",
+    "modelCode": "hero2qltetmo",
+    "ram": "3416-3721MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8996",
+    "screenSizes": [
+      "1440x2560"
+    ],
+    "screenDensities": [
+      480,
+      640
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      23,
+      24,
+      26
+    ],
+    "openGlEsVersions": [
+      "3.1",
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S7 edge",
+    "modelCode": "hero2qlteue",
+    "ram": "3416-3721MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8996",
+    "screenSizes": [
+      "1080x1920",
+      "1440x2560"
+    ],
+    "screenDensities": [
+      480,
+      640
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      23,
+      24,
+      26
+    ],
+    "openGlEsVersions": [
+      "3.1",
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S7 Edge",
+    "modelCode": "hero2qlteusc",
+    "ram": "3416-3721MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8996",
+    "screenSizes": [
+      "1440x2560"
+    ],
+    "screenDensities": [
+      480,
+      640
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      23,
+      24,
+      26
+    ],
+    "openGlEsVersions": [
+      "3.1",
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S7 Edge",
+    "modelCode": "hero2qltevzw",
+    "ram": "3416-3721MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8996",
+    "screenSizes": [
+      "1440x2560"
+    ],
+    "screenDensities": [
+      640
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      23,
+      24,
+      26
+    ],
+    "openGlEsVersions": [
+      "3.1",
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S7",
+    "modelCode": "heroqlteacg",
+    "ram": "1871-3722MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8996",
+    "screenSizes": [
+      "1080x1920",
+      "1440x2560"
+    ],
+    "screenDensities": [
+      480,
+      640
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      23,
+      24,
+      26
+    ],
+    "openGlEsVersions": [
+      "3.1",
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S7",
+    "modelCode": "heroqlteaio",
+    "ram": "3417-3722MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8996",
+    "screenSizes": [
+      "1440x2560"
+    ],
+    "screenDensities": [
+      480,
+      640
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      23,
+      24,
+      26
+    ],
+    "openGlEsVersions": [
+      "3.1",
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S7",
+    "modelCode": "heroqltecctvzw",
+    "ram": "3417-3722MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8996",
+    "screenSizes": [
+      "1440x2560"
+    ],
+    "screenDensities": [
+      640
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      23,
+      24,
+      26
+    ],
+    "openGlEsVersions": [
+      "3.1",
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S7",
+    "modelCode": "heroqltechn",
+    "ram": "3417-3722MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8974",
+    "screenSizes": [
+      "1080x1920"
+    ],
+    "screenDensities": [
+      480,
+      640
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      23,
+      24,
+      26
+    ],
+    "openGlEsVersions": [
+      "3.1",
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S7",
+    "modelCode": "heroqltelra",
+    "ram": "3417-3722MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8996",
+    "screenSizes": [
+      "1080x1920",
+      "1440x2560"
+    ],
+    "screenDensities": [
+      480,
+      640
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      23,
+      24,
+      26
+    ],
+    "openGlEsVersions": [
+      "3.1",
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S7",
+    "modelCode": "heroqltemtr",
+    "ram": "1871-3722MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8996",
+    "screenSizes": [
+      "1440x2560"
+    ],
+    "screenDensities": [
+      480,
+      640
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      23,
+      24,
+      26
+    ],
+    "openGlEsVersions": [
+      "3.1",
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S7",
+    "modelCode": "heroqltetfnvzw",
+    "ram": "3417-3722MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8996",
+    "screenSizes": [
+      "1440x2560"
+    ],
+    "screenDensities": [
+      640
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      23,
+      24,
+      26
+    ],
+    "openGlEsVersions": [
+      "3.1",
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S7",
+    "modelCode": "heroqlteue",
+    "ram": "3417-3722MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8996",
+    "screenSizes": [
+      "1080x1920",
+      "1440x2560"
+    ],
+    "screenDensities": [
+      480,
+      640
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      23,
+      24,
+      26
+    ],
+    "openGlEsVersions": [
+      "3.1",
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S7",
+    "modelCode": "heroqlteusc",
+    "ram": "3417-3722MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8996",
+    "screenSizes": [
+      "1080x1920",
+      "1440x2560"
+    ],
+    "screenDensities": [
+      480,
+      640
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      23,
+      24,
+      26
+    ],
+    "openGlEsVersions": [
+      "3.1",
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S7",
+    "modelCode": "heroqltevzw",
+    "ram": "3417-3722MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8996",
+    "screenSizes": [
+      "1440x2560"
+    ],
+    "screenDensities": [
+      640
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      23,
+      24,
+      26
+    ],
+    "openGlEsVersions": [
+      "3.1",
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy J3",
+    "modelCode": "j3ltectc",
+    "ram": "1388MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8916",
+    "screenSizes": [
+      "720x1280"
+    ],
+    "screenDensities": [
+      320
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      22
+    ],
+    "openGlEsVersions": [
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy J3",
+    "modelCode": "j3ltespr",
+    "ram": "1388MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8916",
+    "screenSizes": [
+      "720x1280"
+    ],
+    "screenDensities": [
+      320
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      22
+    ],
+    "openGlEsVersions": [
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy J3 Prime",
+    "modelCode": "j3popeltecan",
+    "ram": "1323-1326MB",
+    "formFactor": "Phone",
+    "processorName": "Samsung Exynos 7570",
+    "screenSizes": [
+      "720x1280"
+    ],
+    "screenDensities": [
+      320
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      24,
+      27
+    ],
+    "openGlEsVersions": [
+      "3.1"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy J3 Prime",
+    "modelCode": "j3popeltemtr",
+    "ram": "1323MB",
+    "formFactor": "Phone",
+    "processorName": "Samsung Exynos 7570",
+    "screenSizes": [
+      "720x1280"
+    ],
+    "screenDensities": [
+      320
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      24
+    ],
+    "openGlEsVersions": [
+      "3.1"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy J3 Prime",
+    "modelCode": "j3popeltetmo",
+    "ram": "1323MB",
+    "formFactor": "Phone",
+    "processorName": "Samsung Exynos 7570",
+    "screenSizes": [
+      "720x1280"
+    ],
+    "screenDensities": [
+      320
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      24
+    ],
+    "openGlEsVersions": [
+      "3.1"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy J3",
+    "modelCode": "j3popelteue",
+    "ram": "1323-1326MB",
+    "formFactor": "Phone",
+    "processorName": "Samsung Exynos 7570",
+    "screenSizes": [
+      "720x1280"
+    ],
+    "screenDensities": [
+      320
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      24,
+      27
+    ],
+    "openGlEsVersions": [
+      "3.1"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy J3",
+    "modelCode": "j3poplteacg",
+    "ram": "1345-1346MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8917",
+    "screenSizes": [
+      "720x1280"
+    ],
+    "screenDensities": [
+      320
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      24,
+      27
+    ],
+    "openGlEsVersions": [
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy J3",
+    "modelCode": "j3popltelra",
+    "ram": "1345-1346MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8917",
+    "screenSizes": [
+      "720x1280"
+    ],
+    "screenDensities": [
+      320
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      24,
+      27
+    ],
+    "openGlEsVersions": [
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy J3",
+    "modelCode": "j3poplteusc",
+    "ram": "1345-1346MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8917",
+    "screenSizes": [
+      "720x1280"
+    ],
+    "screenDensities": [
+      320
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      24,
+      27
+    ],
+    "openGlEsVersions": [
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy J3",
+    "modelCode": "j3topelteacg",
+    "ram": "1730MB",
+    "formFactor": "Phone",
+    "processorName": "Samsung Exynos 7884A",
+    "screenSizes": [
+      "720x1280"
+    ],
+    "screenDensities": [
+      320
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      26,
+      28
+    ],
+    "openGlEsVersions": [
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy J3",
+    "modelCode": "j3topeltevzw",
+    "ram": "1730-1734MB",
+    "formFactor": "Phone",
+    "processorName": "Samsung Exynos 7883",
+    "screenSizes": [
+      "720x1280"
+    ],
+    "screenDensities": [
+      320
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      26,
+      28
+    ],
+    "openGlEsVersions": [
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy J3",
+    "modelCode": "j3toplteue",
+    "ram": "1835-1836MB",
+    "formFactor": "Phone",
+    "processorName": "Samsung Exynos 7570",
+    "screenSizes": [
+      "720x1280"
+    ],
+    "screenDensities": [
+      320
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      26,
+      28
+    ],
+    "openGlEsVersions": [
+      "3.1"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy J3",
+    "modelCode": "j3x3g",
+    "ram": "1399MB",
+    "formFactor": "Phone",
+    "processorName": "Spreadtrum SC7730SW",
+    "screenSizes": [
+      "720x1280"
+    ],
+    "screenDensities": [
+      320
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      22
+    ],
+    "openGlEsVersions": [
+      "2.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy J3",
+    "modelCode": "j3y17qltecmcc",
+    "ram": "2846-2853MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8917",
+    "screenSizes": [
+      "720x1280"
+    ],
+    "screenDensities": [
+      320
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      25,
+      27,
+      28
+    ],
+    "openGlEsVersions": [
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S4",
+    "modelCode": "ja3g",
+    "ram": "1857-1861MB",
+    "formFactor": "Phone",
+    "processorName": "Samsung Exynos 5410",
+    "screenSizes": [
+      "1080x1920"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      17,
+      18,
+      19,
+      21
+    ],
+    "openGlEsVersions": [
+      "2.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S4",
+    "modelCode": "ja3gduosctc",
+    "ram": "1860-1861MB",
+    "formFactor": "Phone",
+    "processorName": "Samsung Exynos 5410",
+    "screenSizes": [
+      "1080x1920"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      17,
+      18,
+      19,
+      21
+    ],
+    "openGlEsVersions": [
+      "2.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S4",
+    "modelCode": "jaltektt",
+    "ram": "1855-1856MB",
+    "formFactor": "Phone",
+    "processorName": "Samsung Exynos 5410",
+    "screenSizes": [
+      "1080x1920"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      17,
+      18,
+      19,
+      21
+    ],
+    "openGlEsVersions": [
+      "2.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S4",
+    "modelCode": "jaltelgt",
+    "ram": "1860MB",
+    "formFactor": "Phone",
+    "processorName": "Samsung Exynos 5410",
+    "screenSizes": [
+      "1080x1920"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      17,
+      18,
+      19,
+      21
+    ],
+    "openGlEsVersions": [
+      "2.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S4",
+    "modelCode": "jalteskt",
+    "ram": "1855-1857MB",
+    "formFactor": "Phone",
+    "processorName": "Samsung Exynos 5410",
+    "screenSizes": [
+      "1080x1920"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      17,
+      18,
+      19,
+      21
+    ],
+    "openGlEsVersions": [
+      "2.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S4",
+    "modelCode": "jflte",
+    "ram": "1006-1821MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm APQ8064",
+    "screenSizes": [
+      "1080x1920"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      17,
+      18,
+      19,
+      21
+    ],
+    "openGlEsVersions": [
+      "2.0",
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S4",
+    "modelCode": "jflteMetroPCS",
+    "ram": "1817-1821MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm APQ8064",
+    "screenSizes": [
+      "1080x1920"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      17,
+      18,
+      19
+    ],
+    "openGlEsVersions": [
+      "2.0",
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S4",
+    "modelCode": "jflteaio",
+    "ram": "1817-1820MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm APQ8064",
+    "screenSizes": [
+      "1080x1920"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      17,
+      19
+    ],
+    "openGlEsVersions": [
+      "2.0",
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S4",
+    "modelCode": "jflteatt",
+    "ram": "1807-1821MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm APQ8064",
+    "screenSizes": [
+      "1080x1920"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      17,
+      18,
+      19,
+      21
+    ],
+    "openGlEsVersions": [
+      "2.0",
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S4",
+    "modelCode": "jfltecan",
+    "ram": "1791-1821MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm APQ8064",
+    "screenSizes": [
+      "1080x1920"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      17,
+      18,
+      19,
+      21
+    ],
+    "openGlEsVersions": [
+      "2.0",
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S4",
+    "modelCode": "jfltecri",
+    "ram": "1820-2748MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm APQ8064",
+    "screenSizes": [
+      "1080x1920"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      17,
+      18,
+      19
+    ],
+    "openGlEsVersions": [
+      "2.0",
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S4",
+    "modelCode": "jfltecsp",
+    "ram": "1791-1821MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm APQ8064",
+    "screenSizes": [
+      "1080x1920"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      17,
+      18,
+      19,
+      21
+    ],
+    "openGlEsVersions": [
+      "2.0",
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S4",
+    "modelCode": "jfltelra",
+    "ram": "1791-1821MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm APQ8064",
+    "screenSizes": [
+      "1080x1920"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      17,
+      18,
+      19,
+      21
+    ],
+    "openGlEsVersions": [
+      "2.0",
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S4",
+    "modelCode": "jflterefreshspr",
+    "ram": "1791-2748MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm APQ8064",
+    "screenSizes": [
+      "1080x1920"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      18,
+      19,
+      21
+    ],
+    "openGlEsVersions": [
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S4",
+    "modelCode": "jfltespr",
+    "ram": "1791-2748MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm APQ8064",
+    "screenSizes": [
+      "1080x1920"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      17,
+      18,
+      19,
+      21
+    ],
+    "openGlEsVersions": [
+      "2.0",
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S4",
+    "modelCode": "jfltetfnatt",
+    "ram": "1820MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm APQ8064",
+    "screenSizes": [
+      "1080x1920"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      18
+    ],
+    "openGlEsVersions": [
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S4",
+    "modelCode": "jfltetfntmo",
+    "ram": "1820MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm APQ8064",
+    "screenSizes": [
+      "1080x1920"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      17
+    ],
+    "openGlEsVersions": [
+      "2.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S4",
+    "modelCode": "jfltetmo",
+    "ram": "1817-1821MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm APQ8064",
+    "screenSizes": [
+      "1080x1920"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      17,
+      18,
+      19
+    ],
+    "openGlEsVersions": [
+      "2.0",
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S4",
+    "modelCode": "jflteusc",
+    "ram": "1791-1821MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm APQ8064",
+    "screenSizes": [
+      "1080x1920"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      17,
+      18,
+      19,
+      21
+    ],
+    "openGlEsVersions": [
+      "2.0",
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S4",
+    "modelCode": "jfltevzw",
+    "ram": "1807-1821MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm APQ8064",
+    "screenSizes": [
+      "1080x1920"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      17,
+      18,
+      19,
+      21
+    ],
+    "openGlEsVersions": [
+      "2.0",
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S4",
+    "modelCode": "jfltevzwpp",
+    "ram": "1807MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm APQ8064",
+    "screenSizes": [
+      "1080x1920"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      21
+    ],
+    "openGlEsVersions": [
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S4",
+    "modelCode": "jftdd",
+    "ram": "1817-1820MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm APQ8064",
+    "screenSizes": [
+      "1080x1920"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      17,
+      18,
+      19,
+      21
+    ],
+    "openGlEsVersions": [
+      "2.0",
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S4",
+    "modelCode": "jfvelte",
+    "ram": "1810-1812MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm APQ8064",
+    "screenSizes": [
+      "1080x1920"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      19,
+      21
+    ],
+    "openGlEsVersions": [
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S4",
+    "modelCode": "jfwifi",
+    "ram": "1821MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm APQ8064",
+    "screenSizes": [
+      "1080x1920"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      17
+    ],
+    "openGlEsVersions": [
+      "2.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S4",
+    "modelCode": "jsglte",
+    "ram": "1006-1819MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8974",
+    "screenSizes": [
+      "1080x1920"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      19,
+      21
+    ],
+    "openGlEsVersions": [
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S5",
+    "modelCode": "k3g",
+    "ram": "1792-1796MB",
+    "formFactor": "Phone",
+    "processorName": "Samsung Exynos 5422",
+    "screenSizes": [
+      "1080x1920"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      19,
+      21,
+      23
+    ],
+    "openGlEsVersions": [
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S5",
+    "modelCode": "klteMetroPCS",
+    "ram": "1704-2748MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8974",
+    "screenSizes": [
+      "1080x1920"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      19,
+      22,
+      23
+    ],
+    "openGlEsVersions": [
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S5",
+    "modelCode": "klteacg",
+    "ram": "1704-2748MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8974",
+    "screenSizes": [
+      "1080x1920"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      19,
+      21,
+      23
+    ],
+    "openGlEsVersions": [
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S5",
+    "modelCode": "klteaio",
+    "ram": "1704-1856MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8974",
+    "screenSizes": [
+      "1080x1920"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      19,
+      21
+    ],
+    "openGlEsVersions": [
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S5",
+    "modelCode": "klteatt",
+    "ram": "1704-1856MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8974",
+    "screenSizes": [
+      "1080x1920"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      19,
+      21,
+      22,
+      23
+    ],
+    "openGlEsVersions": [
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S5",
+    "modelCode": "kltecan",
+    "ram": "1704-1856MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8974",
+    "screenSizes": [
+      "1080x1920"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      19,
+      21,
+      22,
+      23
+    ],
+    "openGlEsVersions": [
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S5",
+    "modelCode": "klteduoszn",
+    "ram": "1704-1871MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8974",
+    "screenSizes": [
+      "1080x1920"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      19,
+      21,
+      23
+    ],
+    "openGlEsVersions": [
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S5",
+    "modelCode": "kltektt",
+    "ram": "1703-1853MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8974",
+    "screenSizes": [
+      "1080x1920"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      19,
+      21,
+      23
+    ],
+    "openGlEsVersions": [
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S5",
+    "modelCode": "kltelgt",
+    "ram": "1703-2748MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8974",
+    "screenSizes": [
+      "1080x1920"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      19,
+      21,
+      23
+    ],
+    "openGlEsVersions": [
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S5",
+    "modelCode": "kltelra",
+    "ram": "1704-1855MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8974",
+    "screenSizes": [
+      "1080x1920"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      19,
+      21,
+      23
+    ],
+    "openGlEsVersions": [
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S5",
+    "modelCode": "klteskt",
+    "ram": "1703-2748MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8974",
+    "screenSizes": [
+      "1080x1920"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      19,
+      21,
+      23
+    ],
+    "openGlEsVersions": [
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S5",
+    "modelCode": "kltespr",
+    "ram": "1704-2748MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8974",
+    "screenSizes": [
+      "1080x1920"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      19,
+      21,
+      23
+    ],
+    "openGlEsVersions": [
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S5",
+    "modelCode": "kltetfnvzw",
+    "ram": "1705MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8974AC",
+    "screenSizes": [
+      "1080x1920"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      23
+    ],
+    "openGlEsVersions": [
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S5",
+    "modelCode": "kltetmo",
+    "ram": "1704-1856MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8974",
+    "screenSizes": [
+      "1080x1920"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      19,
+      21,
+      22,
+      23
+    ],
+    "openGlEsVersions": [
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S5",
+    "modelCode": "klteusc",
+    "ram": "1704-2748MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8974",
+    "screenSizes": [
+      "1080x1920"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      19,
+      21,
+      23
+    ],
+    "openGlEsVersions": [
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S5",
+    "modelCode": "kltevzw",
+    "ram": "1704-1855MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8974",
+    "screenSizes": [
+      "1080x1920"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      19,
+      21,
+      23
+    ],
+    "openGlEsVersions": [
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S4",
+    "modelCode": "ks01lte",
+    "ram": "1850-1866MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8974",
+    "screenSizes": [
+      "1080x1920"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      17,
+      18,
+      19,
+      21
+    ],
+    "openGlEsVersions": [
+      "2.0",
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S4",
+    "modelCode": "ks01ltektt",
+    "ram": "1850-1860MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8974",
+    "screenSizes": [
+      "1080x1920"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      17,
+      18,
+      19,
+      21
+    ],
+    "openGlEsVersions": [
+      "2.0",
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S4",
+    "modelCode": "ks01ltelgt",
+    "ram": "1850-2748MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8974",
+    "screenSizes": [
+      "1080x1920"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      17,
+      18,
+      19,
+      21
+    ],
+    "openGlEsVersions": [
+      "2.0",
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S5",
+    "modelCode": "kwifi",
+    "ram": "1706MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm MSM8974",
+    "screenSizes": [
+      "1080x1920"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      19
+    ],
+    "openGlEsVersions": [
+      "3.0"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S5",
+    "modelCode": "lentisltektt",
+    "ram": "2748-2783MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm APQ8084",
+    "screenSizes": [
+      "1440x2560"
+    ],
+    "screenDensities": [
+      640
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      19,
+      21,
+      23
+    ],
+    "openGlEsVersions": [
+      "3.0",
+      "3.1"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S5",
+    "modelCode": "lentisltelgt",
+    "ram": "2748-2783MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm APQ8084",
+    "screenSizes": [
+      "1440x2560"
+    ],
+    "screenDensities": [
+      640
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      19,
+      21,
+      23
+    ],
+    "openGlEsVersions": [
+      "3.0",
+      "3.1"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S5",
+    "modelCode": "lentislteskt",
+    "ram": "2748-2783MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm APQ8084",
+    "screenSizes": [
+      "1440x2560"
+    ],
+    "screenDensities": [
+      640
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      19,
+      21,
+      23
+    ],
+    "openGlEsVersions": [
+      "3.0",
+      "3.1"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S5 Neo",
+    "modelCode": "s5neolte",
+    "ram": "1854-1855MB",
+    "formFactor": "Phone",
+    "processorName": "Samsung Exynos 7580",
+    "screenSizes": [
+      "1080x1920"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      22,
+      23
+    ],
+    "openGlEsVersions": [
+      "3.0",
+      "3.1"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S5 Neo",
+    "modelCode": "s5neoltecan",
+    "ram": "1854-1859MB",
+    "formFactor": "Phone",
+    "processorName": "Samsung Exynos 7580",
+    "screenSizes": [
+      "1080x1920"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "armeabi;armeabi-v7a",
+    "sdkVersions": [
+      22,
+      23,
+      24
+    ],
+    "openGlEsVersions": [
+      "3.0",
+      "3.1"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S9",
+    "modelCode": "starlte",
+    "ram": "3396-3611MB",
+    "formFactor": "Phone",
+    "processorName": "Samsung Exynos 9810",
+    "screenSizes": [
+      "1080x2009",
+      "1080x2220"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      26,
+      28,
+      29
+    ],
+    "openGlEsVersions": [
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S9",
+    "modelCode": "starlteks",
+    "ram": "3396-3611MB",
+    "formFactor": "Phone",
+    "processorName": "Samsung Exynos 9810",
+    "screenSizes": [
+      "1080x2009",
+      "1080x2220"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      26,
+      28,
+      29
+    ],
+    "openGlEsVersions": [
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S9",
+    "modelCode": "starqltechn",
+    "ram": "3270-3581MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm SDM845",
+    "screenSizes": [
+      "1080x2009",
+      "1080x2220"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      26,
+      28,
+      29
+    ],
+    "openGlEsVersions": [
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S9",
+    "modelCode": "starqltecmcc",
+    "ram": "3271-3581MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm SDM845",
+    "screenSizes": [
+      "1080x2009",
+      "1080x2220",
+      "2220x1080"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      26,
+      28,
+      29
+    ],
+    "openGlEsVersions": [
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S9",
+    "modelCode": "starqltecs",
+    "ram": "3270-3581MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm SDM845",
+    "screenSizes": [
+      "1080x2009",
+      "1080x2220"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      26,
+      28,
+      29
+    ],
+    "openGlEsVersions": [
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S9",
+    "modelCode": "starqltesq",
+    "ram": "3271-3581MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm SDM845",
+    "screenSizes": [
+      "1080x2009",
+      "1080x2220"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      26,
+      28,
+      29
+    ],
+    "openGlEsVersions": [
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S9",
+    "modelCode": "starqlteue",
+    "ram": "3271-3581MB",
+    "formFactor": "Phone",
+    "processorName": "Qualcomm SDM845",
+    "screenSizes": [
+      "1080x2009",
+      "1080x2220"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      26,
+      28,
+      29
+    ],
+    "openGlEsVersions": [
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S20",
+    "modelCode": "x1s",
+    "ram": "7430-10901MB",
+    "formFactor": "Phone",
+    "processorName": "Samsung Exynos 990",
+    "screenSizes": [
+      "1080x2009",
+      "1080x2400"
+    ],
+    "screenDensities": [
+      480
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      29,
+      30
+    ],
+    "openGlEsVersions": [
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S6",
+    "modelCode": "zeroflte",
+    "ram": "2679-2697MB",
+    "formFactor": "Phone",
+    "processorName": "Samsung Exynos 7420",
+    "screenSizes": [
+      "1440x2560"
+    ],
+    "screenDensities": [
+      640
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      21,
+      22,
+      23,
+      24
+    ],
+    "openGlEsVersions": [
+      "3.1",
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S6",
+    "modelCode": "zeroflteacg",
+    "ram": "2676-2698MB",
+    "formFactor": "Phone",
+    "processorName": "Samsung Exynos 7420",
+    "screenSizes": [
+      "1440x2560"
+    ],
+    "screenDensities": [
+      640
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      21,
+      22,
+      23,
+      24
+    ],
+    "openGlEsVersions": [
+      "3.1",
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S6",
+    "modelCode": "zeroflteaio",
+    "ram": "2678-2697MB",
+    "formFactor": "Phone",
+    "processorName": "Samsung Exynos 7420",
+    "screenSizes": [
+      "1440x2560"
+    ],
+    "screenDensities": [
+      640
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      21,
+      22,
+      23,
+      24
+    ],
+    "openGlEsVersions": [
+      "3.1",
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S6",
+    "modelCode": "zeroflteatt",
+    "ram": "2679-2697MB",
+    "formFactor": "Phone",
+    "processorName": "Samsung Exynos 7420",
+    "screenSizes": [
+      "1440x2560"
+    ],
+    "screenDensities": [
+      640
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      21,
+      22,
+      23,
+      24
+    ],
+    "openGlEsVersions": [
+      "3.1",
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S6",
+    "modelCode": "zerofltebmc",
+    "ram": "2679-2697MB",
+    "formFactor": "Phone",
+    "processorName": "Samsung Exynos 7420",
+    "screenSizes": [
+      "1440x2560"
+    ],
+    "screenDensities": [
+      640
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      21,
+      22,
+      23,
+      24
+    ],
+    "openGlEsVersions": [
+      "3.1",
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S6",
+    "modelCode": "zerofltechn",
+    "ram": "1871-2720MB",
+    "formFactor": "Phone",
+    "processorName": "Samsung Exynos 7420",
+    "screenSizes": [
+      "1440x2560"
+    ],
+    "screenDensities": [
+      640
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      21,
+      22,
+      23,
+      24
+    ],
+    "openGlEsVersions": [
+      "3.1",
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S6",
+    "modelCode": "zerofltectc",
+    "ram": "2676-2699MB",
+    "formFactor": "Phone",
+    "processorName": "Samsung Exynos 7420",
+    "screenSizes": [
+      "1440x2560"
+    ],
+    "screenDensities": [
+      640
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      21,
+      22,
+      23,
+      24
+    ],
+    "openGlEsVersions": [
+      "3.1",
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S6",
+    "modelCode": "zerofltektt",
+    "ram": "2676-2697MB",
+    "formFactor": "Phone",
+    "processorName": "Samsung Exynos 7420",
+    "screenSizes": [
+      "1440x2560"
+    ],
+    "screenDensities": [
+      640
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      21,
+      22,
+      23,
+      24
+    ],
+    "openGlEsVersions": [
+      "3.1",
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S6",
+    "modelCode": "zerofltelgt",
+    "ram": "2676-2697MB",
+    "formFactor": "Phone",
+    "processorName": "Samsung Exynos 7420",
+    "screenSizes": [
+      "1440x2560"
+    ],
+    "screenDensities": [
+      640
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      21,
+      22,
+      23,
+      24
+    ],
+    "openGlEsVersions": [
+      "3.1",
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S6",
+    "modelCode": "zerofltelra",
+    "ram": "2676-2698MB",
+    "formFactor": "Phone",
+    "processorName": "Samsung Exynos 7420",
+    "screenSizes": [
+      "1440x2560"
+    ],
+    "screenDensities": [
+      640
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      21,
+      22,
+      23,
+      24
+    ],
+    "openGlEsVersions": [
+      "3.1",
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S6",
+    "modelCode": "zerofltemtr",
+    "ram": "2678-2697MB",
+    "formFactor": "Phone",
+    "processorName": "Samsung Exynos 7420",
+    "screenSizes": [
+      "1440x2560"
+    ],
+    "screenDensities": [
+      640
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      21,
+      22,
+      23,
+      24
+    ],
+    "openGlEsVersions": [
+      "3.1",
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S6",
+    "modelCode": "zeroflteskt",
+    "ram": "2676-2697MB",
+    "formFactor": "Phone",
+    "processorName": "Samsung Exynos 7420",
+    "screenSizes": [
+      "1440x2560"
+    ],
+    "screenDensities": [
+      640
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      21,
+      22,
+      23,
+      24
+    ],
+    "openGlEsVersions": [
+      "3.1",
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S6",
+    "modelCode": "zerofltespr",
+    "ram": "2676-2698MB",
+    "formFactor": "Phone",
+    "processorName": "Samsung Exynos 7420",
+    "screenSizes": [
+      "1440x2560"
+    ],
+    "screenDensities": [
+      640
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      21,
+      22,
+      23,
+      24
+    ],
+    "openGlEsVersions": [
+      "3.1",
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S6",
+    "modelCode": "zerofltetfnvzw",
+    "ram": "2678-2698MB",
+    "formFactor": "Phone",
+    "processorName": "Samsung Exynos 7420",
+    "screenSizes": [
+      "1440x2560"
+    ],
+    "screenDensities": [
+      640
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      21,
+      23
+    ],
+    "openGlEsVersions": [
+      "3.1"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S6",
+    "modelCode": "zerofltetmo",
+    "ram": "2678-2697MB",
+    "formFactor": "Phone",
+    "processorName": "Samsung Exynos 7420",
+    "screenSizes": [
+      "1440x2560"
+    ],
+    "screenDensities": [
+      640
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      21,
+      22,
+      23,
+      24
+    ],
+    "openGlEsVersions": [
+      "3.1",
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S6",
+    "modelCode": "zeroflteusc",
+    "ram": "2676-2698MB",
+    "formFactor": "Phone",
+    "processorName": "Samsung Exynos 7420",
+    "screenSizes": [
+      "1440x2560"
+    ],
+    "screenDensities": [
+      640
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      21,
+      22,
+      23,
+      24
+    ],
+    "openGlEsVersions": [
+      "3.1",
+      "3.2"
+    ]
+  },
+  {
+    "manufacturer": "Samsung",
+    "modelName": "Galaxy S6",
+    "modelCode": "zerofltevzw",
+    "ram": "2678-2698MB",
+    "formFactor": "Phone",
+    "processorName": "Samsung Exynos 7420",
+    "screenSizes": [
+      "1440x2560"
+    ],
+    "screenDensities": [
+      640
+    ],
+    "abis": "arm64-v8a;armeabi;armeabi-v7a",
+    "sdkVersions": [
+      21,
+      22,
+      23,
+      24
+    ],
+    "openGlEsVersions": [
+      "3.1",
+      "3.2"
+    ]
+  }
+]

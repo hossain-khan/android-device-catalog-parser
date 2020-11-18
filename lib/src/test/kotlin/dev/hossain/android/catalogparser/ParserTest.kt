@@ -79,6 +79,88 @@ class ParserTest {
         val parsedDevices: List<AndroidDevice> = sut.parseDeviceCatalogData(csvFileContent)
 
         assertTrue(parsedDevices.size > 1000, "Total parsed devices should be more than thousand")
+
+        val models = listOf(
+            "Galaxy S9",
+            "Galaxy S8",
+            "Galaxy A5",
+            "Galaxy S10",
+            "Galaxy S7",
+            "Galaxy A8",
+            "Galaxy S9 Plus",
+            "Galaxy S10 Plus",
+            "Galaxy A50",
+            "NONE",
+            "Galaxy S8 Plus",
+            "Galaxy A70",
+            "LG G6",
+            "Galaxy S10e",
+            "Galaxy Note 9",
+            "Galaxy Note 10 Plus",
+            "Huawei P20 Pro",
+            "Pixled 2 XL",
+            "Galaxy S6",
+            "Pixel 3",
+            "Galaxy Note 8",
+            "Huawei P30 Lite",
+            "Galaxy A20",
+            "Galaxy S7 Edge",
+            "Galaxy Tab E 9.6",
+            "Pixel 2",
+            "Galaxy S5 Neo",
+            "Huawei P30 Pro",
+            "Pixel 3 XL",
+            "LG G7 ThinQ",
+            "Huawei P20",
+            "LG G5",
+            "Galaxy S20",
+            "Pixel 3a",
+            "Galaxy S20 Plus",
+            "Galaxy Tab E 8.0",
+            "Huawei ELE-L04",
+            "Galaxy S8",
+            "LG Q910",
+            "LG G4",
+            "Galaxy J3",
+            "Galaxy S5",
+            "Galaxy Tab A 8.0",
+            "Pixel 4 XL",
+            "Galaxy A20",
+            "Galaxy J3",
+            "Galaxy J3 Prime",
+            "Galaxy S20 UItra",
+            "LG Q6",
+            "Galaxy A70",
+            "Moto E5 Play",
+            "Galaxy A10e",
+            "Galaxy A71",
+            "Pixel 4",
+            "LG K20",
+            "MediaPad T3 10",
+            "Galaxy Tab A",
+            "Galaxy Tab A",
+            "Galaxy S4",
+            "Huawei Mate 20 Pro"
+        )
+
+        val matichingDevices = parsedDevices.filter { device ->
+            models.any { device.modelCode.equals(it, true) } ||
+                    models.any { device.modelName.equals(it, true) }
+        }.distinctBy { it.modelCode }
+        println(matichingDevices)
+
+        val gson = Gson()
+        val convertedJson = gson.toJson(matichingDevices)
+        val resourceDirectory: Path = Paths.get("src", "test", "resources")
+        val resDir = resourceDirectory.toFile()
+        assertTrue(resDir.absolutePath.endsWith("src/test/resources"))
+
+        val toMap = matichingDevices.map { it.modelName to it.screenDensities.first() }.sortedBy { it.first }.toMap()
+        val x = gson.toJson(toMap)
+
+
+        val jsonFile: File = File(resDir, "devices-densities.json")
+        jsonFile.writeText(x)
     }
 
     @Test
