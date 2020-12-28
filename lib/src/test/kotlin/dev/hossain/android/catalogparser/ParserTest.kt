@@ -2,9 +2,6 @@ package dev.hossain.android.catalogparser
 
 import com.google.gson.Gson
 import dev.hossain.android.catalogparser.models.AndroidDevice
-import java.io.File
-import java.nio.file.Path
-import java.nio.file.Paths
 import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.assertEquals
@@ -67,7 +64,7 @@ class ParserTest {
         assertEquals("Qualcomm SDM855", device.processorName)
         assertEquals(listOf("1440x3040"), device.screenSizes)
         assertEquals(listOf(560), device.screenDensities)
-        assertEquals("arm64-v8a;armeabi;armeabi-v7a", device.abis)
+        assertEquals(listOf("arm64-v8a", "armeabi", "armeabi-v7a"), device.abis)
         assertEquals(listOf(29, 30), device.sdkVersions)
         assertEquals(listOf("3.2"), device.openGlEsVersions)
     }

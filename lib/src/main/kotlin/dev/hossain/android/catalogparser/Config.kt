@@ -1,5 +1,9 @@
 package dev.hossain.android.catalogparser
 
+/**
+ * Contains CSV header names found in Google Play Device Catalog
+ * See https://play.google.com/console/about/devicecatalog/ to get latest version.
+ */
 object Config {
     const val CSV_MULTI_VALUE_SEPARATOR = ";"
 

@@ -16,6 +16,11 @@ import dev.hossain.android.catalogparser.Config.CSV_KEY_SOC
 import dev.hossain.android.catalogparser.Config.CSV_MULTI_VALUE_SEPARATOR
 import dev.hossain.android.catalogparser.models.AndroidDevice
 
+/**
+ * CSV parser for Google Play Device Catalog found in Google Play Console
+ * See https://play.google.com/console/about/devicecatalog/ to get latest version.
+ * @see Config
+ */
 class Parser {
 
     private val csvReader: CsvReader = csvReader()
@@ -64,7 +69,7 @@ class Parser {
                 processorName = processorName,
                 screenSizes = screenSizes.split(CSV_MULTI_VALUE_SEPARATOR),
                 screenDensities = screenDensities.split(CSV_MULTI_VALUE_SEPARATOR).map { it.toInt() },
-                abis = abis,
+                abis = abis.split(CSV_MULTI_VALUE_SEPARATOR),
                 sdkVersions = sdkVersions.split(CSV_MULTI_VALUE_SEPARATOR).map { it.toInt() },
                 openGlEsVersions = openGlEsVersions.split(CSV_MULTI_VALUE_SEPARATOR)
             )
