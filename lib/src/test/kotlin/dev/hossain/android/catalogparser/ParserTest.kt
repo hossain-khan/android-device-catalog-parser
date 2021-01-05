@@ -45,6 +45,48 @@ class ParserTest {
     }
 
     @Test
+    fun `given valid csv data with duplicate api levels - filters out duplicates`() {
+        val csvData: String = """
+        Manufacturer,Model Name,Model Code,RAM (TotalMem),Form Factor,System on Chip,Screen Sizes,Screen Densities,ABIs,Android SDK Versions,OpenGL ES Versions
+        ManName,Model,Model-Code,2868-2874MB,Phone,Qualcomm MSM8917,720x1280,320,arm64-v8a;armeabi;armeabi-v7a,25;27;25;24;25,3.0
+        """.trimIndent()
+
+        val parsedDevices = sut.parseDeviceCatalogData(csvData)
+
+        assertEquals(1, parsedDevices.size)
+
+        assertEquals(listOf(24,25,27), parsedDevices.first().sdkVersions)
+    }
+
+    @Test
+    fun `given valid csv data with duplicate abis - filters out duplicates`() {
+        val csvData: String = """
+        Manufacturer,Model Name,Model Code,RAM (TotalMem),Form Factor,System on Chip,Screen Sizes,Screen Densities,ABIs,Android SDK Versions,OpenGL ES Versions
+        ManName,Model,Model-Code,2868-2874MB,Phone,Qualcomm MSM8917,720x1280,320,armeabi;armeabi-v7a;armeabi;armeabi-v7a,25;27,3.0
+        """.trimIndent()
+
+        val parsedDevices = sut.parseDeviceCatalogData(csvData)
+
+        assertEquals(1, parsedDevices.size)
+
+        assertEquals(listOf("armeabi", "armeabi-v7a"), parsedDevices.first().abis)
+    }
+
+    @Test
+    fun `given valid csv data with duplicate opengl versions - filters out duplicates`() {
+        val csvData: String = """
+        Manufacturer,Model Name,Model Code,RAM (TotalMem),Form Factor,System on Chip,Screen Sizes,Screen Densities,ABIs,Android SDK Versions,OpenGL ES Versions
+        ManName,Model,Model-Code,2868-2874MB,Phone,Qualcomm MSM8917,720x1280,320,armeabi,25;27,3.0;3.1;3.0
+        """.trimIndent()
+
+        val parsedDevices = sut.parseDeviceCatalogData(csvData)
+
+        assertEquals(1, parsedDevices.size)
+
+        assertEquals(listOf("3.0", "3.1"), parsedDevices.first().openGlEsVersions)
+    }
+
+    @Test
     fun `given valid csv data row parses device attributes`() {
         val csvData: String = """
         Manufacturer,Model Name,Model Code,RAM (TotalMem),Form Factor,System on Chip,Screen Sizes,Screen Densities,ABIs,Android SDK Versions,OpenGL ES Versions
