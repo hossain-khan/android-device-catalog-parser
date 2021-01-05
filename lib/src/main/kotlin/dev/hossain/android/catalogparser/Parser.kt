@@ -45,17 +45,17 @@ class Parser {
             val openGlEsVersions = rowData[CSV_KEY_OPENGL_ES_VERSIONS]
 
             // Validates non-null values
-            if (manufacturer == null ||
-                modelName == null ||
-                modelCode == null ||
-                ram == null ||
-                formFactor == null ||
-                processorName == null ||
-                screenSizes == null ||
-                screenDensities == null ||
-                abis == null ||
-                sdkVersions == null ||
-                openGlEsVersions == null
+            if (manufacturer.isNullOrBlank() ||
+                modelName.isNullOrBlank() ||
+                modelCode.isNullOrBlank() ||
+                ram.isNullOrBlank() ||
+                formFactor.isNullOrBlank() ||
+                processorName.isNullOrBlank() ||
+                screenSizes.isNullOrBlank() ||
+                screenDensities.isNullOrBlank() ||
+                abis.isNullOrBlank() ||
+                sdkVersions.isNullOrBlank() ||
+                openGlEsVersions.isNullOrBlank()
             ) {
                 return@map null
             }
@@ -67,11 +67,28 @@ class Parser {
                 ram = ram,
                 formFactor = formFactor,
                 processorName = processorName,
-                screenSizes = screenSizes.split(CSV_MULTI_VALUE_SEPARATOR),
-                screenDensities = screenDensities.split(CSV_MULTI_VALUE_SEPARATOR).map { it.toInt() },
-                abis = abis.split(CSV_MULTI_VALUE_SEPARATOR),
-                sdkVersions = sdkVersions.split(CSV_MULTI_VALUE_SEPARATOR).map { it.toInt() },
+                screenSizes = screenSizes.split(CSV_MULTI_VALUE_SEPARATOR)
+                    .filter { it.isNotEmpty() }
+                    .toSortedSet()
+                    .toList(),
+                screenDensities = screenDensities.split(CSV_MULTI_VALUE_SEPARATOR)
+                    .filter { it.isNotEmpty() }
+                    .toSortedSet()
+                    .toList()
+                    .map { it.toInt() },
+                abis = abis.split(CSV_MULTI_VALUE_SEPARATOR)
+                    .filter { it.isNotEmpty() }
+                    .toSortedSet()
+                    .toList(),
+                sdkVersions = sdkVersions.split(CSV_MULTI_VALUE_SEPARATOR)
+                    .filter { it.isNotEmpty() }
+                    .toSortedSet()
+                    .toList()
+                    .map { it.toInt() },
                 openGlEsVersions = openGlEsVersions.split(CSV_MULTI_VALUE_SEPARATOR)
+                    .filter { it.isNotEmpty() }
+                    .toSortedSet()
+                    .toList()
             )
         }.filterNotNull()
     }
