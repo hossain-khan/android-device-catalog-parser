@@ -40,3 +40,16 @@ dependencies {
     // Used for exporting converted data to JSON
     testImplementation("com.google.code.gson:gson:2.8.6")
 }
+
+// https://docs.gradle.org/current/userguide/publishing_maven.html
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            groupId = "dev.hossain.android"
+            artifactId = "catalogparser"
+            version = "1.4"
+
+            from(components["java"])
+        }
+    }
+}
