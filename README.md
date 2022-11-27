@@ -1,4 +1,4 @@
-![Kotlin CI with Gradle](https://github.com/amardeshbd/android-device-catalog-parser/workflows/Kotlin%20CI%20with%20Gradle/badge.svg) [![](https://jitpack.io/v/amardeshbd/android-device-catalog-parser.svg)](https://jitpack.io/#amardeshbd/android-device-catalog-parser)
+![Kotlin CI with Gradle](https://github.com/amardeshbd/android-device-catalog-parser/workflows/Kotlin%20CI%20with%20Gradle/badge.svg) [![](https://jitpack.io/v/hossain-khan/android-device-catalog-parser.svg)](https://jitpack.io/#hossain-khan/android-device-catalog-parser)
 
 
 # android-device-catalog-parser
