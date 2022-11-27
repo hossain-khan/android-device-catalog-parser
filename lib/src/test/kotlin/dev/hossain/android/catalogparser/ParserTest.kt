@@ -25,8 +25,9 @@ class ParserTest {
     @Test
     fun `given no csv header fails to parse devices`() {
         val csvData: String = """
-        10.or,D,10or_D,2868-2874MB,Phone,Qualcomm MSM8917,720x1280,320,arm64-v8a;armeabi;armeabi-v7a,25;27,3.0
-        10.or,E,E,1857-2846MB,Phone,Qualcomm MSM8937,1080x1920,480,arm64-v8a;armeabi;armeabi-v7a,25;27,3.2
+        motorola,ali,Motorola,moto g(6),2994MB,Phone,Qualcomm SDM450,Qualcomm Adreno 506 (600 MHz),1080x2160,480,armeabi;armeabi-v7a,26;28,3.2
+        motorola,ali_n,Motorola,moto g(6),2994MB,Phone,Qualcomm SDM450,Qualcomm Adreno 506 (600 MHz),1080x2160,480,armeabi;armeabi-v7a,28,3.2
+        motorola,aljeter,Motorola,moto g(6) play,3018MB,Phone,Qualcomm MSM8937,Qualcomm Adreno 505 (450 MHz),720x1440,320,armeabi;armeabi-v7a,26;28,3.2
         """.trimIndent()
 
         val parsedDevices = sut.parseDeviceCatalogData(csvData)
@@ -37,35 +38,36 @@ class ParserTest {
     @Test
     fun `given valid csv data parses device list`() {
         val csvData: String = """
-        Manufacturer,Model Name,Model Code,RAM (TotalMem),Form Factor,System on Chip,Screen Sizes,Screen Densities,ABIs,Android SDK Versions,OpenGL ES Versions
-        10.or,D,10or_D,2868-2874MB,Phone,Qualcomm MSM8917,720x1280,320,arm64-v8a;armeabi;armeabi-v7a,25;27,3.0
-        10.or,E,E,1857-2846MB,Phone,Qualcomm MSM8937,1080x1920,480,arm64-v8a;armeabi;armeabi-v7a,25;27,3.2
+        Brand,Device,Manufacturer,Model Name,RAM (TotalMem),Form Factor,System on Chip,GPU,Screen Sizes,Screen Densities,ABIs,Android SDK Versions,OpenGL ES Versions
+        motorola,ali,Motorola,moto g(6),2994MB,Phone,Qualcomm SDM450,Qualcomm Adreno 506 (600 MHz),1080x2160,480,armeabi;armeabi-v7a,26;28,3.2
+        motorola,ali_n,Motorola,moto g(6),2994MB,Phone,Qualcomm SDM450,Qualcomm Adreno 506 (600 MHz),1080x2160,480,armeabi;armeabi-v7a,28,3.2
+        motorola,aljeter,Motorola,moto g(6) play,3018MB,Phone,Qualcomm MSM8937,Qualcomm Adreno 505 (450 MHz),720x1440,320,armeabi;armeabi-v7a,26;28,3.2
         """.trimIndent()
 
         val parsedDevices = sut.parseDeviceCatalogData(csvData)
 
-        assertEquals(2, parsedDevices.size)
+        assertEquals(3, parsedDevices.size)
     }
 
     @Test
     fun `given valid csv data with duplicate api levels - filters out duplicates`() {
         val csvData: String = """
-        Manufacturer,Model Name,Model Code,RAM (TotalMem),Form Factor,System on Chip,Screen Sizes,Screen Densities,ABIs,Android SDK Versions,OpenGL ES Versions
-        ManName,Model,Model-Code,2868-2874MB,Phone,Qualcomm MSM8917,720x1280,320,arm64-v8a;armeabi;armeabi-v7a,25;27;25;24;25,3.0
+        Brand,Device,Manufacturer,Model Name,RAM (TotalMem),Form Factor,System on Chip,GPU,Screen Sizes,Screen Densities,ABIs,Android SDK Versions,OpenGL ES Versions
+        motorola,aljeter,Motorola,moto g(6) play,3018MB,Phone,Qualcomm MSM8937,Qualcomm Adreno 505 (450 MHz),720x1440,320,armeabi;armeabi-v7a,26;28,3.2
         """.trimIndent()
 
         val parsedDevices = sut.parseDeviceCatalogData(csvData)
 
         assertEquals(1, parsedDevices.size)
 
-        assertEquals(listOf(24,25,27), parsedDevices.first().sdkVersions)
+        assertEquals(listOf(26, 28), parsedDevices.first().sdkVersions)
     }
 
     @Test
     fun `given valid csv data with duplicate abis - filters out duplicates`() {
         val csvData: String = """
-        Manufacturer,Model Name,Model Code,RAM (TotalMem),Form Factor,System on Chip,Screen Sizes,Screen Densities,ABIs,Android SDK Versions,OpenGL ES Versions
-        ManName,Model,Model-Code,2868-2874MB,Phone,Qualcomm MSM8917,720x1280,320,armeabi;armeabi-v7a;armeabi;armeabi-v7a,25;27,3.0
+        Brand,Device,Manufacturer,Model Name,RAM (TotalMem),Form Factor,System on Chip,GPU,Screen Sizes,Screen Densities,ABIs,Android SDK Versions,OpenGL ES Versions
+        motorola,aljeter,Motorola,moto g(6) play,3018MB,Phone,Qualcomm MSM8937,Qualcomm Adreno 505 (450 MHz),720x1440,320,armeabi;armeabi-v7a;armeabi;armeabi-v7a,26;28,3.2
         """.trimIndent()
 
         val parsedDevices = sut.parseDeviceCatalogData(csvData)
@@ -78,22 +80,22 @@ class ParserTest {
     @Test
     fun `given valid csv data with duplicate opengl versions - filters out duplicates`() {
         val csvData: String = """
-        Manufacturer,Model Name,Model Code,RAM (TotalMem),Form Factor,System on Chip,Screen Sizes,Screen Densities,ABIs,Android SDK Versions,OpenGL ES Versions
-        ManName,Model,Model-Code,2868-2874MB,Phone,Qualcomm MSM8917,720x1280,320,armeabi,25;27,3.0;3.1;3.0
+        Brand,Device,Manufacturer,Model Name,RAM (TotalMem),Form Factor,System on Chip,GPU,Screen Sizes,Screen Densities,ABIs,Android SDK Versions,OpenGL ES Versions
+        motorola,aljeter,Motorola,moto g(6) play,3018MB,Phone,Qualcomm MSM8937,Qualcomm Adreno 505 (450 MHz),720x1440,320,armeabi;armeabi-v7a;armeabi;armeabi-v7a,26;28,3.1;3.2;3.1;3.0
         """.trimIndent()
 
         val parsedDevices = sut.parseDeviceCatalogData(csvData)
 
         assertEquals(1, parsedDevices.size)
 
-        assertEquals(listOf("3.0", "3.1"), parsedDevices.first().openGlEsVersions)
+        assertEquals(listOf("3.0", "3.1", "3.2"), parsedDevices.first().openGlEsVersions)
     }
 
     @Test
     fun `given valid csv data row parses device attributes`() {
         val csvData: String = """
-        Manufacturer,Model Name,Model Code,RAM (TotalMem),Form Factor,System on Chip,Screen Sizes,Screen Densities,ABIs,Android SDK Versions,OpenGL ES Versions
-        Google,Pixel 4 XL,coral,5466MB,Phone,Qualcomm SDM855,1440x3040,560,arm64-v8a;armeabi;armeabi-v7a,29;30,3.2
+        Brand,Device,Manufacturer,Model Name,RAM (TotalMem),Form Factor,System on Chip,GPU,Screen Sizes,Screen Densities,ABIs,Android SDK Versions,OpenGL ES Versions
+        google,coral,Google,Pixel 4 XL,5730MB,Phone,Qualcomm SDM855,Qualcomm Adreno 640 (585 MHz),1440x3040,560,arm64-v8a;armeabi;armeabi-v7a,32;33,3.2
         """.trimIndent()
 
         val parsedDevices = sut.parseDeviceCatalogData(csvData)
@@ -101,16 +103,19 @@ class ParserTest {
         assertEquals(1, parsedDevices.size)
         val device = parsedDevices.first()
 
+        assertEquals("google", device.brand)
+        assertEquals("coral", device.device)
+        assertEquals("Google", device.manufacturer)
         assertEquals("Google", device.manufacturer)
         assertEquals("Pixel 4 XL", device.modelName)
-        assertEquals("coral", device.modelCode)
-        assertEquals("5466MB", device.ram)
+        assertEquals("5730MB", device.ram)
         assertEquals("Phone", device.formFactor)
         assertEquals("Qualcomm SDM855", device.processorName)
+        assertEquals("Qualcomm Adreno 640 (585 MHz)", device.gpu)
         assertEquals(listOf("1440x3040"), device.screenSizes)
         assertEquals(listOf(560), device.screenDensities)
         assertEquals(listOf("arm64-v8a", "armeabi", "armeabi-v7a"), device.abis)
-        assertEquals(listOf(29, 30), device.sdkVersions)
+        assertEquals(listOf(32, 33), device.sdkVersions)
         assertEquals(listOf("3.2"), device.openGlEsVersions)
     }
 
