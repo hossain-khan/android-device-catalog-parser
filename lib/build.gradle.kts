@@ -11,6 +11,10 @@ plugins {
     // https://kotlinlang.org/docs/releases.html#release-details
     kotlin("jvm") version "1.7.10"
 
+    // https://docs.gradle.org/current/userguide/publishing_maven.html
+    // See the documentation and examples: https://docs.jitpack.io
+    `maven-publish`
+
     // Apply the java-library plugin for API and implementation separation.
     `java-library`
 }
