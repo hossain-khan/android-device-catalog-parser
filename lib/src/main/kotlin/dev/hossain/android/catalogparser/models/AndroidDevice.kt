@@ -6,6 +6,17 @@ package dev.hossain.android.catalogparser.models
  */
 class AndroidDevice(
     /**
+     * Manufacturer brand code.
+     * Examples: google, htc, lge, Lenovo, motorola
+     */
+    val brand: String,
+
+    /**
+     * Examples: coral, htc_a50aml, SW4H_FF, luv20ts, falcon_umts
+     */
+    val device: String,
+
+    /**
      * Device manufacturer name.
      * Examples: Acer, LG, Samsung
      */
@@ -16,12 +27,6 @@ class AndroidDevice(
      * Examples: Iconia One 7, S13, ZenFone 4 (ZE554KL)
      */
     val modelName: String,
-
-    /**
-     * Device model code internally used by manufacturer
-     * Examples: ASUS_Z01KD_3, K00X_1, BLU_NEO_X_LTE
-     */
-    val modelCode: String,
 
     /**
      * Device RAM
@@ -39,6 +44,12 @@ class AndroidDevice(
      * Examples: Mediatek MT6572A, Qualcomm MSM8909, Rockchip RK3326, Spreadtrum SC9832A
      */
     val processorName: String,
+
+    /**
+     * GPU processor name.
+     * Examples: Qualcomm Adreno 640 (585 MHz), ARM Mali 400 (400 MHz)
+     */
+    val gpu: String,
 
     /**
      * Examples: 1024x600, 1366x768, 480x854, 800x1280

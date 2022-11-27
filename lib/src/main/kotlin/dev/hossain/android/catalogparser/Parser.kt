@@ -3,13 +3,15 @@ package dev.hossain.android.catalogparser
 import com.github.doyaaaaaken.kotlincsv.client.CsvReader
 import com.github.doyaaaaaken.kotlincsv.dsl.csvReader
 import dev.hossain.android.catalogparser.Config.CSV_KEY_ABIS
+import dev.hossain.android.catalogparser.Config.CSV_KEY_BRAND
+import dev.hossain.android.catalogparser.Config.CSV_KEY_DEVICE
 import dev.hossain.android.catalogparser.Config.CSV_KEY_FORM_FACTOR
 import dev.hossain.android.catalogparser.Config.CSV_KEY_MANUFACTURER
-import dev.hossain.android.catalogparser.Config.CSV_KEY_MODEL_CODE
 import dev.hossain.android.catalogparser.Config.CSV_KEY_MODEL_NAME
 import dev.hossain.android.catalogparser.Config.CSV_KEY_OPENGL_ES_VERSIONS
 import dev.hossain.android.catalogparser.Config.CSV_KEY_RAM
 import dev.hossain.android.catalogparser.Config.CSV_KEY_SCREEN_DENSITIES
+import dev.hossain.android.catalogparser.Config.CSV_KEY_SCREEN_GPU
 import dev.hossain.android.catalogparser.Config.CSV_KEY_SCREEN_SIZES
 import dev.hossain.android.catalogparser.Config.CSV_KEY_SDK_VERSIONS
 import dev.hossain.android.catalogparser.Config.CSV_KEY_SOC
@@ -32,12 +34,14 @@ class Parser {
         val deviceRows: List<Map<String, String>> = csvReader.readAllWithHeader(csvContent)
 
         return deviceRows.map { rowData ->
+            val brand = rowData[CSV_KEY_BRAND]
+            val device = rowData[CSV_KEY_DEVICE]
             val manufacturer = rowData[CSV_KEY_MANUFACTURER]
             val modelName = rowData[CSV_KEY_MODEL_NAME]
-            val modelCode = rowData[CSV_KEY_MODEL_CODE]
             val ram = rowData[CSV_KEY_RAM]
             val formFactor = rowData[CSV_KEY_FORM_FACTOR]
             val processorName = rowData[CSV_KEY_SOC]
+            val gpu = rowData[CSV_KEY_SCREEN_GPU]
             val screenSizes = rowData[CSV_KEY_SCREEN_SIZES]
             val screenDensities = rowData[CSV_KEY_SCREEN_DENSITIES]
             val abis = rowData[CSV_KEY_ABIS]
@@ -45,12 +49,14 @@ class Parser {
             val openGlEsVersions = rowData[CSV_KEY_OPENGL_ES_VERSIONS]
 
             // Validates non-null values
-            if (manufacturer.isNullOrBlank() ||
+            if (brand.isNullOrBlank() ||
+                device.isNullOrBlank() ||
+                manufacturer.isNullOrBlank() ||
                 modelName.isNullOrBlank() ||
-                modelCode.isNullOrBlank() ||
                 ram.isNullOrBlank() ||
                 formFactor.isNullOrBlank() ||
                 processorName.isNullOrBlank() ||
+                gpu.isNullOrBlank() ||
                 screenSizes.isNullOrBlank() ||
                 screenDensities.isNullOrBlank() ||
                 abis.isNullOrBlank() ||
@@ -61,12 +67,14 @@ class Parser {
             }
 
             return@map AndroidDevice(
+                brand = brand,
+                device = device,
                 manufacturer = manufacturer,
                 modelName = modelName,
-                modelCode = modelCode,
                 ram = ram,
                 formFactor = formFactor,
                 processorName = processorName,
+                gpu = gpu,
                 screenSizes = screenSizes.split(CSV_MULTI_VALUE_SEPARATOR)
                     .filter { it.isNotEmpty() }
                     .toSortedSet()
