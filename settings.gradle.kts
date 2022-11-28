@@ -9,3 +9,4 @@
 
 rootProject.name = "android-device-catalog"
 include("lib")
+include("app")
