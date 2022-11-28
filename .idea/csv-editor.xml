@@ -10,6 +10,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/app/src/main/resources/android-devices-catalog.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/lib/src/test/resources/android-devices-catalog.csv">
           <value>
             <Attribute>
