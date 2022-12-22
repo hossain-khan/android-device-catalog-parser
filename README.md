@@ -2,9 +2,9 @@
 
 
 # android-device-catalog-parser
-Android Device catalog CSV parser that is available from Google Play developer console.
+Android Device catalog CSV parser that is available from Google Play developer [console](https://play.google.com/console/about/devicecatalog/).
 
-![](https://user-images.githubusercontent.com/99822/99319347-5e93f800-2837-11eb-9600-779663f580e3.png)
+[![](https://user-images.githubusercontent.com/99822/99319347-5e93f800-2837-11eb-9600-779663f580e3.png)](https://play.google.com/console/about/devicecatalog/)
 
 
 
