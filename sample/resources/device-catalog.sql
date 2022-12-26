@@ -5,7 +5,9 @@ CREATE TABLE "device" (
   "manufacturer" TEXT NOT NULL,
   "model_name" TEXT NOT NULL,
   "ram" TEXT NOT NULL,
-  "processor_name" TEXT NOT NULL
+  "form_factor" TEXT NOT NULL,
+  "processor_name" TEXT NOT NULL,
+  "gpu" TEXT NOT NULL
 );
 
 CREATE TABLE "deviceAbi" (
