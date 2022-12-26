@@ -17,7 +17,7 @@ fun main() {
 
     println("Parsed ${parsedDevices.size} devices from the catalog CSV file.")
 
-    processRecordsToDb(parsedDevices.take(100))
+    processRecordsToDb(parsedDevices)
 }
 
 private fun processRecordsToDb(parsedDevices: List<AndroidDevice>) {
