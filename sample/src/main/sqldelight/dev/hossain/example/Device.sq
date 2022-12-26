@@ -1,21 +1,18 @@
-CREATE TABLE hockeyPlayer (
-  player_number INTEGER NOT NULL,
-  full_name TEXT NOT NULL
+CREATE TABLE "device" (
+  "_id" INTEGER NOT NULL ON CONFLICT REPLACE PRIMARY KEY AUTOINCREMENT,
+  "brand" TEXT NOT NULL,
+  "device" TEXT NOT NULL,
+  "manufacturer" TEXT NOT NULL,
+  "model_name" TEXT,
+  "ram" TEXT,
+  "processor_name" TEXT
 );
 
-CREATE INDEX hockeyPlayer_full_name ON hockeyPlayer(full_name);
-
-INSERT INTO hockeyPlayer (player_number, full_name)
-VALUES (15, 'Ryan Getzlaf');
 
 selectAll:
 SELECT *
-FROM hockeyPlayer;
+FROM device;
 
 insert:
-INSERT INTO hockeyPlayer(player_number, full_name)
-VALUES (?, ?);
-
-insertFullPlayerObject:
-INSERT INTO hockeyPlayer(player_number, full_name)
-VALUES ?;
+INSERT INTO device(brand, device, manufacturer, model_name, ram, processor_name)
+VALUES (?, ?, ?, ?, ?, ?);

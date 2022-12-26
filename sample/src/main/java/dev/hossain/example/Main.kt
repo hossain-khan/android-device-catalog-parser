@@ -16,26 +16,26 @@ fun main() {
 
     println("Parsed ${parsedDevices.size} devices from the catalog CSV file.")
 
-    processRecordsToDb()
+    processRecordsToDb(parsedDevices)
 }
 
-fun processRecordsToDb() {
+private fun processRecordsToDb(parsedDevices: List<AndroidDevice>) {
     val driver: SqlDriver = JdbcSqliteDriver(JdbcSqliteDriver.IN_MEMORY)
 
     val database = DeviceDatabase(driver)
     DeviceDatabase.Schema.create(driver)
 
+    val deviceQueries = database.deviceQueries
 
-    val playerQueries = database.deviceQueries
-
-    println(playerQueries.selectAll().executeAsList())
-// Prints [HockeyPlayer(15, "Ryan Getzlaf")]
-
-    playerQueries.insert(player_number = 10, full_name = "Corey Perry")
-    println(playerQueries.selectAll().executeAsList())
-// Prints [HockeyPlayer(15, "Ryan Getzlaf"), HockeyPlayer(10, "Corey Perry")]
-
-    val player = HockeyPlayer(10, "Ronald McDonald")
-    playerQueries.insertFullPlayerObject(player)
-    println(playerQueries.selectAll().executeAsList())
+    parsedDevices.forEach {
+        deviceQueries.insert(
+            brand = it.brand,
+            device = it.device,
+            manufacturer = it.manufacturer,
+            model_name = it.modelName,
+            ram = it.ram,
+            processor_name = it.processorName,
+        )
+    }
+    println("Inserted ${deviceQueries.selectAll().executeAsList().size} records to DB")
 }
