@@ -4,6 +4,13 @@ plugins {
     id("com.squareup.sqldelight")
 }
 
+sqldelight {
+    // This will be the name of the generated database class.
+    database(name = "DeviceDatabase") {
+        packageName = "dev.hossain.example"
+    }
+}
+
 group = "dev.hossain.example"
 version = "1.0"
 
