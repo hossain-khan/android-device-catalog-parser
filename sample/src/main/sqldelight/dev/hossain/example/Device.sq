@@ -5,7 +5,9 @@ CREATE TABLE "device" (
   "manufacturer" TEXT NOT NULL,
   "model_name" TEXT NOT NULL,
   "ram" TEXT NOT NULL,
-  "processor_name" TEXT NOT NULL
+  "form_factor" TEXT NOT NULL,
+  "processor_name" TEXT NOT NULL,
+  "gpu" TEXT NOT NULL
 );
 
 CREATE TABLE "deviceAbi" (
@@ -51,25 +53,50 @@ lastInsertRowId:
 SELECT last_insert_rowid();
 
 insert:
-INSERT INTO device(brand, device, manufacturer, model_name, ram, processor_name)
-VALUES (?, ?, ?, ?, ?, ?);
+INSERT INTO device(brand, device, manufacturer, model_name, ram, form_factor, processor_name, gpu)
+VALUES (?, ?, ?, ?, ?, ?, ?, ?);
 
 insertAbi:
 INSERT INTO deviceAbi(device_id, abi)
 VALUES (?, ?);
 
+getAbi:
+SELECT *
+FROM deviceAbi
+WHERE device_id = ?;
+
 insertOpenGlVersion:
 INSERT INTO deviceOpengl(device_id, opengl_version)
 VALUES (?, ?);
+
+getOpenGlVersion:
+SELECT *
+FROM deviceOpengl
+WHERE device_id = ?;
 
 insertScreenDensity:
 INSERT INTO deviceScreenDensity(device_id, screen_density)
 VALUES (?, ?);
 
+getScreenDensity:
+SELECT *
+FROM deviceScreenDensity
+WHERE device_id = ?;
+
 insertScreenSize:
 INSERT INTO deviceScreenSize(device_id, screen_size)
 VALUES (?, ?);
 
+getScreenSize:
+SELECT *
+FROM deviceScreenSize
+WHERE device_id = ?;
+
 insertSdkVersion:
 INSERT INTO deviceSdk(device_id, sdk_version)
 VALUES (?, ?);
+
+getSdkVersion:
+SELECT *
+FROM deviceSdk
+WHERE device_id = ?;

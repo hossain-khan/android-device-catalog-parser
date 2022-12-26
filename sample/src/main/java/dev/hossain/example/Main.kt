@@ -22,7 +22,7 @@ fun main() {
 
 private fun processRecordsToDb(parsedDevices: List<AndroidDevice>) {
     val dbFile = File("devices.db")
-    if(dbFile.exists()) {
+    if (dbFile.exists()) {
         dbFile.delete()
     }
     val driver: SqlDriver = JdbcSqliteDriver("${JdbcSqliteDriver.IN_MEMORY}devices.db")
@@ -40,7 +40,9 @@ private fun processRecordsToDb(parsedDevices: List<AndroidDevice>) {
                 manufacturer = androidDevice.manufacturer,
                 model_name = androidDevice.modelName,
                 ram = androidDevice.ram,
+                form_factor = androidDevice.formFactor,
                 processor_name = androidDevice.processorName,
+                gpu = androidDevice.gpu
             )
         }
 
@@ -63,5 +65,28 @@ private fun processRecordsToDb(parsedDevices: List<AndroidDevice>) {
             deviceQueries.insertSdkVersion(deviceId, it.toLong())
         }
     }
-    println("Inserted ${deviceQueries.selectAll().executeAsList().size} records to DB")
+    val deviceListDb: List<Device> = deviceQueries.selectAll().executeAsList()
+    println("Inserted ${deviceListDb.size} records to DB")
+
+    val androidDeviceBack: List<AndroidDevice> = deviceListDb.map { dbDevice ->
+        AndroidDevice(
+            brand = dbDevice.brand,
+            device = dbDevice.device,
+            manufacturer = dbDevice.manufacturer,
+            modelName = dbDevice.model_name,
+            ram = dbDevice.ram,
+            formFactor = dbDevice.form_factor,
+            processorName = dbDevice.processor_name,
+            gpu = dbDevice.gpu,
+            screenSizes = deviceQueries.getScreenSize(dbDevice._id).executeAsList().map { it.screen_size },
+            screenDensities = deviceQueries.getScreenDensity(dbDevice._id).executeAsList()
+                .map { it.screen_density.toInt() },
+            abis = deviceQueries.getAbi(dbDevice._id).executeAsList().map { it.abi },
+            sdkVersions = deviceQueries.getSdkVersion(dbDevice._id).executeAsList().map { it.sdk_version.toInt() },
+            openGlEsVersions = deviceQueries.getOpenGlVersion(dbDevice._id).executeAsList().map { it.opengl_version },
+        )
+    }
+
+    println("Got all the Android device model back. Total: ${androidDeviceBack.size}")
+    println("Are they same as source? ${parsedDevices == androidDeviceBack}")
 }

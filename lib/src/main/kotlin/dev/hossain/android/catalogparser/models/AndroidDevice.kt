@@ -75,4 +75,26 @@ class AndroidDevice(
      * Examples: 2.0, 3.0, 3.1, 3.2
      */
     val openGlEsVersions: List<String>
-)
+) {
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (javaClass != other?.javaClass) return false
+
+        other as AndroidDevice
+
+        if (brand != other.brand) return false
+        if (device != other.device) return false
+        if (manufacturer != other.manufacturer) return false
+        if (modelName != other.modelName) return false
+
+        return true
+    }
+
+    override fun hashCode(): Int {
+        var result = brand.hashCode()
+        result = 31 * result + device.hashCode()
+        result = 31 * result + manufacturer.hashCode()
+        result = 31 * result + modelName.hashCode()
+        return result
+    }
+}
