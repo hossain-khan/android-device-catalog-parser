@@ -9,7 +9,7 @@
 plugins {
     // For build.gradle.kts (Kotlin DSL)
     // https://kotlinlang.org/docs/releases.html#release-details
-    kotlin("jvm") version "1.7.10"
+    kotlin("jvm")
 
     // https://docs.gradle.org/current/userguide/publishing_maven.html
     // See the documentation and examples: https://docs.jitpack.io
