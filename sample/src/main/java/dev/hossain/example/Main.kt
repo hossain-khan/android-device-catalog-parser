@@ -16,7 +16,7 @@ fun main() {
 
     println("Parsed ${parsedDevices.size} devices from the catalog CSV file.")
 
-    processRecordsToDb(parsedDevices)
+    processRecordsToDb(parsedDevices.take(10))
 }
 
 private fun processRecordsToDb(parsedDevices: List<AndroidDevice>) {
@@ -27,15 +27,33 @@ private fun processRecordsToDb(parsedDevices: List<AndroidDevice>) {
 
     val deviceQueries = database.deviceQueries
 
-    parsedDevices.forEach {
+    parsedDevices.forEach { androidDevice ->
         deviceQueries.insert(
-            brand = it.brand,
-            device = it.device,
-            manufacturer = it.manufacturer,
-            model_name = it.modelName,
-            ram = it.ram,
-            processor_name = it.processorName,
+            brand = androidDevice.brand,
+            device = androidDevice.device,
+            manufacturer = androidDevice.manufacturer,
+            model_name = androidDevice.modelName,
+            ram = androidDevice.ram,
+            processor_name = androidDevice.processorName,
         )
+        val deviceId: Long = deviceQueries.lastInsertRowId().executeAsOne()
+        println("Inserted new record with id: $deviceId")
+
+        androidDevice.abis.forEach {
+            deviceQueries.insertAbi(deviceId, it)
+        }
+        androidDevice.openGlEsVersions.forEach {
+            deviceQueries.insertOpenGlVersion(deviceId, it)
+        }
+        androidDevice.screenDensities.forEach {
+            deviceQueries.insertScreenDensity(deviceId, it.toLong())
+        }
+        androidDevice.screenSizes.forEach {
+            deviceQueries.insertScreenSize(deviceId, it)
+        }
+        androidDevice.sdkVersions.forEach {
+            deviceQueries.insertSdkVersion(deviceId, it.toLong())
+        }
     }
     println("Inserted ${deviceQueries.selectAll().executeAsList().size} records to DB")
 }

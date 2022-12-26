@@ -3,15 +3,43 @@ CREATE TABLE "device" (
   "brand" TEXT NOT NULL,
   "device" TEXT NOT NULL,
   "manufacturer" TEXT NOT NULL,
-  "model_name" TEXT,
-  "ram" TEXT,
-  "processor_name" TEXT
+  "model_name" TEXT NOT NULL,
+  "ram" TEXT NOT NULL,
+  "processor_name" TEXT NOT NULL
 );
 
-CREATE TABLE "device_opengl" (
+CREATE TABLE "deviceAbi" (
+  "device_id" INTEGER NOT NULL,
+  "abi" TEXT NOT NULL ON CONFLICT REPLACE,
+  PRIMARY KEY ("device_id", "abi"),
+  FOREIGN KEY ("device_id") REFERENCES "device" ("_id") ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE "deviceOpengl" (
   "device_id" INTEGER NOT NULL,
   "opengl_version" TEXT NOT NULL ON CONFLICT REPLACE,
   PRIMARY KEY ("device_id", "opengl_version"),
+  FOREIGN KEY ("device_id") REFERENCES "device" ("_id") ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE "deviceScreenDensity" (
+  "device_id" INTEGER NOT NULL,
+  "screen_density" INTEGER NOT NULL ON CONFLICT REPLACE,
+  PRIMARY KEY ("device_id", "screen_density"),
+  FOREIGN KEY ("device_id") REFERENCES "device" ("_id") ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE "deviceScreenSize" (
+  "device_id" INTEGER NOT NULL,
+  "screen_size" TEXT NOT NULL ON CONFLICT REPLACE,
+  PRIMARY KEY ("device_id", "screen_size"),
+  FOREIGN KEY ("device_id") REFERENCES "device" ("_id") ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE "deviceSdk" (
+  "device_id" INTEGER NOT NULL,
+  "sdk_version" INTEGER NOT NULL ON CONFLICT REPLACE,
+  PRIMARY KEY ("device_id", "sdk_version"),
   FOREIGN KEY ("device_id") REFERENCES "device" ("_id") ON DELETE CASCADE ON UPDATE CASCADE
 );
 
@@ -19,6 +47,29 @@ selectAll:
 SELECT *
 FROM device;
 
+lastInsertRowId:
+SELECT last_insert_rowid();
+
 insert:
 INSERT INTO device(brand, device, manufacturer, model_name, ram, processor_name)
 VALUES (?, ?, ?, ?, ?, ?);
+
+insertAbi:
+INSERT INTO deviceAbi(device_id, abi)
+VALUES (?, ?);
+
+insertOpenGlVersion:
+INSERT INTO deviceOpengl(device_id, opengl_version)
+VALUES (?, ?);
+
+insertScreenDensity:
+INSERT INTO deviceScreenDensity(device_id, screen_density)
+VALUES (?, ?);
+
+insertScreenSize:
+INSERT INTO deviceScreenSize(device_id, screen_size)
+VALUES (?, ?);
+
+insertSdkVersion:
+INSERT INTO deviceSdk(device_id, sdk_version)
+VALUES (?, ?);

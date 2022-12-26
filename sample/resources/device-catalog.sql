@@ -8,35 +8,35 @@ CREATE TABLE "device" (
   "processor_name" TEXT NOT NULL
 );
 
-CREATE TABLE "device_abi" (
+CREATE TABLE "deviceAbi" (
   "device_id" INTEGER NOT NULL,
   "abi" TEXT NOT NULL ON CONFLICT REPLACE,
   PRIMARY KEY ("device_id", "abi"),
   CONSTRAINT "fk_device_id" FOREIGN KEY ("device_id") REFERENCES "device" ("_id") ON DELETE CASCADE ON UPDATE CASCADE
 );
 
-CREATE TABLE "device_opengl" (
+CREATE TABLE "deviceOpengl" (
   "device_id" INTEGER NOT NULL,
   "opengl_version" TEXT NOT NULL ON CONFLICT REPLACE,
   PRIMARY KEY ("device_id", "opengl_version"),
   CONSTRAINT "fk_device_id" FOREIGN KEY ("device_id") REFERENCES "device" ("_id") ON DELETE CASCADE ON UPDATE CASCADE
 );
 
-CREATE TABLE "device_screen_density" (
+CREATE TABLE "deviceScreenDensity" (
   "device_id" INTEGER NOT NULL,
   "screen_density" INTEGER NOT NULL ON CONFLICT REPLACE,
   PRIMARY KEY ("device_id", "screen_density"),
   CONSTRAINT "fk_device_id" FOREIGN KEY ("device_id") REFERENCES "device" ("_id") ON DELETE CASCADE ON UPDATE CASCADE
 );
 
-CREATE TABLE "device_screen_size" (
+CREATE TABLE "deviceScreenSize" (
   "device_id" INTEGER NOT NULL,
   "screen_size" TEXT NOT NULL ON CONFLICT REPLACE,
   PRIMARY KEY ("device_id", "screen_size"),
   CONSTRAINT "fk_device_id" FOREIGN KEY ("device_id") REFERENCES "device" ("_id") ON DELETE CASCADE ON UPDATE CASCADE
 );
 
-CREATE TABLE "device_sdk" (
+CREATE TABLE "deviceSdk" (
   "device_id" INTEGER NOT NULL,
   "sdk_version" INTEGER NOT NULL ON CONFLICT REPLACE,
   PRIMARY KEY ("device_id", "sdk_version"),
