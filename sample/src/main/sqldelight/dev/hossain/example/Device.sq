@@ -8,6 +8,12 @@ CREATE TABLE "device" (
   "processor_name" TEXT
 );
 
+CREATE TABLE "device_opengl" (
+  "device_id" INTEGER NOT NULL,
+  "opengl_version" TEXT NOT NULL ON CONFLICT REPLACE,
+  PRIMARY KEY ("device_id", "opengl_version"),
+  FOREIGN KEY ("device_id") REFERENCES "device" ("_id") ON DELETE CASCADE ON UPDATE CASCADE
+);
 
 selectAll:
 SELECT *
