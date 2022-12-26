@@ -1,6 +1,14 @@
 plugins {
-    kotlin("jvm") version "1.7.10"
+    kotlin("jvm")
     application
+    id("com.squareup.sqldelight")
+}
+
+sqldelight {
+    // This will be the name of the generated database class.
+    database(name = "DeviceDatabase") {
+        packageName = "dev.hossain.example"
+    }
 }
 
 group = "dev.hossain.example"
@@ -12,6 +20,7 @@ repositories {
 
 dependencies {
     implementation(project(":lib"))
+    implementation("com.squareup.sqldelight:sqlite-driver:1.5.4")
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.8.1")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.8.1")
 }

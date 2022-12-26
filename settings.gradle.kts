@@ -7,6 +7,25 @@
  * in the user manual at https://docs.gradle.org/6.7/userguide/multi_project_builds.html
  */
 
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+    dependencies {
+        classpath("com.squareup.sqldelight:gradle-plugin:1.5.4")
+    }
+}
+
 rootProject.name = "android-device-catalog"
 include("lib")
 include("sample")
