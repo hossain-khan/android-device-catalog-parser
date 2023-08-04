@@ -68,7 +68,7 @@ private fun processRecordsToDb(parsedDevices: List<AndroidDevice>) {
     val deviceListDb: List<Device> = deviceQueries.selectAll().executeAsList()
     println("Inserted ${deviceListDb.size} records to DB")
 
-    val androidDeviceBack: List<AndroidDevice> = deviceListDb.map { dbDevice ->
+    val androidDevicesFromDb: List<AndroidDevice> = deviceListDb.map { dbDevice ->
         AndroidDevice(
             brand = dbDevice.brand,
             device = dbDevice.device,
@@ -87,6 +87,6 @@ private fun processRecordsToDb(parsedDevices: List<AndroidDevice>) {
         )
     }
 
-    println("Got all the Android device model back. Total: ${androidDeviceBack.size}")
-    println("Are they same as source? ${parsedDevices == androidDeviceBack}")
+    println("Got all the Android device model back. Total: ${androidDevicesFromDb.size}")
+    println("Are they same as source? ${parsedDevices == androidDevicesFromDb}")
 }
