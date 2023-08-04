@@ -6,6 +6,24 @@ Android Device catalog CSV parser that is available from Google Play developer [
 
 [![](https://user-images.githubusercontent.com/99822/99319347-5e93f800-2837-11eb-9600-779663f580e3.png)](https://play.google.com/console/about/devicecatalog/)
 
+### Usage
+Follow jitpack [guideline](https://jitpack.io/#hossain-khan/android-device-catalog-parser)
+
+```groovy
+// Step 1. Add the JitPack repository to your build file
+	allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+
+
+// Step 2. Add the dependency
+	dependencies {
+	        implementation 'com.github.hossain-khan:android-device-catalog-parser:1.4'
+	}
+```
 
 
 ### CSV Snapshot
