@@ -144,7 +144,9 @@ class ParserTest {
         // Use following to write file to resources
         /*val resourceDirectory: Path = Paths.get("src", "test", "resources")
         val resDir = resourceDirectory.toFile()
-        assertTrue(resDir.absolutePath.endsWith("src/test/resources"))
+        // UNIX: src/test/resources
+        // WINDOWS: src\test\resources
+        assertTrue(resDir.absolutePath.endsWith("src${File.separator}test${File.separator}resources")) // src\test\resources
 
         val jsonFile: File = File(resDir, "android-devices-catalog-min.json")
         jsonFile.writeText(convertedJson)*/
