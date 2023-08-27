@@ -5,6 +5,7 @@
 Android Device catalog CSV parser that is available from Google Play developer [console](https://play.google.com/console/about/devicecatalog/).
 
 [![](https://user-images.githubusercontent.com/99822/99319347-5e93f800-2837-11eb-9600-779663f580e3.png)](https://play.google.com/console/about/devicecatalog/)
+![](https://user-images.githubusercontent.com/99822/263503515-f5910fb5-02c1-4bef-bdc7-1328085b32d9.png)
 
 ### Usage
 Follow jitpack [guideline](https://jitpack.io/#hossain-khan/android-device-catalog-parser)
