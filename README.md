@@ -12,18 +12,17 @@ Follow jitpack [guideline](https://jitpack.io/#hossain-khan/android-device-catal
 
 ```groovy
 // Step 1. Add the JitPack repository to your build file
-	allprojects {
-		repositories {
-			...
-			maven { url 'https://jitpack.io' }
-		}
-	}
+allprojects {
+    repositories {
+        maven { url 'https://jitpack.io' }
+    }
+}
 
 
 // Step 2. Add the dependency
-	dependencies {
-	        implementation 'com.github.hossain-khan:android-device-catalog-parser:1.4'
-	}
+dependencies {
+    implementation 'com.github.hossain-khan:android-device-catalog-parser:1.4'
+}
 ```
 
 
