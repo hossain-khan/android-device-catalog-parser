@@ -18,8 +18,7 @@ plugins {
     // Apply the java-library plugin for API and implementation separation.
     `java-library`
 
-    // https://github.com/jeremymailen/kotlinter-gradle
-    id("org.jmailen.kotlinter")
+    id("org.jlleitschuh.gradle.ktlint")
 }
 
 repositories {

@@ -2,7 +2,7 @@ plugins {
     kotlin("jvm")
     application
     id("com.squareup.sqldelight")
-    id("org.jmailen.kotlinter")
+    id("org.jlleitschuh.gradle.ktlint")
 }
 
 sqldelight {
