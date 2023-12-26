@@ -42,7 +42,7 @@ private fun processRecordsToDb(parsedDevices: List<AndroidDevice>) {
                 ram = androidDevice.ram,
                 form_factor = androidDevice.formFactor,
                 processor_name = androidDevice.processorName,
-                gpu = androidDevice.gpu
+                gpu = androidDevice.gpu,
             )
         }
 
@@ -68,24 +68,26 @@ private fun processRecordsToDb(parsedDevices: List<AndroidDevice>) {
     val deviceListDb: List<Device> = deviceQueries.selectAll().executeAsList()
     println("Inserted ${deviceListDb.size} records to DB")
 
-    val androidDevicesFromDb: List<AndroidDevice> = deviceListDb.map { dbDevice ->
-        AndroidDevice(
-            brand = dbDevice.brand,
-            device = dbDevice.device,
-            manufacturer = dbDevice.manufacturer,
-            modelName = dbDevice.model_name,
-            ram = dbDevice.ram,
-            formFactor = dbDevice.form_factor,
-            processorName = dbDevice.processor_name,
-            gpu = dbDevice.gpu,
-            screenSizes = deviceQueries.getScreenSize(dbDevice._id).executeAsList().map { it.screen_size },
-            screenDensities = deviceQueries.getScreenDensity(dbDevice._id).executeAsList()
-                .map { it.screen_density.toInt() },
-            abis = deviceQueries.getAbi(dbDevice._id).executeAsList().map { it.abi },
-            sdkVersions = deviceQueries.getSdkVersion(dbDevice._id).executeAsList().map { it.sdk_version.toInt() },
-            openGlEsVersions = deviceQueries.getOpenGlVersion(dbDevice._id).executeAsList().map { it.opengl_version },
-        )
-    }
+    val androidDevicesFromDb: List<AndroidDevice> =
+        deviceListDb.map { dbDevice ->
+            AndroidDevice(
+                brand = dbDevice.brand,
+                device = dbDevice.device,
+                manufacturer = dbDevice.manufacturer,
+                modelName = dbDevice.model_name,
+                ram = dbDevice.ram,
+                formFactor = dbDevice.form_factor,
+                processorName = dbDevice.processor_name,
+                gpu = dbDevice.gpu,
+                screenSizes = deviceQueries.getScreenSize(dbDevice._id).executeAsList().map { it.screen_size },
+                screenDensities =
+                    deviceQueries.getScreenDensity(dbDevice._id).executeAsList()
+                        .map { it.screen_density.toInt() },
+                abis = deviceQueries.getAbi(dbDevice._id).executeAsList().map { it.abi },
+                sdkVersions = deviceQueries.getSdkVersion(dbDevice._id).executeAsList().map { it.sdk_version.toInt() },
+                openGlEsVersions = deviceQueries.getOpenGlVersion(dbDevice._id).executeAsList().map { it.opengl_version },
+            )
+        }
 
     println("Got all the Android device model back. Total: ${androidDevicesFromDb.size}")
     println("Are they same as source? ${parsedDevices == androidDevicesFromDb}")

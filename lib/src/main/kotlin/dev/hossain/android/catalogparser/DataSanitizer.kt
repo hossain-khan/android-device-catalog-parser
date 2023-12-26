@@ -12,7 +12,7 @@ object DataSanitizer {
         }
         val maxRamRangeValue = extractNumbers(ram).maxOrNull()
         if (maxRamRangeValue == null) {
-            return ram;
+            return ram
         } else {
             return "${maxRamRangeValue}${SUFFIX_MB}"
         }
