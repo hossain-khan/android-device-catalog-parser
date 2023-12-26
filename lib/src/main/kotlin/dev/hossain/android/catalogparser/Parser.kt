@@ -24,7 +24,6 @@ import dev.hossain.android.catalogparser.models.AndroidDevice
  * @see Config
  */
 class Parser {
-
     private val csvReader: CsvReader = csvReader()
 
     /**
@@ -75,28 +74,33 @@ class Parser {
                 formFactor = formFactor,
                 processorName = processorName,
                 gpu = gpu,
-                screenSizes = screenSizes.split(CSV_MULTI_VALUE_SEPARATOR)
-                    .filter { it.isNotEmpty() }
-                    .toSortedSet()
-                    .toList(),
-                screenDensities = screenDensities.split(CSV_MULTI_VALUE_SEPARATOR)
-                    .filter { it.isNotEmpty() }
-                    .toSortedSet()
-                    .toList()
-                    .map { it.toInt() },
-                abis = abis.split(CSV_MULTI_VALUE_SEPARATOR)
-                    .filter { it.isNotEmpty() }
-                    .toSortedSet()
-                    .toList(),
-                sdkVersions = sdkVersions.split(CSV_MULTI_VALUE_SEPARATOR)
-                    .filter { it.isNotEmpty() }
-                    .toSortedSet()
-                    .toList()
-                    .map { it.toInt() },
-                openGlEsVersions = openGlEsVersions.split(CSV_MULTI_VALUE_SEPARATOR)
-                    .filter { it.isNotEmpty() }
-                    .toSortedSet()
-                    .toList()
+                screenSizes =
+                    screenSizes.split(CSV_MULTI_VALUE_SEPARATOR)
+                        .filter { it.isNotEmpty() }
+                        .toSortedSet()
+                        .toList(),
+                screenDensities =
+                    screenDensities.split(CSV_MULTI_VALUE_SEPARATOR)
+                        .filter { it.isNotEmpty() }
+                        .toSortedSet()
+                        .toList()
+                        .map { it.toInt() },
+                abis =
+                    abis.split(CSV_MULTI_VALUE_SEPARATOR)
+                        .filter { it.isNotEmpty() }
+                        .toSortedSet()
+                        .toList(),
+                sdkVersions =
+                    sdkVersions.split(CSV_MULTI_VALUE_SEPARATOR)
+                        .filter { it.isNotEmpty() }
+                        .toSortedSet()
+                        .toList()
+                        .map { it.toInt() },
+                openGlEsVersions =
+                    openGlEsVersions.split(CSV_MULTI_VALUE_SEPARATOR)
+                        .filter { it.isNotEmpty() }
+                        .toSortedSet()
+                        .toList(),
             )
         }.filterNotNull()
     }
