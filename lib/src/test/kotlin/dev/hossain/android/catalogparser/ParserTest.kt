@@ -9,7 +9,7 @@ import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
 /**
- * Tests the Android device catalog CSV parser.
+ * Tests the Android device catalog CSV [Parser].
  */
 class ParserTest {
     private lateinit var sut: Parser

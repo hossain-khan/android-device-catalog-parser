@@ -21,7 +21,7 @@ object DataSanitizer {
     /**
      * Extracts all number from range of numbers like: `3705-3735-3829`
      */
-    private fun extractNumbers(input: String): List<Int> {
+    internal fun extractNumbers(input: String): List<Int> {
         val regex = Regex("""\d+""")
         val matches = regex.findAll(input)
         val numbersList = matches.map { it.value }.toList().map { it.toInt() }
