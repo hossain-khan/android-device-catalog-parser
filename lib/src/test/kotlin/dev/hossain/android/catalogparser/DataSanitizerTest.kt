@@ -7,7 +7,6 @@ import org.junit.Test
  * Test cases for [DataSanitizer]
  */
 class DataSanitizerTest {
-
     @Test
     fun `sanitizeDeviceRam returns input when no MB suffix present`() {
         val input = "3705"

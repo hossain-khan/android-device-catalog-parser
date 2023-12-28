@@ -188,36 +188,39 @@ class ParserTest {
 
     @Test
     fun `parseDeviceCatalogData returns list of AndroidDevice when csvContent is valid`() {
-        val csvContent = """
+        val csvContent =
+            """
             Brand,Device,Manufacturer,Model Name,RAM (TotalMem),Form Factor,System on Chip,GPU,Screen Sizes,Screen Densities,ABIs,Android SDK Versions,OpenGL ES Versions,Install base,User-perceived ANR rate,User-perceived crash rate
             google,coral,Google,Pixel 4 XL,5730MB,Phone,Qualcomm SDM855,Qualcomm Adreno 640 (585 MHz),1440x3040,560,arm64-v8a;armeabi;armeabi-v7a,33,3.2,0,0.00%,0.00%
-        """.trimIndent()
+            """.trimIndent()
         val actual = sut.parseDeviceCatalogData(csvContent)
         assertEquals(1, actual.size)
     }
 
     @Test
     fun `parseDeviceCatalogData returns list of AndroidDevice with correct attributes when csvContent is valid`() {
-        val csvContent = """
+        val csvContent =
+            """
             Brand,Device,Manufacturer,Model Name,RAM (TotalMem),Form Factor,System on Chip,GPU,Screen Sizes,Screen Densities,ABIs,Android SDK Versions,OpenGL ES Versions,Install base,User-perceived ANR rate,User-perceived crash rate
             google,coral,Google,Pixel 4 XL,5730MB,Phone,Qualcomm SDM855,Qualcomm Adreno 640 (585 MHz),1440x3040,560,arm64-v8a;armeabi;armeabi-v7a,33,3.2,0,0.00%,0.00%
-        """.trimIndent()
+            """.trimIndent()
         val actual = sut.parseDeviceCatalogData(csvContent)
-        val expectedDevice = AndroidDevice(
-            brand = "google",
-            device = "coral",
-            manufacturer = "Google",
-            modelName = "Pixel 4 XL",
-            ram = "5730MB",
-            formFactor = "Phone",
-            processorName = "Qualcomm SDM855",
-            gpu = "Qualcomm Adreno 640 (585 MHz)",
-            screenSizes = listOf("1440x3040"),
-            screenDensities = listOf(560),
-            abis = listOf("arm64-v8a", "armeabi", "armeabi-v7a"),
-            sdkVersions = listOf(33),
-            openGlEsVersions = listOf("3.2")
-        )
+        val expectedDevice =
+            AndroidDevice(
+                brand = "google",
+                device = "coral",
+                manufacturer = "Google",
+                modelName = "Pixel 4 XL",
+                ram = "5730MB",
+                formFactor = "Phone",
+                processorName = "Qualcomm SDM855",
+                gpu = "Qualcomm Adreno 640 (585 MHz)",
+                screenSizes = listOf("1440x3040"),
+                screenDensities = listOf(560),
+                abis = listOf("arm64-v8a", "armeabi", "armeabi-v7a"),
+                sdkVersions = listOf(33),
+                openGlEsVersions = listOf("3.2"),
+            )
         assertEquals(expectedDevice, actual[0])
     }
 
