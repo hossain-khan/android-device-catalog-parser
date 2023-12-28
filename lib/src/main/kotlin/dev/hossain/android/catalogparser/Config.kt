@@ -14,17 +14,81 @@ package dev.hossain.android.catalogparser
 object Config {
     const val CSV_MULTI_VALUE_SEPARATOR = ";"
 
+    /**
+     * This constant represents the CSV header for the brand of the device.
+     * Example: "google"
+     */
     const val CSV_KEY_BRAND = "Brand"
+
+    /**
+     * This constant represents the CSV header for the device identifier.
+     * Example: "coral"
+     */
     const val CSV_KEY_DEVICE = "Device"
+
+    /**
+     * This constant represents the CSV header for the manufacturer of the device.
+     * Example: "Google"
+     */
     const val CSV_KEY_MANUFACTURER = "Manufacturer"
+
+    /**
+     * This constant represents the CSV header for the model name of the device.
+     * Example: "Pixel 4 XL"
+     */
     const val CSV_KEY_MODEL_NAME = "Model Name"
+
+    /**
+     * This constant represents the CSV header for the total memory (RAM) of the device.
+     * Example: "5730MB"
+     */
     const val CSV_KEY_RAM = "RAM (TotalMem)"
+
+    /**
+     * This constant represents the CSV header for the form factor of the device.
+     * Example: "Phone"
+     */
     const val CSV_KEY_FORM_FACTOR = "Form Factor"
+
+    /**
+     * This constant represents the CSV header for the system on chip of the device.
+     * Example: "Qualcomm SDM855"
+     */
     const val CSV_KEY_SOC = "System on Chip"
+
+    /**
+     * This constant represents the CSV header for the GPU of the device.
+     * Example: "Qualcomm Adreno 640 (585 MHz)"
+     */
     const val CSV_KEY_SCREEN_GPU = "GPU"
+
+    /**
+     * This constant represents the CSV header for the screen sizes of the device.
+     * Example: "1440x3040"
+     */
     const val CSV_KEY_SCREEN_SIZES = "Screen Sizes"
+
+    /**
+     * This constant represents the CSV header for the screen densities of the device.
+     * Example: "560"
+     */
     const val CSV_KEY_SCREEN_DENSITIES = "Screen Densities"
+
+    /**
+     * This constant represents the CSV header for the ABIs of the device.
+     * Example: "arm64-v8a;armeabi;armeabi-v7a"
+     */
     const val CSV_KEY_ABIS = "ABIs"
+
+    /**
+     * This constant represents the CSV header for the Android SDK versions supported by the device.
+     * Example: "33"
+     */
     const val CSV_KEY_SDK_VERSIONS = "Android SDK Versions"
+
+    /**
+     * This constant represents the CSV header for the OpenGL ES versions supported by the device.
+     * Example: "3.2"
+     */
     const val CSV_KEY_OPENGL_ES_VERSIONS = "OpenGL ES Versions"
 }

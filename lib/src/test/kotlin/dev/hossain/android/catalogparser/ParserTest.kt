@@ -9,7 +9,7 @@ import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
 /**
- * Tests the Android device catalog CSV parser.
+ * Tests the Android device catalog CSV [Parser].
  */
 class ParserTest {
     private lateinit var sut: Parser
@@ -175,4 +175,54 @@ class ParserTest {
         // And set the following custom config
         // idea.max.intellisense.filesize=10000 # 10MB
     }
+
+    // region Tests by AI
+
+    @Test
+    fun `parseDeviceCatalogData returns empty list when csvContent is empty`() {
+        val csvContent = ""
+        val expected = emptyList<AndroidDevice>()
+        val actual = sut.parseDeviceCatalogData(csvContent)
+        assertEquals(expected, actual)
+    }
+
+    @Test
+    fun `parseDeviceCatalogData returns list of AndroidDevice when csvContent is valid`() {
+        val csvContent =
+            """
+            Brand,Device,Manufacturer,Model Name,RAM (TotalMem),Form Factor,System on Chip,GPU,Screen Sizes,Screen Densities,ABIs,Android SDK Versions,OpenGL ES Versions,Install base,User-perceived ANR rate,User-perceived crash rate
+            google,coral,Google,Pixel 4 XL,5730MB,Phone,Qualcomm SDM855,Qualcomm Adreno 640 (585 MHz),1440x3040,560,arm64-v8a;armeabi;armeabi-v7a,33,3.2,0,0.00%,0.00%
+            """.trimIndent()
+        val actual = sut.parseDeviceCatalogData(csvContent)
+        assertEquals(1, actual.size)
+    }
+
+    @Test
+    fun `parseDeviceCatalogData returns list of AndroidDevice with correct attributes when csvContent is valid`() {
+        val csvContent =
+            """
+            Brand,Device,Manufacturer,Model Name,RAM (TotalMem),Form Factor,System on Chip,GPU,Screen Sizes,Screen Densities,ABIs,Android SDK Versions,OpenGL ES Versions,Install base,User-perceived ANR rate,User-perceived crash rate
+            google,coral,Google,Pixel 4 XL,5730MB,Phone,Qualcomm SDM855,Qualcomm Adreno 640 (585 MHz),1440x3040,560,arm64-v8a;armeabi;armeabi-v7a,33,3.2,0,0.00%,0.00%
+            """.trimIndent()
+        val actual = sut.parseDeviceCatalogData(csvContent)
+        val expectedDevice =
+            AndroidDevice(
+                brand = "google",
+                device = "coral",
+                manufacturer = "Google",
+                modelName = "Pixel 4 XL",
+                ram = "5730MB",
+                formFactor = "Phone",
+                processorName = "Qualcomm SDM855",
+                gpu = "Qualcomm Adreno 640 (585 MHz)",
+                screenSizes = listOf("1440x3040"),
+                screenDensities = listOf(560),
+                abis = listOf("arm64-v8a", "armeabi", "armeabi-v7a"),
+                sdkVersions = listOf(33),
+                openGlEsVersions = listOf("3.2"),
+            )
+        assertEquals(expectedDevice, actual[0])
+    }
+
+    // endregion Tests by AI
 }
