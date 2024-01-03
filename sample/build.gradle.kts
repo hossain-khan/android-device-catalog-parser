@@ -21,8 +21,8 @@ repositories {
 dependencies {
     implementation(project(":lib"))
     implementation("com.squareup.sqldelight:sqlite-driver:1.5.4")
-    testImplementation("org.junit.jupiter:junit-jupiter-api:5.8.1")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.8.1")
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.10.1")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.10.1")
 }
 
 tasks.getByName<Test>("test") {
