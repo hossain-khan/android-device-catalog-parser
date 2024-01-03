@@ -29,7 +29,7 @@ dependencies {
 
     // CSV Processor
     // https://github.com/doyaaaaaken/kotlin-csv
-    implementation("com.github.doyaaaaaken:kotlin-csv-jvm:0.13.0")
+    implementation("com.github.doyaaaaaken:kotlin-csv-jvm:0.15.2")
 
     // Use the Kotlin test library.
     testImplementation("org.jetbrains.kotlin:kotlin-test")
