@@ -22,7 +22,7 @@ buildscript {
         gradlePluginPortal()
     }
     dependencies {
-        classpath("com.squareup.sqldelight:gradle-plugin:1.5.4")
+        classpath("com.squareup.sqldelight:gradle-plugin:1.5.5")
     }
 }
 
