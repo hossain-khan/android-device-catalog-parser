@@ -22,6 +22,8 @@ repositories {
 dependencies {
     implementation(project(":lib"))
     implementation("com.squareup.sqldelight:sqlite-driver:1.5.5")
+    implementation("com.squareup.moshi:moshi:1.12.0")
+    implementation("com.squareup.moshi:moshi-kotlin:1.12.0")
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.10.2")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.10.2")
 }
