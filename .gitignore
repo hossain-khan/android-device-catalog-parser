@@ -92,3 +92,4 @@ fabric.properties
 # MacOS
 .DS_Store
 devices.db
+devices.db-journal
