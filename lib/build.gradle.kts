@@ -41,7 +41,7 @@ dependencies {
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit")
 
     // Used for exporting converted data to JSON
-    testImplementation("com.google.code.gson:gson:2.10.1")
+    testImplementation("com.google.code.gson:gson:2.11.0")
 }
 
 // https://docs.gradle.org/current/userguide/publishing_maven.html
