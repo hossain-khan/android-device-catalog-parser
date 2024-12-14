@@ -93,3 +93,4 @@ fabric.properties
 .DS_Store
 devices.db
 devices.db-journal
+.idea/

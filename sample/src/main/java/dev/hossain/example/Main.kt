@@ -1,16 +1,16 @@
 package dev.hossain.example
 
+import com.squareup.moshi.Moshi
+import com.squareup.moshi.Types
+import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import com.squareup.sqldelight.db.SqlDriver
 import com.squareup.sqldelight.sqlite.driver.JdbcSqliteDriver
 import dev.hossain.android.catalogparser.Parser
 import dev.hossain.android.catalogparser.models.AndroidDevice
-import java.io.File
-import java.util.Date
-import com.squareup.moshi.Moshi
-import com.squareup.moshi.Types
-import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import java.io.BufferedWriter
+import java.io.File
 import java.io.FileWriter
+import java.util.Date
 
 /**
  * The main function of the application.
@@ -26,14 +26,17 @@ fun main() {
 
     // Read the Android devices catalog CSV file from the resources directory.
     val csvFileContent =
-        object {}.javaClass.getResourceAsStream("/android-devices-catalog.csv")!!.bufferedReader().readText()
+        object {}
+            .javaClass
+            .getResourceAsStream("/android-devices-catalog.csv")!!
+            .bufferedReader()
+            .readText()
 
     // Parse the CSV file content into a list of AndroidDevice objects.
     val parsedDevices: List<AndroidDevice> = parser.parseDeviceCatalogData(csvFileContent)
 
     // Print the number of parsed devices to the console.
     println("Parsed ${parsedDevices.size} devices from the catalog CSV file.")
-
 
     // Write the parsed AndroidDevice objects to a JSON file.
     writeDeviceListToJson(parsedDevices, "sample/src/main/resources/android-devices-catalog.json")
@@ -124,12 +127,17 @@ private fun processRecordsToDb(parsedDevices: List<AndroidDevice>) {
                 gpu = dbDevice.gpu,
                 screenSizes = deviceQueries.getScreenSize(dbDevice._id).executeAsList().map { it.screen_size },
                 screenDensities =
-                deviceQueries.getScreenDensity(dbDevice._id).executeAsList()
-                    .map { it.screen_density.toInt() },
+                    deviceQueries
+                        .getScreenDensity(dbDevice._id)
+                        .executeAsList()
+                        .map { it.screen_density.toInt() },
                 abis = deviceQueries.getAbi(dbDevice._id).executeAsList().map { it.abi },
                 sdkVersions = deviceQueries.getSdkVersion(dbDevice._id).executeAsList().map { it.sdk_version.toInt() },
-                openGlEsVersions = deviceQueries.getOpenGlVersion(dbDevice._id).executeAsList()
-                    .map { it.opengl_version },
+                openGlEsVersions =
+                    deviceQueries
+                        .getOpenGlVersion(dbDevice._id)
+                        .executeAsList()
+                        .map { it.opengl_version },
             )
         }
 
@@ -146,10 +154,15 @@ private fun processRecordsToDb(parsedDevices: List<AndroidDevice>) {
  * @param deviceList The list of AndroidDevice objects to write to the JSON file.
  * @param filePath The path of the JSON file to write the AndroidDevice objects to.
  */
-fun writeDeviceListToJson(deviceList: List<AndroidDevice>, filePath: String) {
-    val moshi = Moshi.Builder()
-        .add(KotlinJsonAdapterFactory())
-        .build()
+fun writeDeviceListToJson(
+    deviceList: List<AndroidDevice>,
+    filePath: String,
+) {
+    val moshi =
+        Moshi
+            .Builder()
+            .add(KotlinJsonAdapterFactory())
+            .build()
 
     val type = Types.newParameterizedType(List::class.java, AndroidDevice::class.java)
     val adapter = moshi.adapter<List<AndroidDevice>>(type).indent("    ")
