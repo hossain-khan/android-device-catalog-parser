@@ -5,7 +5,7 @@ plugins {
 
     // Dokka - Documentation Engine for Kotlin
     // https://github.com/Kotlin/dokka
-    id("org.jetbrains.dokka") version "1.9.20"
+    id("org.jetbrains.dokka") version "2.0.0"
 }
 
 subprojects {
