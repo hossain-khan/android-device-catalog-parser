@@ -169,11 +169,15 @@ class ParserTest {
         val jsonFile: File = File(resDir, "android-devices-catalog-min.json")
         jsonFile.writeText(convertedJson)*/
 
-        // TIP - Can't edit large 4MB+ JSON file and can't format it?
+        // TIP - Can't edit large 10MB+ JSON file and can't format it?
         // --------------------------------------------------------------
         // Follow the guide from https://www.jetbrains.com/help/objc/configuring-file-size-limit.html#file-size-limit
         // And set the following custom config
-        // idea.max.intellisense.filesize=10000 # 10MB
+        // idea.max.intellisense.filesize=15000 # 15MB
+        //
+        // Or use easy way:
+        // Use "Help | Edit Custom Properties..." action to create an `idea.properties` file in your config directory.
+        // And add the config above
     }
 
     // region Tests by AI
