@@ -36,10 +36,10 @@ fun main() {
 
 
     // Write the parsed AndroidDevice objects to a JSON file.
-    writeDeviceListToJson(parsedDevices, "sample/src/main/resources/android-devices-catalog.json")
+    //writeDeviceListToJson(parsedDevices, "sample/src/main/resources/android-devices-catalog.json")
 
     // Process the parsed devices into a SQLite database.
-    processRecordsToDb(parsedDevices)
+    //processRecordsToDb(parsedDevices)
 }
 
 /**
