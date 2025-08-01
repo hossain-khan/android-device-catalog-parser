@@ -22,7 +22,8 @@ buildscript {
         gradlePluginPortal()
     }
     dependencies {
-        classpath("app.cash.sqldelight:gradle-plugin:2.0.2")
+        classpath("app.cash.sqldelight:gradle-plugin:2.1.0")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:2.2.0")
     }
 }
 
