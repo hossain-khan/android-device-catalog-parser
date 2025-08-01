@@ -187,7 +187,12 @@ fun validateJsonWithSchema(jsonPath: String, schemaPath: String) {
         .build()
     val schema: Schema = loader.load().build()
 
-    val jsonArray = JSONArray(jsonText)
-    schema.validate(jsonArray) // Throws ValidationException if invalid
-    println("JSON validation passed successfully!")
+    try {
+        val jsonArray = JSONArray(jsonText)
+        schema.validate(jsonArray) // Throws ValidationException if invalid
+        println("JSON validation passed successfully!")
+    } catch (e: JSONException) {
+        System.err.println("Failed to parse JSON file '$jsonPath': ${e.message}")
+        throw e
+    }
 }
