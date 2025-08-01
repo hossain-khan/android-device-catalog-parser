@@ -31,8 +31,8 @@ dependencies {
     implementation(platform("org.jetbrains.kotlin:kotlin-bom"))
 
     // CSV Processor
-    // https://github.com/doyaaaaaken/kotlin-csv
-    implementation("com.github.doyaaaaaken:kotlin-csv-jvm:1.10.0")
+    // https://github.com/jsoizo/kotlin-csv (note: ownership changed from doyaaaaaken to jsoizo in v1.10.0)
+    implementation("com.jsoizo:kotlin-csv-jvm:1.10.0")
 
     // Use the Kotlin test library.
     testImplementation("org.jetbrains.kotlin:kotlin-test")
@@ -41,7 +41,7 @@ dependencies {
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit")
 
     // Used for exporting converted data to JSON
-    testImplementation("com.google.code.gson:gson:2.11.0")
+    testImplementation("com.google.code.gson:gson:2.13.1")
 }
 
 // Configure JVM toolchain
