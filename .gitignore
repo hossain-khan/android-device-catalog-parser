@@ -94,3 +94,4 @@ fabric.properties
 devices.db
 devices.db-journal
 *.iml
+.idea/
