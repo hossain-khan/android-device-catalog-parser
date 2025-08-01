@@ -1,14 +1,16 @@
 plugins {
     kotlin("jvm")
     application
-    id("com.squareup.sqldelight")
+    id("app.cash.sqldelight")
     id("org.jmailen.kotlinter")
 }
 
 sqldelight {
     // This will be the name of the generated database class.
-    database(name = "DeviceDatabase") {
-        packageName = "dev.hossain.example"
+    databases {
+        create("DeviceDatabase") {
+            packageName.set("dev.hossain.example")
+        }
     }
 }
 
@@ -21,7 +23,7 @@ repositories {
 
 dependencies {
     implementation(project(":lib"))
-    implementation("com.squareup.sqldelight:sqlite-driver:1.5.5")
+    implementation("app.cash.sqldelight:sqlite-driver:2.0.2")
     implementation("com.github.erosb:everit-json-schema:1.14.6") // https://github.com/erosb/everit-json-schema
     implementation("com.squareup.moshi:moshi:1.12.0")
     implementation("com.squareup.moshi:moshi-kotlin:1.12.0")
@@ -29,8 +31,9 @@ dependencies {
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.11.4")
 }
 
-tasks.getByName<Test>("test") {
-    useJUnitPlatform()
+// Configure JVM toolchain
+kotlin {
+    jvmToolchain(21)
 }
 
 application {

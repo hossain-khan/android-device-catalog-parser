@@ -44,6 +44,11 @@ dependencies {
     testImplementation("com.google.code.gson:gson:2.11.0")
 }
 
+// Configure JVM toolchain
+kotlin {
+    jvmToolchain(21)
+}
+
 // https://docs.gradle.org/current/userguide/publishing_maven.html
 publishing {
     publications {
