@@ -34,6 +34,9 @@ fun main() {
     // Print the number of parsed devices to the console.
     println("Parsed ${parsedDevices.size} devices from the catalog CSV file.")
 
+    // Print all unique form factors from the parsed devices, each value in quotes.
+    val uniqueFormFactors = parsedDevices.map { it.formFactor }.toSet()
+    println("Unique form factors: [$uniqueFormFactors]")
 
     // Write the parsed AndroidDevice objects to a JSON file.
     //writeDeviceListToJson(parsedDevices, "sample/src/main/resources/android-devices-catalog.json")
