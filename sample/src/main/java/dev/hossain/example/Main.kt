@@ -1,16 +1,22 @@
 package dev.hossain.example
 
+import com.squareup.moshi.Moshi
+import com.squareup.moshi.Types
+import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import com.squareup.sqldelight.db.SqlDriver
 import com.squareup.sqldelight.sqlite.driver.JdbcSqliteDriver
 import dev.hossain.android.catalogparser.Parser
 import dev.hossain.android.catalogparser.models.AndroidDevice
-import java.io.File
-import java.util.Date
-import com.squareup.moshi.Moshi
-import com.squareup.moshi.Types
-import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
+import org.everit.json.schema.Schema
+import org.everit.json.schema.loader.SchemaLoader
+import org.json.JSONArray
+import org.json.JSONObject
 import java.io.BufferedWriter
+import java.io.File
 import java.io.FileWriter
+import java.nio.file.Files
+import java.nio.file.Paths
+import java.util.*
 
 /**
  * The main function of the application.
@@ -36,10 +42,11 @@ fun main() {
 
     // Print all unique form factors from the parsed devices, each value in quotes.
     val uniqueFormFactors = parsedDevices.map { it.formFactor }.toSet()
-    println("Unique form factors: [$uniqueFormFactors]")
+    val quotedFormFactors = uniqueFormFactors.joinToString(", ") { "\"$it\"" }
+    println("Unique form factors: [$quotedFormFactors]")
 
     // Write the parsed AndroidDevice objects to a JSON file.
-    //writeDeviceListToJson(parsedDevices, "sample/src/main/resources/android-devices-catalog.json")
+    // writeDeviceListToJson(parsedDevices, "sample/src/main/resources/android-devices-catalog.json")
 
     // Process the parsed devices into a SQLite database.
     //processRecordsToDb(parsedDevices)
@@ -161,4 +168,26 @@ fun writeDeviceListToJson(deviceList: List<AndroidDevice>, filePath: String) {
     BufferedWriter(FileWriter(filePath)).use { out ->
         out.write(json)
     }
+
+    validateJsonWithSchema(filePath, "sample/src/main/resources/android-devices-catalog-schema.json")
+}
+
+
+
+fun validateJsonWithSchema(jsonPath: String, schemaPath: String) {
+    val jsonText = Files.readString(Paths.get(jsonPath))
+    val schemaText = Files.readString(Paths.get(schemaPath))
+
+    // Load schema as JSONObject
+    val schemaJson = JSONObject(schemaText)
+
+    val loader: SchemaLoader = SchemaLoader.builder()
+        .schemaJson(schemaJson)
+        .draftV7Support() // Using draft v7 as specified in the schema
+        .build()
+    val schema: Schema = loader.load().build()
+
+    val jsonArray = JSONArray(jsonText)
+    schema.validate(jsonArray) // Throws ValidationException if invalid
+    println("JSON validation passed successfully!")
 }
