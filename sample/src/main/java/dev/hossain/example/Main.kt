@@ -10,6 +10,7 @@ import dev.hossain.android.catalogparser.models.AndroidDevice
 import org.everit.json.schema.Schema
 import org.everit.json.schema.loader.SchemaLoader
 import org.json.JSONArray
+import org.json.JSONException
 import org.json.JSONObject
 import java.io.BufferedWriter
 import java.io.File
@@ -191,8 +192,8 @@ fun validateJsonWithSchema(jsonPath: String, schemaPath: String) {
         val jsonArray = JSONArray(jsonText)
         schema.validate(jsonArray) // Throws ValidationException if invalid
         println("JSON validation passed successfully!")
-    } catch (e: JSONException) {
-        System.err.println("Failed to parse JSON file '$jsonPath': ${e.message}")
-        throw e
+    } catch (exception: JSONException) {
+        System.err.println("Failed to parse JSON file '$jsonPath': ${exception.message}")
+        throw exception
     }
 }
