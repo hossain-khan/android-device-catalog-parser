@@ -10,35 +10,35 @@ CREATE TABLE "device" (
   "gpu" TEXT NOT NULL
 );
 
-CREATE TABLE "deviceAbi" (
+CREATE TABLE "device_abi" (
   "device_id" INTEGER NOT NULL,
   "abi" TEXT NOT NULL ON CONFLICT REPLACE,
 --  PRIMARY KEY ("device_id", "abi"),
   FOREIGN KEY ("device_id") REFERENCES "device" ("_id") ON DELETE CASCADE ON UPDATE CASCADE
 );
 
-CREATE TABLE "deviceOpengl" (
+CREATE TABLE "device_opengl" (
   "device_id" INTEGER NOT NULL,
   "opengl_version" TEXT NOT NULL ON CONFLICT REPLACE,
 --  PRIMARY KEY ("device_id", "opengl_version"),
   FOREIGN KEY ("device_id") REFERENCES "device" ("_id") ON DELETE CASCADE ON UPDATE CASCADE
 );
 
-CREATE TABLE "deviceScreenDensity" (
+CREATE TABLE "device_screen_density" (
   "device_id" INTEGER NOT NULL,
   "screen_density" INTEGER NOT NULL ON CONFLICT REPLACE,
 --  PRIMARY KEY ("device_id", "screen_density"),
   FOREIGN KEY ("device_id") REFERENCES "device" ("_id") ON DELETE CASCADE ON UPDATE CASCADE
 );
 
-CREATE TABLE "deviceScreenSize" (
+CREATE TABLE "device_screen_size" (
   "device_id" INTEGER NOT NULL,
   "screen_size" TEXT NOT NULL ON CONFLICT REPLACE,
 --  PRIMARY KEY ("device_id", "screen_size"),
   FOREIGN KEY ("device_id") REFERENCES "device" ("_id") ON DELETE CASCADE ON UPDATE CASCADE
 );
 
-CREATE TABLE "deviceSdk" (
+CREATE TABLE "device_sdk" (
   "device_id" INTEGER NOT NULL,
   "sdk_version" INTEGER NOT NULL ON CONFLICT REPLACE,
 --  PRIMARY KEY ("device_id", "sdk_version"),
@@ -57,46 +57,46 @@ INSERT INTO device(brand, device, manufacturer, model_name, ram, form_factor, pr
 VALUES (?, ?, ?, ?, ?, ?, ?, ?);
 
 insertAbi:
-INSERT INTO deviceAbi(device_id, abi)
+INSERT INTO device_abi(device_id, abi)
 VALUES (?, ?);
 
 getAbi:
 SELECT *
-FROM deviceAbi
+FROM device_abi
 WHERE device_id = ?;
 
 insertOpenGlVersion:
-INSERT INTO deviceOpengl(device_id, opengl_version)
+INSERT INTO device_opengl(device_id, opengl_version)
 VALUES (?, ?);
 
 getOpenGlVersion:
 SELECT *
-FROM deviceOpengl
+FROM device_opengl
 WHERE device_id = ?;
 
 insertScreenDensity:
-INSERT INTO deviceScreenDensity(device_id, screen_density)
+INSERT INTO device_screen_density(device_id, screen_density)
 VALUES (?, ?);
 
 getScreenDensity:
 SELECT *
-FROM deviceScreenDensity
+FROM device_screen_density
 WHERE device_id = ?;
 
 insertScreenSize:
-INSERT INTO deviceScreenSize(device_id, screen_size)
+INSERT INTO device_screen_size(device_id, screen_size)
 VALUES (?, ?);
 
 getScreenSize:
 SELECT *
-FROM deviceScreenSize
+FROM device_screen_size
 WHERE device_id = ?;
 
 insertSdkVersion:
-INSERT INTO deviceSdk(device_id, sdk_version)
+INSERT INTO device_sdk(device_id, sdk_version)
 VALUES (?, ?);
 
 getSdkVersion:
 SELECT *
-FROM deviceSdk
+FROM device_sdk
 WHERE device_id = ?;

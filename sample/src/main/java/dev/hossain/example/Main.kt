@@ -54,7 +54,7 @@ fun main() {
     // writeDeviceListToJson(parsedDevices, "sample/src/main/resources/android-devices-catalog.json")
 
     // Process the parsed devices into a SQLite database.
-    // processRecordsToDb(parsedDevices)
+    processRecordsToDb(parsedDevices)
 }
 
 /**
@@ -72,7 +72,7 @@ private fun processRecordsToDb(parsedDevices: List<AndroidDevice>) {
     }
 
     // Create a new SQLite driver for the database.
-    val driver: SqlDriver = JdbcSqliteDriver("${JdbcSqliteDriver.IN_MEMORY}devices.db")
+    val driver: SqlDriver = JdbcSqliteDriver("jdbc:sqlite:devices.db")
 
     // Create a new DeviceDatabase object with the SQLite driver.
     val database = DeviceDatabase(driver)
@@ -83,7 +83,7 @@ private fun processRecordsToDb(parsedDevices: List<AndroidDevice>) {
     // Get the DeviceQueries object from the DeviceDatabase.
     val deviceQueries = database.deviceQueries
 
-    parsedDevices.forEach { androidDevice ->
+    parsedDevices.forEachIndexed { index, androidDevice ->
         deviceQueries.transaction {
             // Insert the AndroidDevice into the database.
             deviceQueries.insert(
@@ -96,26 +96,26 @@ private fun processRecordsToDb(parsedDevices: List<AndroidDevice>) {
                 processor_name = androidDevice.processorName,
                 gpu = androidDevice.gpu,
             )
-        }
+            // Get the ID of the last inserted row inside the transaction
+            val deviceId: Long = deviceQueries.lastInsertRowId().executeAsOne()
+            println("Inserted new record with id: $deviceId")
 
-        // Get the ID of the last inserted row.
-        val deviceId: Long = deviceQueries.lastInsertRowId().executeAsOne()
-        println("Inserted new record with id: $deviceId")
 
-        androidDevice.abis.forEach {
-            deviceQueries.insertAbi(deviceId, it)
-        }
-        androidDevice.openGlEsVersions.forEach {
-            deviceQueries.insertOpenGlVersion(deviceId, it)
-        }
-        androidDevice.screenDensities.forEach {
-            deviceQueries.insertScreenDensity(deviceId, it.toLong())
-        }
-        androidDevice.screenSizes.forEach {
-            deviceQueries.insertScreenSize(deviceId, it)
-        }
-        androidDevice.sdkVersions.forEach {
-            deviceQueries.insertSdkVersion(deviceId, it.toLong())
+            androidDevice.abis.forEach {
+                deviceQueries.insertAbi(deviceId, it)
+            }
+            androidDevice.openGlEsVersions.forEach {
+                deviceQueries.insertOpenGlVersion(deviceId, it)
+            }
+            androidDevice.screenDensities.forEach {
+                deviceQueries.insertScreenDensity(deviceId, it.toLong())
+            }
+            androidDevice.screenSizes.forEach {
+                deviceQueries.insertScreenSize(deviceId, it)
+            }
+            androidDevice.sdkVersions.forEach {
+                deviceQueries.insertSdkVersion(deviceId, it.toLong())
+            }
         }
     }
 
