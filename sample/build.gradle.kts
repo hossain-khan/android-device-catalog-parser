@@ -39,3 +39,11 @@ kotlin {
 application {
     mainClass.set("MainKt")
 }
+
+kotlinter {
+    ktlintVersion = "1.7.1"
+    // Due to generated code at sample/build/generated/sqldelight/code
+    ignoreFormatFailures = true
+    ignoreLintFailures = true
+    reporters = arrayOf("checkstyle", "plain")
+}
