@@ -121,27 +121,27 @@ enum class FormFactor(
         /**
          * Returns the FormFactor enum value that matches the given CSV value.
          *
-         * @param csvValue The string value from the CSV data
+         * @param value The string value from the CSV data
          * @return The corresponding FormFactor enum value
          * @throws IllegalArgumentException if the CSV value doesn't match any known form factor
          */
-        fun fromCsvValue(csvValue: String): FormFactor =
-            entries.find { it.value == csvValue }
-                ?: throw IllegalArgumentException("Unknown form factor: $csvValue")
+        fun fromValue(value: String): FormFactor =
+            entries.find { it.value == value }
+                ?: throw IllegalArgumentException("Unknown form factor: $value")
 
         /**
          * Returns the FormFactor enum value that matches the given CSV value, or null if not found.
          *
-         * @param csvValue The string value from the CSV data
+         * @param value The string value from the CSV data
          * @return The corresponding FormFactor enum value, or null if not found
          */
-        fun fromCsvValueOrNull(csvValue: String): FormFactor? = entries.find { it.value == csvValue }
+        fun fromValueOrNull(value: String): FormFactor? = entries.find { it.value == value }
 
         /**
          * Returns all CSV values as a list for validation or reference purposes.
          *
          * @return List of all valid CSV values
          */
-        fun getAllCsvValues(): List<String> = entries.map { it.value }
+        fun getAllValues(): List<String> = entries.map { it.value }
     }
 }

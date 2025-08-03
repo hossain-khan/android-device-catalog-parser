@@ -11,40 +11,40 @@ import kotlin.test.assertNull
 class FormFactorTest {
     @Test
     fun `fromCsvValue returns correct FormFactor for valid CSV values`() {
-        assertEquals(FormFactor.PHONE, FormFactor.fromCsvValue("Phone"))
-        assertEquals(FormFactor.TABLET, FormFactor.fromCsvValue("Tablet"))
-        assertEquals(FormFactor.TV, FormFactor.fromCsvValue("TV"))
-        assertEquals(FormFactor.WEARABLE, FormFactor.fromCsvValue("Wearable"))
-        assertEquals(FormFactor.ANDROID_AUTOMOTIVE, FormFactor.fromCsvValue("Android Automotive"))
-        assertEquals(FormFactor.CHROMEBOOK, FormFactor.fromCsvValue("Chromebook"))
-        assertEquals(FormFactor.GOOGLE_PLAY_GAMES_ON_PC, FormFactor.fromCsvValue("Google Play Games on PC"))
+        assertEquals(FormFactor.PHONE, FormFactor.fromValue("Phone"))
+        assertEquals(FormFactor.TABLET, FormFactor.fromValue("Tablet"))
+        assertEquals(FormFactor.TV, FormFactor.fromValue("TV"))
+        assertEquals(FormFactor.WEARABLE, FormFactor.fromValue("Wearable"))
+        assertEquals(FormFactor.ANDROID_AUTOMOTIVE, FormFactor.fromValue("Android Automotive"))
+        assertEquals(FormFactor.CHROMEBOOK, FormFactor.fromValue("Chromebook"))
+        assertEquals(FormFactor.GOOGLE_PLAY_GAMES_ON_PC, FormFactor.fromValue("Google Play Games on PC"))
     }
 
     @Test
     fun `fromCsvValue throws IllegalArgumentException for invalid CSV value`() {
         val exception =
             assertFailsWith<IllegalArgumentException> {
-                FormFactor.fromCsvValue("Invalid Form Factor")
+                FormFactor.fromValue("Invalid Form Factor")
             }
         assertEquals("Unknown form factor: Invalid Form Factor", exception.message)
     }
 
     @Test
     fun `fromCsvValueOrNull returns correct FormFactor for valid CSV values`() {
-        assertEquals(FormFactor.PHONE, FormFactor.fromCsvValueOrNull("Phone"))
-        assertEquals(FormFactor.TABLET, FormFactor.fromCsvValueOrNull("Tablet"))
-        assertEquals(FormFactor.TV, FormFactor.fromCsvValueOrNull("TV"))
-        assertEquals(FormFactor.WEARABLE, FormFactor.fromCsvValueOrNull("Wearable"))
-        assertEquals(FormFactor.ANDROID_AUTOMOTIVE, FormFactor.fromCsvValueOrNull("Android Automotive"))
-        assertEquals(FormFactor.CHROMEBOOK, FormFactor.fromCsvValueOrNull("Chromebook"))
-        assertEquals(FormFactor.GOOGLE_PLAY_GAMES_ON_PC, FormFactor.fromCsvValueOrNull("Google Play Games on PC"))
+        assertEquals(FormFactor.PHONE, FormFactor.fromValueOrNull("Phone"))
+        assertEquals(FormFactor.TABLET, FormFactor.fromValueOrNull("Tablet"))
+        assertEquals(FormFactor.TV, FormFactor.fromValueOrNull("TV"))
+        assertEquals(FormFactor.WEARABLE, FormFactor.fromValueOrNull("Wearable"))
+        assertEquals(FormFactor.ANDROID_AUTOMOTIVE, FormFactor.fromValueOrNull("Android Automotive"))
+        assertEquals(FormFactor.CHROMEBOOK, FormFactor.fromValueOrNull("Chromebook"))
+        assertEquals(FormFactor.GOOGLE_PLAY_GAMES_ON_PC, FormFactor.fromValueOrNull("Google Play Games on PC"))
     }
 
     @Test
     fun `fromCsvValueOrNull returns null for invalid CSV value`() {
-        assertNull(FormFactor.fromCsvValueOrNull("Invalid Form Factor"))
-        assertNull(FormFactor.fromCsvValueOrNull(""))
-        assertNull(FormFactor.fromCsvValueOrNull("phone")) // case sensitive
+        assertNull(FormFactor.fromValueOrNull("Invalid Form Factor"))
+        assertNull(FormFactor.fromValueOrNull(""))
+        assertNull(FormFactor.fromValueOrNull("phone")) // case sensitive
     }
 
     @Test
@@ -59,7 +59,7 @@ class FormFactorTest {
                 "Chromebook",
                 "Google Play Games on PC",
             )
-        assertEquals(expectedValues, FormFactor.getAllCsvValues())
+        assertEquals(expectedValues, FormFactor.getAllValues())
     }
 
     @Test
@@ -106,7 +106,7 @@ class FormFactorTest {
 
     @Test
     fun `CSV values are unique`() {
-        val csvValues = FormFactor.getAllCsvValues()
+        val csvValues = FormFactor.getAllValues()
         val uniqueCsvValues = csvValues.toSet()
         assertEquals(csvValues.size, uniqueCsvValues.size, "All CSV values should be unique")
     }

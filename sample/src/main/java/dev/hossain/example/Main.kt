@@ -136,7 +136,7 @@ private fun processRecordsToDb(parsedDevices: List<AndroidDevice>) {
                 manufacturer = dbDevice.manufacturer,
                 modelName = dbDevice.model_name,
                 ram = dbDevice.ram,
-                formFactor = FormFactor.fromCsvValue(dbDevice.form_factor),
+                formFactor = FormFactor.fromValue(dbDevice.form_factor),
                 processorName = dbDevice.processor_name,
                 gpu = dbDevice.gpu,
                 screenSizes = deviceQueries.getScreenSize(dbDevice._id).executeAsList().map { it.screen_size },
