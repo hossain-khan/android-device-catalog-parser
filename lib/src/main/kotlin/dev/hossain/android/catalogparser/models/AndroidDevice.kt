@@ -30,10 +30,14 @@ class AndroidDevice(
      */
     val ram: String,
     /**
-     * Device form factor.
-     * Examples: Phone, TV, Tablet
+     * Device form factor categorizing the type and intended use case of the device.
+     *
+     * This enum value represents the physical form and primary interaction model
+     * of the device, such as Phone, Tablet, TV, Wearable, etc.
+     *
+     * @see FormFactor for detailed descriptions of each form factor type
      */
-    val formFactor: String,
+    val formFactor: FormFactor,
     /**
      * Examples: Mediatek MT6572A, Qualcomm MSM8909, Rockchip RK3326, Spreadtrum SC9832A
      */
