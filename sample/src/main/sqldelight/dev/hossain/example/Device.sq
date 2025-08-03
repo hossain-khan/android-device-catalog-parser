@@ -5,7 +5,7 @@ CREATE TABLE "device" (
   "manufacturer" TEXT NOT NULL,
   "model_name" TEXT NOT NULL,
   "ram" TEXT NOT NULL,
-  "form_factor" TEXT NOT NULL,
+  "form_factor" TEXT NOT NULL CHECK (form_factor IN ('Phone', 'Tablet', 'TV', 'Wearable', 'Android Automotive', 'Chromebook', 'Google Play Games on PC')),
   "processor_name" TEXT NOT NULL,
   "gpu" TEXT NOT NULL
 );

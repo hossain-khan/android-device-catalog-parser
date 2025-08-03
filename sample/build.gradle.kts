@@ -34,6 +34,7 @@ dependencies {
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.11.4")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.11.4")
+    testImplementation("org.jetbrains.kotlin:kotlin-test:2.2.0")
 }
 
 // Configure JVM toolchain
@@ -42,7 +43,7 @@ kotlin {
 }
 
 application {
-    mainClass.set("MainKt")
+    mainClass.set("dev.hossain.example.MainKt")
 }
 
 kotlinter {
