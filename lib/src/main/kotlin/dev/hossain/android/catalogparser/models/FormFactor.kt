@@ -12,7 +12,7 @@ enum class FormFactor(
     /**
      * The string value as it appears in the CSV data from Google Play Device Catalog.
      */
-    val csvValue: String,
+    val value: String,
     /**
      * A human-readable description of this form factor.
      */
@@ -126,7 +126,7 @@ enum class FormFactor(
          * @throws IllegalArgumentException if the CSV value doesn't match any known form factor
          */
         fun fromCsvValue(csvValue: String): FormFactor =
-            values().find { it.csvValue == csvValue }
+            entries.find { it.value == csvValue }
                 ?: throw IllegalArgumentException("Unknown form factor: $csvValue")
 
         /**
@@ -135,13 +135,13 @@ enum class FormFactor(
          * @param csvValue The string value from the CSV data
          * @return The corresponding FormFactor enum value, or null if not found
          */
-        fun fromCsvValueOrNull(csvValue: String): FormFactor? = values().find { it.csvValue == csvValue }
+        fun fromCsvValueOrNull(csvValue: String): FormFactor? = entries.find { it.value == csvValue }
 
         /**
          * Returns all CSV values as a list for validation or reference purposes.
          *
          * @return List of all valid CSV values
          */
-        fun getAllCsvValues(): List<String> = values().map { it.csvValue }
+        fun getAllCsvValues(): List<String> = entries.map { it.value }
     }
 }

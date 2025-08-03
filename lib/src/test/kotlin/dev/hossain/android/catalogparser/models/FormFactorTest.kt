@@ -64,25 +64,25 @@ class FormFactorTest {
 
     @Test
     fun `enum values have correct csvValue and description`() {
-        assertEquals("Phone", FormFactor.PHONE.csvValue)
+        assertEquals("Phone", FormFactor.PHONE.value)
         assertEquals("Smartphones and mobile phones", FormFactor.PHONE.description)
 
-        assertEquals("Tablet", FormFactor.TABLET.csvValue)
+        assertEquals("Tablet", FormFactor.TABLET.value)
         assertEquals("Tablet devices with larger screens", FormFactor.TABLET.description)
 
-        assertEquals("TV", FormFactor.TV.csvValue)
+        assertEquals("TV", FormFactor.TV.value)
         assertEquals("Television and Android TV devices", FormFactor.TV.description)
 
-        assertEquals("Wearable", FormFactor.WEARABLE.csvValue)
+        assertEquals("Wearable", FormFactor.WEARABLE.value)
         assertEquals("Smartwatches and other wearable devices", FormFactor.WEARABLE.description)
 
-        assertEquals("Android Automotive", FormFactor.ANDROID_AUTOMOTIVE.csvValue)
+        assertEquals("Android Automotive", FormFactor.ANDROID_AUTOMOTIVE.value)
         assertEquals("In-vehicle Android Automotive systems", FormFactor.ANDROID_AUTOMOTIVE.description)
 
-        assertEquals("Chromebook", FormFactor.CHROMEBOOK.csvValue)
+        assertEquals("Chromebook", FormFactor.CHROMEBOOK.value)
         assertEquals("Chromebook devices running Android apps", FormFactor.CHROMEBOOK.description)
 
-        assertEquals("Google Play Games on PC", FormFactor.GOOGLE_PLAY_GAMES_ON_PC.csvValue)
+        assertEquals("Google Play Games on PC", FormFactor.GOOGLE_PLAY_GAMES_ON_PC.value)
         assertEquals("PC platform for Android games", FormFactor.GOOGLE_PLAY_GAMES_ON_PC.description)
     }
 
