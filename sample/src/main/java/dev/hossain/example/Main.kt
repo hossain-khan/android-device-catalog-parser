@@ -7,6 +7,7 @@ import com.squareup.moshi.Types
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dev.hossain.android.catalogparser.Parser
 import dev.hossain.android.catalogparser.models.AndroidDevice
+import dev.hossain.android.catalogparser.models.FormFactor
 import org.everit.json.schema.Schema
 import org.everit.json.schema.loader.SchemaLoader
 import org.json.JSONArray
@@ -46,15 +47,17 @@ fun main() {
     println("Parsed ${parsedDevices.size} devices from the catalog CSV file.")
 
     // Print all unique form factors from the parsed devices, each value in quotes.
-    val uniqueFormFactors = parsedDevices.map { it.formFactor }.toSet()
-    val quotedFormFactors = uniqueFormFactors.joinToString(", ") { "\"$it\"" }
-    println("Unique form factors: [$quotedFormFactors]")
+    val formFactorCounts = parsedDevices.groupingBy { it.formFactor }.eachCount()
+    println("Form factor counts:")
+    formFactorCounts.forEach { (formFactor, count) ->
+        println("  \"${formFactor.csvValue}\": $count")
+    }
 
     // Write the parsed AndroidDevice objects to a JSON file.
     // writeDeviceListToJson(parsedDevices, "sample/src/main/resources/android-devices-catalog.json")
 
     // Process the parsed devices into a SQLite database.
-    processRecordsToDb(parsedDevices)
+    // processRecordsToDb(parsedDevices)
 }
 
 /**
@@ -92,14 +95,13 @@ private fun processRecordsToDb(parsedDevices: List<AndroidDevice>) {
                 manufacturer = androidDevice.manufacturer,
                 model_name = androidDevice.modelName,
                 ram = androidDevice.ram,
-                form_factor = androidDevice.formFactor,
+                form_factor = androidDevice.formFactor.csvValue,
                 processor_name = androidDevice.processorName,
                 gpu = androidDevice.gpu,
             )
             // Get the ID of the last inserted row inside the transaction
             val deviceId: Long = deviceQueries.lastInsertRowId().executeAsOne()
             println("Inserted new record with id: $deviceId")
-
 
             androidDevice.abis.forEach {
                 deviceQueries.insertAbi(deviceId, it)
@@ -134,7 +136,7 @@ private fun processRecordsToDb(parsedDevices: List<AndroidDevice>) {
                 manufacturer = dbDevice.manufacturer,
                 modelName = dbDevice.model_name,
                 ram = dbDevice.ram,
-                formFactor = dbDevice.form_factor,
+                formFactor = FormFactor.fromCsvValue(dbDevice.form_factor),
                 processorName = dbDevice.processor_name,
                 gpu = dbDevice.gpu,
                 screenSizes = deviceQueries.getScreenSize(dbDevice._id).executeAsList().map { it.screen_size },

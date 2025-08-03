@@ -3,6 +3,7 @@ package dev.hossain.android.catalogparser
 import com.google.gson.Gson
 import dev.hossain.android.catalogparser.DataSanitizer.sanitizeDeviceRam
 import dev.hossain.android.catalogparser.models.AndroidDevice
+import dev.hossain.android.catalogparser.models.FormFactor
 import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.assertEquals
@@ -127,7 +128,7 @@ class ParserTest {
         assertEquals("Google", device.manufacturer)
         assertEquals("Pixel 4 XL", device.modelName)
         assertEquals("5730MB", device.ram)
-        assertEquals("Phone", device.formFactor)
+        assertEquals(FormFactor.PHONE, device.formFactor)
         assertEquals("Qualcomm SDM855", device.processorName)
         assertEquals("Qualcomm Adreno 640 (585 MHz)", device.gpu)
         assertEquals(listOf("1440x3040"), device.screenSizes)
@@ -217,7 +218,7 @@ class ParserTest {
                 manufacturer = "Google",
                 modelName = "Pixel 4 XL",
                 ram = "5730MB",
-                formFactor = "Phone",
+                formFactor = FormFactor.PHONE,
                 processorName = "Qualcomm SDM855",
                 gpu = "Qualcomm Adreno 640 (585 MHz)",
                 screenSizes = listOf("1440x3040"),
@@ -230,4 +231,82 @@ class ParserTest {
     }
 
     // endregion Tests by AI
+
+    // region FormFactor Integration Tests
+
+    @Test
+    fun `parseDeviceCatalogData correctly parses all form factors`() {
+        val csvContent =
+            """
+            Brand,Device,Manufacturer,Model Name,RAM (TotalMem),Form Factor,System on Chip,GPU,Screen Sizes,Screen Densities,ABIs,Android SDK Versions,OpenGL ES Versions,Install base,User-perceived ANR rate,User-perceived crash rate
+            google,coral,Google,Pixel 4 XL,5730MB,Phone,Qualcomm SDM855,Qualcomm Adreno 640 (585 MHz),1440x3040,560,arm64-v8a,33,3.2,0,0.00%,0.00%
+            samsung,tab1,Samsung,Galaxy Tab S7,8192MB,Tablet,Qualcomm SDM865+,Qualcomm Adreno 650,2560x1600,287,arm64-v8a,30,3.2,0,0.00%,0.00%
+            google,sabrina,Google,Chromecast with Google TV,2048MB,TV,ARM MT8167A,IMG GE8300,1920x1080,213,arm64-v8a,29,3.2,0,0.00%,0.00%
+            samsung,watch1,Samsung,Galaxy Watch 4,1536MB,Wearable,Samsung Exynos W920,ARM Mali-G68 MP2,450x450,320,arm64-v8a,30,3.2,0,0.00%,0.00%
+            volvo,car1,Volvo,XC90,4096MB,Android Automotive,Qualcomm SDM820,Qualcomm Adreno 530,1920x1200,160,arm64-v8a,28,3.2,0,0.00%,0.00%
+            google,chromebook1,Google,Pixelbook Go,8192MB,Chromebook,Intel Core m3,Intel UHD Graphics 615,1920x1080,166,x86_64,28,3.2,0,0.00%,0.00%
+            google,pc1,Google,Play Games on PC,16384MB,Google Play Games on PC,Intel i7,NVIDIA RTX,1920x1080,96,x86_64,30,3.2,0,0.00%,0.00%
+            """.trimIndent()
+
+        val actual = sut.parseDeviceCatalogData(csvContent)
+        assertEquals(7, actual.size)
+
+        // Verify each form factor is parsed correctly
+        assertEquals(FormFactor.PHONE, actual[0].formFactor)
+        assertEquals(FormFactor.TABLET, actual[1].formFactor)
+        assertEquals(FormFactor.TV, actual[2].formFactor)
+        assertEquals(FormFactor.WEARABLE, actual[3].formFactor)
+        assertEquals(FormFactor.ANDROID_AUTOMOTIVE, actual[4].formFactor)
+        assertEquals(FormFactor.CHROMEBOOK, actual[5].formFactor)
+        assertEquals(FormFactor.GOOGLE_PLAY_GAMES_ON_PC, actual[6].formFactor)
+    }
+
+    @Test
+    fun `parseDeviceCatalogData handles unknown form factor gracefully`() {
+        val csvContent =
+            """
+            Brand,Device,Manufacturer,Model Name,RAM (TotalMem),Form Factor,System on Chip,GPU,Screen Sizes,Screen Densities,ABIs,Android SDK Versions,OpenGL ES Versions,Install base,User-perceived ANR rate,User-perceived crash rate
+            unknown,device1,Unknown,Unknown Device,1024MB,Unknown Form Factor,Unknown Chip,Unknown GPU,1920x1080,160,arm64-v8a,28,3.2,0,0.00%,0.00%
+            """.trimIndent()
+
+        val actual = sut.parseDeviceCatalogData(csvContent)
+
+        // Should skip devices with unknown form factors
+        assertEquals(0, actual.size)
+    }
+
+    @Test
+    fun `parseDeviceCatalogData filters out devices with invalid form factors`() {
+        val csvContent =
+            """
+            Brand,Device,Manufacturer,Model Name,RAM (TotalMem),Form Factor,System on Chip,GPU,Screen Sizes,Screen Densities,ABIs,Android SDK Versions,OpenGL ES Versions,Install base,User-perceived ANR rate,User-perceived crash rate
+            google,coral,Google,Pixel 4 XL,5730MB,Phone,Qualcomm SDM855,Qualcomm Adreno 640 (585 MHz),1440x3040,560,arm64-v8a,33,3.2,0,0.00%,0.00%
+            unknown,device1,Unknown,Unknown Device,1024MB,Invalid Form Factor,Unknown Chip,Unknown GPU,1920x1080,160,arm64-v8a,28,3.2,0,0.00%,0.00%
+            samsung,tab1,Samsung,Galaxy Tab S7,8192MB,Tablet,Qualcomm SDM865+,Qualcomm Adreno 650,2560x1600,287,arm64-v8a,30,3.2,0,0.00%,0.00%
+            """.trimIndent()
+
+        val actual = sut.parseDeviceCatalogData(csvContent)
+
+        // Should only parse valid form factors
+        assertEquals(2, actual.size)
+        assertEquals(FormFactor.PHONE, actual[0].formFactor)
+        assertEquals(FormFactor.TABLET, actual[1].formFactor)
+    }
+
+    @Test
+    fun `parseDeviceCatalogData maintains form factor case sensitivity`() {
+        val csvContent =
+            """
+            Brand,Device,Manufacturer,Model Name,RAM (TotalMem),Form Factor,System on Chip,GPU,Screen Sizes,Screen Densities,ABIs,Android SDK Versions,OpenGL ES Versions,Install base,User-perceived ANR rate,User-perceived crash rate
+            google,coral,Google,Pixel 4 XL,5730MB,phone,Qualcomm SDM855,Qualcomm Adreno 640 (585 MHz),1440x3040,560,arm64-v8a,33,3.2,0,0.00%,0.00%
+            samsung,tab1,Samsung,Galaxy Tab S7,8192MB,TABLET,Qualcomm SDM865+,Qualcomm Adreno 650,2560x1600,287,arm64-v8a,30,3.2,0,0.00%,0.00%
+            """.trimIndent()
+
+        val actual = sut.parseDeviceCatalogData(csvContent)
+
+        // Should filter out case-mismatched form factors (FormFactor.fromCsvValueOrNull is case-sensitive)
+        assertEquals(0, actual.size)
+    }
+
+    // endregion FormFactor Integration Tests
 }

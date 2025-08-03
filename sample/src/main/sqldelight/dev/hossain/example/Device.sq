@@ -5,7 +5,7 @@ CREATE TABLE "device" (
   "manufacturer" TEXT NOT NULL,
   "model_name" TEXT NOT NULL,
   "ram" TEXT NOT NULL,
-  "form_factor" TEXT NOT NULL,
+  "form_factor" TEXT NOT NULL CHECK (form_factor IN ('Phone', 'Tablet', 'TV', 'Wearable', 'Android Automotive', 'Chromebook', 'Google Play Games on PC')),
   "processor_name" TEXT NOT NULL,
   "gpu" TEXT NOT NULL
 );
@@ -13,35 +13,35 @@ CREATE TABLE "device" (
 CREATE TABLE "device_abi" (
   "device_id" INTEGER NOT NULL,
   "abi" TEXT NOT NULL ON CONFLICT REPLACE,
---  PRIMARY KEY ("device_id", "abi"),
+  PRIMARY KEY ("device_id", "abi"),
   FOREIGN KEY ("device_id") REFERENCES "device" ("_id") ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE "device_opengl" (
   "device_id" INTEGER NOT NULL,
   "opengl_version" TEXT NOT NULL ON CONFLICT REPLACE,
---  PRIMARY KEY ("device_id", "opengl_version"),
+  PRIMARY KEY ("device_id", "opengl_version"),
   FOREIGN KEY ("device_id") REFERENCES "device" ("_id") ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE "device_screen_density" (
   "device_id" INTEGER NOT NULL,
   "screen_density" INTEGER NOT NULL ON CONFLICT REPLACE,
---  PRIMARY KEY ("device_id", "screen_density"),
+  PRIMARY KEY ("device_id", "screen_density"),
   FOREIGN KEY ("device_id") REFERENCES "device" ("_id") ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE "device_screen_size" (
   "device_id" INTEGER NOT NULL,
   "screen_size" TEXT NOT NULL ON CONFLICT REPLACE,
---  PRIMARY KEY ("device_id", "screen_size"),
+  PRIMARY KEY ("device_id", "screen_size"),
   FOREIGN KEY ("device_id") REFERENCES "device" ("_id") ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE "device_sdk" (
   "device_id" INTEGER NOT NULL,
   "sdk_version" INTEGER NOT NULL ON CONFLICT REPLACE,
---  PRIMARY KEY ("device_id", "sdk_version"),
+  PRIMARY KEY ("device_id", "sdk_version"),
   FOREIGN KEY ("device_id") REFERENCES "device" ("_id") ON DELETE CASCADE ON UPDATE CASCADE
 );
 

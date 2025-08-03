@@ -24,11 +24,17 @@ repositories {
 dependencies {
     implementation(project(":lib"))
     implementation("app.cash.sqldelight:sqlite-driver:2.1.0")
-    implementation("com.github.erosb:everit-json-schema:1.14.6") // https://github.com/erosb/everit-json-schema
-    implementation("com.squareup.moshi:moshi:1.12.0")
-    implementation("com.squareup.moshi:moshi-kotlin:1.12.0")
+    // https://github.com/erosb/everit-json-schema
+    implementation("com.github.erosb:everit-json-schema:1.14.6")
+
+    // Moshi - A modern JSON library for Android and Java
+    // https://github.com/square/moshi
+    implementation("com.squareup.moshi:moshi:1.15.2")
+    implementation("com.squareup.moshi:moshi-kotlin:1.15.2")
+
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.11.4")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.11.4")
+    testImplementation("org.jetbrains.kotlin:kotlin-test:2.2.0")
 }
 
 // Configure JVM toolchain
@@ -37,7 +43,7 @@ kotlin {
 }
 
 application {
-    mainClass.set("MainKt")
+    mainClass.set("dev.hossain.example.MainKt")
 }
 
 kotlinter {

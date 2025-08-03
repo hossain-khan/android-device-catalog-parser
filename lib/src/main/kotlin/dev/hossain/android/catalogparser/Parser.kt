@@ -17,6 +17,7 @@ import dev.hossain.android.catalogparser.Config.CSV_KEY_SDK_VERSIONS
 import dev.hossain.android.catalogparser.Config.CSV_KEY_SOC
 import dev.hossain.android.catalogparser.Config.CSV_MULTI_VALUE_SEPARATOR
 import dev.hossain.android.catalogparser.models.AndroidDevice
+import dev.hossain.android.catalogparser.models.FormFactor
 
 /**
  * CSV parser for Google Play Device Catalog found in Google Play Console
@@ -39,7 +40,7 @@ class Parser {
                 val manufacturer = rowData[CSV_KEY_MANUFACTURER]
                 val modelName = rowData[CSV_KEY_MODEL_NAME]
                 val ram = rowData[CSV_KEY_RAM]
-                val formFactor = rowData[CSV_KEY_FORM_FACTOR]
+                val formFactorString = rowData[CSV_KEY_FORM_FACTOR]
                 val processorName = rowData[CSV_KEY_SOC]
                 val gpu = rowData[CSV_KEY_SCREEN_GPU]
                 val screenSizes = rowData[CSV_KEY_SCREEN_SIZES]
@@ -54,7 +55,7 @@ class Parser {
                     manufacturer.isNullOrBlank() ||
                     modelName.isNullOrBlank() ||
                     ram.isNullOrBlank() ||
-                    formFactor.isNullOrBlank() ||
+                    formFactorString.isNullOrBlank() ||
                     processorName.isNullOrBlank() ||
                     gpu.isNullOrBlank() ||
                     screenSizes.isNullOrBlank() ||
@@ -63,6 +64,13 @@ class Parser {
                     sdkVersions.isNullOrBlank() ||
                     openGlEsVersions.isNullOrBlank()
                 ) {
+                    return@map null
+                }
+
+                // Convert form factor string to enum, skip record if unknown
+                val formFactor = FormFactor.fromCsvValueOrNull(formFactorString)
+                if (formFactor == null) {
+                    // Log or handle unknown form factor - for now, skip the record
                     return@map null
                 }
 
