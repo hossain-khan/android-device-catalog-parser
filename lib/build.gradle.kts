@@ -27,8 +27,8 @@ repositories {
 }
 
 dependencies {
-    // Align versions of all Kotlin components
-    implementation(platform("org.jetbrains.kotlin:kotlin-bom"))
+    // Align versions of all Kotlin components - explicitly specify version to avoid POM issues
+    implementation(platform("org.jetbrains.kotlin:kotlin-bom:2.2.0"))
 
     // CSV Processor
     // https://github.com/jsoizo/kotlin-csv (note: ownership changed from doyaaaaaken to jsoizo in v1.10.0)
@@ -55,7 +55,7 @@ publishing {
         create<MavenPublication>("maven") {
             groupId = "dev.hossain.android"
             artifactId = "catalogparser"
-            version = "1.4"
+            version = "1.8"
 
             from(components["java"])
         }
