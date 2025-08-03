@@ -162,14 +162,19 @@ class ParserTest {
 
         // Use following to write file to resources
 
-        /*val resourceDirectory: Path = Paths.get("src", "test", "resources")
+        /*
+        //import java.io.File
+        //import java.nio.file.Path
+        //import java.nio.file.Paths
+        val resourceDirectory: Path = Paths.get("src", "test", "resources")
         val resDir = resourceDirectory.toFile()
         // UNIX: src/test/resources
         // WINDOWS: src\test\resources
         assertTrue(resDir.absolutePath.endsWith("src${File.separator}test${File.separator}resources"))
 
         val jsonFile: File = File(resDir, "android-devices-catalog-min.json")
-        jsonFile.writeText(convertedJson)*/
+        jsonFile.writeText(convertedJson)
+        */
 
         // TIP - Can't edit large 10MB+ JSON file and can't format it?
         // --------------------------------------------------------------

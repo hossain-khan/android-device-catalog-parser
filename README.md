@@ -21,7 +21,7 @@ allprojects {
 
 // Step 2. Add the dependency
 dependencies {
-    implementation 'com.github.hossain-khan:android-device-catalog-parser:1.5'
+    implementation 'com.github.hossain-khan:android-device-catalog-parser:1.8'
 }
 ```
 
@@ -33,14 +33,14 @@ dependencies {
 The CSV is parsed into a list of `AndroidDevice` [class](https://github.com/amardeshbd/android-device-catalog-parser/blob/main/lib/src/main/kotlin/dev/hossain/android/catalogparser/models/AndroidDevice.kt).
 
 Here is a snapshot of parsed [CSV file](https://github.com/amardeshbd/android-device-catalog-parser/blob/main/lib/src/test/resources/android-devices-catalog.csv)
-![](https://user-images.githubusercontent.com/99822/209040485-3c02e4ea-3309-4e95-8f2e-ae5281b1f9ba.png)
+![](https://github.com/user-attachments/assets/616aaf39-c179-4847-b965-df226b266026)
 
 
 ## Snapshot Files
 Device catalog can always be downloaded from the [Google Play Console](https://play.google.com/console/about/devicecatalog/)
 
 ### CSV
-Here is snapshot taken on December, 2023
+Here is snapshot taken on August 2025
 * https://github.com/amardeshbd/android-device-catalog-parser/blob/main/lib/src/test/resources/android-devices-catalog.csv
 
 ### JSON
