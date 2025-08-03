@@ -174,7 +174,7 @@ class ParserTest {
 
         val jsonFile: File = File(resDir, "android-devices-catalog-min.json")
         jsonFile.writeText(convertedJson)
-        */
+         */
 
         // TIP - Can't edit large 10MB+ JSON file and can't format it?
         // --------------------------------------------------------------
