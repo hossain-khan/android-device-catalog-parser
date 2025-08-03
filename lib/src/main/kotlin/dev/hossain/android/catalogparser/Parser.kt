@@ -68,7 +68,7 @@ class Parser {
                 }
 
                 // Convert form factor string to enum, skip record if unknown
-                val formFactor = FormFactor.fromCsvValueOrNull(formFactorString)
+                val formFactor = FormFactor.fromValueOrNull(formFactorString)
                 if (formFactor == null) {
                     // Log or handle unknown form factor - for now, skip the record
                     return@map null

@@ -50,7 +50,7 @@ fun main() {
     val formFactorCounts = parsedDevices.groupingBy { it.formFactor }.eachCount()
     println("Form factor counts:")
     formFactorCounts.forEach { (formFactor, count) ->
-        println("  \"${formFactor.csvValue}\": $count")
+        println("  \"${formFactor.value}\": $count")
     }
 
     // Write the parsed AndroidDevice objects to a JSON file.
@@ -95,7 +95,7 @@ private fun processRecordsToDb(parsedDevices: List<AndroidDevice>) {
                 manufacturer = androidDevice.manufacturer,
                 model_name = androidDevice.modelName,
                 ram = androidDevice.ram,
-                form_factor = androidDevice.formFactor.csvValue,
+                form_factor = androidDevice.formFactor.value,
                 processor_name = androidDevice.processorName,
                 gpu = androidDevice.gpu,
             )
@@ -136,7 +136,7 @@ private fun processRecordsToDb(parsedDevices: List<AndroidDevice>) {
                 manufacturer = dbDevice.manufacturer,
                 modelName = dbDevice.model_name,
                 ram = dbDevice.ram,
-                formFactor = FormFactor.fromCsvValue(dbDevice.form_factor),
+                formFactor = FormFactor.fromValue(dbDevice.form_factor),
                 processorName = dbDevice.processor_name,
                 gpu = dbDevice.gpu,
                 screenSizes = deviceQueries.getScreenSize(dbDevice._id).executeAsList().map { it.screen_size },
