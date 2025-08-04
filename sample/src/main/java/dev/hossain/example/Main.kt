@@ -53,6 +53,45 @@ fun main() {
         println("  \"${formFactor.value}\": $count")
     }
 
+    // Print all unique processors
+    val uniqueProcessors = parsedDevices.map { it.processorName }.toSet().sorted()
+    println("Unique processors:")
+    uniqueProcessors.forEach { println("  \"$it\"") }
+
+    // Print all unique GPUs
+    val uniqueGpus = parsedDevices.map { it.gpu }.toSet().sorted()
+    println("Unique GPUs:")
+    uniqueGpus.forEach { println("  \"$it\"") }
+
+    // Print all unique screen sizes, sorted by width then height
+    val uniqueScreenSizes = parsedDevices.flatMap { it.screenSizes }.toSet()
+    val sortedScreenSizes = uniqueScreenSizes.sortedWith(compareBy(
+        { it.substringBefore('x').toIntOrNull() ?: 0 },
+        { it.substringAfter('x').toIntOrNull() ?: 0 }
+    ))
+    println("Unique screen sizes:")
+    sortedScreenSizes.forEach { println("  \"$it\"") }
+
+    // Print all unique ABIs
+    val uniqueAbis = parsedDevices.flatMap { it.abis }.toSet().sorted()
+    println("Unique ABIs:")
+    uniqueAbis.forEach { println("  \"$it\"") }
+
+    // Print all unique SDK versions
+    val uniqueSdkVersions = parsedDevices.flatMap { it.sdkVersions }.toSet().sorted()
+    println("Unique SDK versions:")
+    uniqueSdkVersions.forEach { println("  \"$it\"") }
+
+    // Print all unique OpenGL ES versions
+    val uniqueOpenGlEsVersions = parsedDevices.flatMap { it.openGlEsVersions }.toSet()
+    println("Unique OpenGL ES versions:")
+    uniqueOpenGlEsVersions.forEach { println("  \"$it\"") }
+
+    // Print all unique screen densities, sorted numerically
+    val uniqueScreenDensities = parsedDevices.flatMap { it.screenDensities }.toSet().sorted()
+    println("Unique screen densities:")
+    uniqueScreenDensities.forEach { println("  \"$it\"") }
+
     // Write the parsed AndroidDevice objects to a JSON file.
     // writeDeviceListToJson(parsedDevices, "sample/src/main/resources/android-devices-catalog.json")
 
