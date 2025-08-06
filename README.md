@@ -25,6 +25,69 @@ dependencies {
 }
 ```
 
+#### Basic Usage
+The library provides a simple way to parse Android Device Catalog CSV files:
+
+```kotlin
+import dev.hossain.android.catalogparser.Parser
+import dev.hossain.android.catalogparser.models.AndroidDevice
+
+val parser = Parser()
+val csvContent = // Your CSV content as String
+
+// Simple parsing - returns only successfully parsed devices
+val devices: List<AndroidDevice> = parser.parseDeviceCatalogData(csvContent)
+println("Successfully parsed ${devices.size} devices")
+```
+
+#### Enhanced Usage with Statistics
+For more insights into the parsing process, including information about discarded records:
+
+```kotlin
+import dev.hossain.android.catalogparser.Parser
+import dev.hossain.android.catalogparser.models.ParseResult
+
+val parser = Parser()
+val csvContent = // Your CSV content as String
+
+// Enhanced parsing - returns detailed statistics
+val result: ParseResult = parser.parseDeviceCatalogDataWithStats(csvContent)
+
+println("Parsing Summary:")
+println("  Total rows processed: ${result.totalRows}")
+println("  Successfully parsed: ${result.successfulCount}")
+println("  Discarded: ${result.discardedCount}")
+println("  Success rate: ${"%.2f".format(result.successRate)}%")
+
+// Access the successfully parsed devices
+val devices = result.devices
+
+// Analyze discard reasons
+if (result.discardReasons.isNotEmpty()) {
+    println("\nDiscard reasons:")
+    result.discardReasons.forEach { (reason, count) ->
+        println("  $reason: $count")
+    }
+}
+```
+
+#### Example Output
+When parsing a CSV with mixed valid and invalid data:
+
+```
+Parsing Summary:
+  Total rows processed: 1000
+  Successfully parsed: 892
+  Discarded: 108
+  Success rate: 89.20%
+
+Discard reasons:
+  Missing required field: Brand: 45
+  Missing required field: GPU: 32
+  Unknown form factor: Desktop: 18
+  Missing required field: RAM (TotalMem): 13
+```
+
 
 ### CSV Snapshot
 ![](https://user-images.githubusercontent.com/99822/99319610-cf3b1480-2837-11eb-8a60-532d974c2151.png)

@@ -4,6 +4,7 @@ import com.google.gson.Gson
 import dev.hossain.android.catalogparser.DataSanitizer.sanitizeDeviceRam
 import dev.hossain.android.catalogparser.models.AndroidDevice
 import dev.hossain.android.catalogparser.models.FormFactor
+import dev.hossain.android.catalogparser.models.ParseResult
 import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.assertEquals
@@ -314,4 +315,151 @@ class ParserTest {
     }
 
     // endregion FormFactor Integration Tests
+
+    // region Enhanced Parser Tests with Statistics
+
+    @Test
+    fun `parseDeviceCatalogDataWithStats returns full statistics for valid data`() {
+        val csvContent =
+            """
+            Brand,Device,Manufacturer,Model Name,RAM (TotalMem),Form Factor,System on Chip,GPU,Screen Sizes,Screen Densities,ABIs,Android SDK Versions,OpenGL ES Versions,Install base,User-perceived ANR rate,User-perceived crash rate
+            google,coral,Google,Pixel 4 XL,5730MB,Phone,Qualcomm SDM855,Qualcomm Adreno 640 (585 MHz),1440x3040,560,arm64-v8a;armeabi;armeabi-v7a,33,3.2,0,0.00%,0.00%
+            samsung,tab1,Samsung,Galaxy Tab S7,8192MB,Tablet,Qualcomm SDM865+,Qualcomm Adreno 650,2560x1600,287,arm64-v8a,30,3.2,0,0.00%,0.00%
+            """.trimIndent()
+
+        val result = sut.parseDeviceCatalogDataWithStats(csvContent)
+
+        assertEquals(2, result.totalRows)
+        assertEquals(2, result.successfulCount)
+        assertEquals(0, result.discardedCount)
+        assertEquals(100.0, result.successRate)
+        assertEquals(emptyMap<String, Int>(), result.discardReasons)
+        assertEquals(2, result.devices.size)
+    }
+
+    @Test
+    fun `parseDeviceCatalogDataWithStats tracks missing required fields`() {
+        val csvContent =
+            """
+            Brand,Device,Manufacturer,Model Name,RAM (TotalMem),Form Factor,System on Chip,GPU,Screen Sizes,Screen Densities,ABIs,Android SDK Versions,OpenGL ES Versions,Install base,User-perceived ANR rate,User-perceived crash rate
+            google,coral,Google,Pixel 4 XL,5730MB,Phone,Qualcomm SDM855,Qualcomm Adreno 640 (585 MHz),1440x3040,560,arm64-v8a,33,3.2,0,0.00%,0.00%
+            ,,Samsung,Galaxy Tab S7,8192MB,Tablet,Qualcomm SDM865+,Qualcomm Adreno 650,2560x1600,287,arm64-v8a,30,3.2,0,0.00%,0.00%
+            motorola,device3,,Device 3,1024MB,Phone,Qualcomm,GPU,1920x1080,320,arm64-v8a,28,3.2,0,0.00%,0.00%
+            """.trimIndent()
+
+        val result = sut.parseDeviceCatalogDataWithStats(csvContent)
+
+        assertEquals(3, result.totalRows)
+        assertEquals(1, result.successfulCount)
+        assertEquals(2, result.discardedCount)
+        assertEquals(33.33, result.successRate, 0.01)
+        
+        val expectedReasons = mapOf(
+            "Missing required field: Brand" to 1,
+            "Missing required field: Device" to 1,
+            "Missing required field: Manufacturer" to 1
+        )
+        assertEquals(expectedReasons, result.discardReasons)
+    }
+
+    @Test
+    fun `parseDeviceCatalogDataWithStats tracks unknown form factors`() {
+        val csvContent =
+            """
+            Brand,Device,Manufacturer,Model Name,RAM (TotalMem),Form Factor,System on Chip,GPU,Screen Sizes,Screen Densities,ABIs,Android SDK Versions,OpenGL ES Versions,Install base,User-perceived ANR rate,User-perceived crash rate
+            google,coral,Google,Pixel 4 XL,5730MB,Phone,Qualcomm SDM855,Qualcomm Adreno 640 (585 MHz),1440x3040,560,arm64-v8a,33,3.2,0,0.00%,0.00%
+            unknown,device1,Unknown,Device 1,1024MB,Unknown Form,Unknown Chip,Unknown GPU,1920x1080,160,arm64-v8a,28,3.2,0,0.00%,0.00%
+            another,device2,Another,Device 2,2048MB,Invalid Type,Another Chip,Another GPU,1280x720,240,arm64-v8a,29,3.2,0,0.00%,0.00%
+            """.trimIndent()
+
+        val result = sut.parseDeviceCatalogDataWithStats(csvContent)
+
+        assertEquals(3, result.totalRows)
+        assertEquals(1, result.successfulCount)
+        assertEquals(2, result.discardedCount)
+        assertEquals(33.33, result.successRate, 0.01)
+        
+        val expectedReasons = mapOf(
+            "Unknown form factor: Unknown Form" to 1,
+            "Unknown form factor: Invalid Type" to 1
+        )
+        assertEquals(expectedReasons, result.discardReasons)
+    }
+
+    @Test
+    fun `parseDeviceCatalogDataWithStats handles mixed validation failures`() {
+        val csvContent =
+            """
+            Brand,Device,Manufacturer,Model Name,RAM (TotalMem),Form Factor,System on Chip,GPU,Screen Sizes,Screen Densities,ABIs,Android SDK Versions,OpenGL ES Versions,Install base,User-perceived ANR rate,User-perceived crash rate
+            google,coral,Google,Pixel 4 XL,5730MB,Phone,Qualcomm SDM855,Qualcomm Adreno 640 (585 MHz),1440x3040,560,arm64-v8a,33,3.2,0,0.00%,0.00%
+            ,,Samsung,Galaxy Tab S7,,Tablet,Qualcomm SDM865+,Qualcomm Adreno 650,2560x1600,287,arm64-v8a,30,3.2,0,0.00%,0.00%
+            brand2,device2,Manufacturer2,Model2,1024MB,Unknown Form,Processor2,GPU2,1920x1080,320,arm64-v8a,28,3.2,0,0.00%,0.00%
+            brand3,device3,Manufacturer3,,2048MB,Phone,Processor3,,1280x720,240,arm64-v8a,29,3.2,0,0.00%,0.00%
+            """.trimIndent()
+
+        val result = sut.parseDeviceCatalogDataWithStats(csvContent)
+
+        assertEquals(4, result.totalRows)
+        assertEquals(1, result.successfulCount)
+        assertEquals(3, result.discardedCount)
+        assertEquals(25.0, result.successRate)
+        
+        val expectedReasons = mapOf(
+            "Missing required field: Brand" to 1,
+            "Missing required field: Device" to 1,
+            "Missing required field: RAM (TotalMem)" to 1,
+            "Unknown form factor: Unknown Form" to 1,
+            "Missing required field: Model Name" to 1,
+            "Missing required field: GPU" to 1
+        )
+        assertEquals(expectedReasons, result.discardReasons)
+    }
+
+    @Test
+    fun `parseDeviceCatalogDataWithStats handles empty CSV content`() {
+        val csvContent = ""
+
+        val result = sut.parseDeviceCatalogDataWithStats(csvContent)
+
+        assertEquals(0, result.totalRows)
+        assertEquals(0, result.successfulCount)
+        assertEquals(0, result.discardedCount)
+        assertEquals(0.0, result.successRate)
+        assertEquals(emptyMap<String, Int>(), result.discardReasons)
+        assertEquals(emptyList<AndroidDevice>(), result.devices)
+    }
+
+    @Test
+    fun `parseDeviceCatalogDataWithStats handles CSV with only header`() {
+        val csvContent =
+            """
+            Brand,Device,Manufacturer,Model Name,RAM (TotalMem),Form Factor,System on Chip,GPU,Screen Sizes,Screen Densities,ABIs,Android SDK Versions,OpenGL ES Versions,Install base,User-perceived ANR rate,User-perceived crash rate
+            """.trimIndent()
+
+        val result = sut.parseDeviceCatalogDataWithStats(csvContent)
+
+        assertEquals(0, result.totalRows)
+        assertEquals(0, result.successfulCount)
+        assertEquals(0, result.discardedCount)
+        assertEquals(0.0, result.successRate)
+        assertEquals(emptyMap<String, Int>(), result.discardReasons)
+        assertEquals(emptyList<AndroidDevice>(), result.devices)
+    }
+
+    @Test
+    fun `parseDeviceCatalogDataWithStats returns same devices as original method for valid data`() {
+        val csvContent =
+            """
+            Brand,Device,Manufacturer,Model Name,RAM (TotalMem),Form Factor,System on Chip,GPU,Screen Sizes,Screen Densities,ABIs,Android SDK Versions,OpenGL ES Versions,Install base,User-perceived ANR rate,User-perceived crash rate
+            google,coral,Google,Pixel 4 XL,5730MB,Phone,Qualcomm SDM855,Qualcomm Adreno 640 (585 MHz),1440x3040,560,arm64-v8a;armeabi;armeabi-v7a,33,3.2,0,0.00%,0.00%
+            samsung,tab1,Samsung,Galaxy Tab S7,8192MB,Tablet,Qualcomm SDM865+,Qualcomm Adreno 650,2560x1600,287,arm64-v8a,30,3.2,0,0.00%,0.00%
+            """.trimIndent()
+
+        val originalResult = sut.parseDeviceCatalogData(csvContent)
+        val enhancedResult = sut.parseDeviceCatalogDataWithStats(csvContent)
+
+        assertEquals(originalResult, enhancedResult.devices)
+    }
+
+    // endregion Enhanced Parser Tests with Statistics
 }
