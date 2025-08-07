@@ -65,10 +65,13 @@ fun main() {
 
     // Print all unique screen sizes, sorted by width then height
     val uniqueScreenSizes = parsedDevices.flatMap { it.screenSizes }.toSet()
-    val sortedScreenSizes = uniqueScreenSizes.sortedWith(compareBy(
-        { it.substringBefore('x').toIntOrNull() ?: 0 },
-        { it.substringAfter('x').toIntOrNull() ?: 0 }
-    ))
+    val sortedScreenSizes =
+        uniqueScreenSizes.sortedWith(
+            compareBy(
+                { it.substringBefore('x').toIntOrNull() ?: 0 },
+                { it.substringAfter('x').toIntOrNull() ?: 0 },
+            ),
+        )
     println("Unique screen sizes:")
     sortedScreenSizes.forEach { println("  \"$it\"") }
 
