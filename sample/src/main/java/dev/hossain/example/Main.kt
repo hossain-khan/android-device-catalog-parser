@@ -46,6 +46,27 @@ fun main() {
     // Print the number of parsed devices to the console.
     println("Parsed ${parsedDevices.size} devices from the catalog CSV file.")
 
+    // Also demonstrate the enhanced parsing with statistics
+    val parseResult = parser.parseDeviceCatalogDataWithStats(csvFileContent)
+
+    println("\n--- Enhanced Parsing Statistics ---")
+    println("Total rows processed: ${parseResult.totalRows}")
+    println("Successfully parsed: ${parseResult.successfulCount}")
+    println("Discarded: ${parseResult.discardedCount}")
+    println("Success rate: ${"%.2f".format(parseResult.successRate)}%")
+
+    if (parseResult.discardReasons.isNotEmpty()) {
+        println("\nDiscard reasons:")
+        parseResult.discardReasons
+            .toList()
+            .sortedByDescending { it.second }
+            .take(10) // Show top 10 reasons
+            .forEach { (reason, count) ->
+                println("  $reason: $count")
+            }
+    }
+    println("--- End Statistics ---\n")
+
     // Print all unique form factors from the parsed devices, each value in quotes.
     val formFactorCounts = parsedDevices.groupingBy { it.formFactor }.eachCount()
     println("Form factor counts:")
