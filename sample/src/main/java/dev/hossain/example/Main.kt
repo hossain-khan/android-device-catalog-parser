@@ -45,19 +45,20 @@ fun main() {
 
     // Print the number of parsed devices to the console.
     println("Parsed ${parsedDevices.size} devices from the catalog CSV file.")
-    
+
     // Also demonstrate the enhanced parsing with statistics
     val parseResult = parser.parseDeviceCatalogDataWithStats(csvFileContent)
-    
+
     println("\n--- Enhanced Parsing Statistics ---")
     println("Total rows processed: ${parseResult.totalRows}")
     println("Successfully parsed: ${parseResult.successfulCount}")
     println("Discarded: ${parseResult.discardedCount}")
     println("Success rate: ${"%.2f".format(parseResult.successRate)}%")
-    
+
     if (parseResult.discardReasons.isNotEmpty()) {
         println("\nDiscard reasons:")
-        parseResult.discardReasons.toList()
+        parseResult.discardReasons
+            .toList()
             .sortedByDescending { it.second }
             .take(10) // Show top 10 reasons
             .forEach { (reason, count) ->
@@ -85,10 +86,13 @@ fun main() {
 
     // Print all unique screen sizes, sorted by width then height
     val uniqueScreenSizes = parsedDevices.flatMap { it.screenSizes }.toSet()
-    val sortedScreenSizes = uniqueScreenSizes.sortedWith(compareBy(
-        { it.substringBefore('x').toIntOrNull() ?: 0 },
-        { it.substringAfter('x').toIntOrNull() ?: 0 }
-    ))
+    val sortedScreenSizes =
+        uniqueScreenSizes.sortedWith(
+            compareBy(
+                { it.substringBefore('x').toIntOrNull() ?: 0 },
+                { it.substringAfter('x').toIntOrNull() ?: 0 },
+            ),
+        )
     println("Unique screen sizes:")
     sortedScreenSizes.forEach { println("  \"$it\"") }
 

@@ -122,20 +122,20 @@ class Parser {
 
     /**
      * Enhanced version of [parseDeviceCatalogData] that provides detailed parsing statistics.
-     * 
+     *
      * Given Android Device Catalog CSV data, parses to [ParseResult] containing both
      * the successfully parsed devices and detailed information about discarded records.
-     * 
+     *
      * @param csvContent CSV content string with header row
      * @return [ParseResult] containing parsed devices and parsing statistics
      */
     fun parseDeviceCatalogDataWithStats(csvContent: String): ParseResult {
         val deviceRows: List<Map<String, String>> = csvReader.readAllWithHeader(csvContent)
-        
+
         val discardReasons = mutableMapOf<String, Int>()
         val devices = mutableListOf<AndroidDevice>()
         var discardedCount = 0
-        
+
         deviceRows.forEach { rowData ->
             val brand = rowData[CSV_KEY_BRAND]
             val device = rowData[CSV_KEY_DEVICE]
@@ -187,55 +187,57 @@ class Parser {
             }
 
             // If we reach here, all validations passed - create the device
-            devices.add(AndroidDevice(
-                brand = brand!!,
-                device = device!!,
-                manufacturer = manufacturer!!,
-                modelName = modelName!!,
-                ram = ram!!,
-                formFactor = formFactor,
-                processorName = processorName!!,
-                gpu = gpu!!,
-                screenSizes =
-                    screenSizes!!
-                        .split(CSV_MULTI_VALUE_SEPARATOR)
-                        .filter { it.isNotEmpty() }
-                        .toSortedSet()
-                        .toList(),
-                screenDensities =
-                    screenDensities!!
-                        .split(CSV_MULTI_VALUE_SEPARATOR)
-                        .filter { it.isNotEmpty() }
-                        .toSortedSet()
-                        .toList()
-                        .map { it.toInt() },
-                abis =
-                    abis!!
-                        .split(CSV_MULTI_VALUE_SEPARATOR)
-                        .filter { it.isNotEmpty() }
-                        .toSortedSet()
-                        .toList(),
-                sdkVersions =
-                    sdkVersions!!
-                        .split(CSV_MULTI_VALUE_SEPARATOR)
-                        .filter { it.isNotEmpty() }
-                        .toSortedSet()
-                        .toList()
-                        .map { it.toInt() },
-                openGlEsVersions =
-                    openGlEsVersions!!
-                        .split(CSV_MULTI_VALUE_SEPARATOR)
-                        .filter { it.isNotEmpty() }
-                        .toSortedSet()
-                        .toList(),
-            ))
+            devices.add(
+                AndroidDevice(
+                    brand = brand!!,
+                    device = device!!,
+                    manufacturer = manufacturer!!,
+                    modelName = modelName!!,
+                    ram = ram!!,
+                    formFactor = formFactor,
+                    processorName = processorName!!,
+                    gpu = gpu!!,
+                    screenSizes =
+                        screenSizes!!
+                            .split(CSV_MULTI_VALUE_SEPARATOR)
+                            .filter { it.isNotEmpty() }
+                            .toSortedSet()
+                            .toList(),
+                    screenDensities =
+                        screenDensities!!
+                            .split(CSV_MULTI_VALUE_SEPARATOR)
+                            .filter { it.isNotEmpty() }
+                            .toSortedSet()
+                            .toList()
+                            .map { it.toInt() },
+                    abis =
+                        abis!!
+                            .split(CSV_MULTI_VALUE_SEPARATOR)
+                            .filter { it.isNotEmpty() }
+                            .toSortedSet()
+                            .toList(),
+                    sdkVersions =
+                        sdkVersions!!
+                            .split(CSV_MULTI_VALUE_SEPARATOR)
+                            .filter { it.isNotEmpty() }
+                            .toSortedSet()
+                            .toList()
+                            .map { it.toInt() },
+                    openGlEsVersions =
+                        openGlEsVersions!!
+                            .split(CSV_MULTI_VALUE_SEPARATOR)
+                            .filter { it.isNotEmpty() }
+                            .toSortedSet()
+                            .toList(),
+                ),
+            )
         }
-        
+
         return ParseResult(
             devices = devices,
             totalRows = deviceRows.size,
             discardedCount = discardedCount,
-            discardReasons = discardReasons.toMap()
+            discardReasons = discardReasons.toMap(),
         )
     }
 }

@@ -13,30 +13,27 @@ data class ParseResult(
      * List of successfully parsed Android devices.
      */
     val devices: List<AndroidDevice>,
-    
     /**
      * Total number of data rows processed from CSV (excluding header row).
      */
     val totalRows: Int,
-    
     /**
      * Number of rows that were discarded during parsing due to validation failures.
      */
     val discardedCount: Int,
-    
     /**
      * Map containing the reasons for discarding rows and their occurrence counts.
      * Common reasons include:
      * - "Missing required field: <field_name>" - when a required field is null or blank
      * - "Unknown form factor: <value>" - when form factor cannot be parsed
      */
-    val discardReasons: Map<String, Int>
+    val discardReasons: Map<String, Int>,
 ) {
     /**
      * Number of successfully parsed devices.
      */
     val successfulCount: Int get() = devices.size
-    
+
     /**
      * Percentage of successfully parsed rows (0.0 to 100.0).
      */

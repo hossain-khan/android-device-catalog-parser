@@ -353,12 +353,13 @@ class ParserTest {
         assertEquals(1, result.successfulCount)
         assertEquals(2, result.discardedCount)
         assertEquals(33.33, result.successRate, 0.01)
-        
-        val expectedReasons = mapOf(
-            "Missing required field: Brand" to 1,
-            "Missing required field: Device" to 1,
-            "Missing required field: Manufacturer" to 1
-        )
+
+        val expectedReasons =
+            mapOf(
+                "Missing required field: Brand" to 1,
+                "Missing required field: Device" to 1,
+                "Missing required field: Manufacturer" to 1,
+            )
         assertEquals(expectedReasons, result.discardReasons)
     }
 
@@ -378,11 +379,12 @@ class ParserTest {
         assertEquals(1, result.successfulCount)
         assertEquals(2, result.discardedCount)
         assertEquals(33.33, result.successRate, 0.01)
-        
-        val expectedReasons = mapOf(
-            "Unknown form factor: Unknown Form" to 1,
-            "Unknown form factor: Invalid Type" to 1
-        )
+
+        val expectedReasons =
+            mapOf(
+                "Unknown form factor: Unknown Form" to 1,
+                "Unknown form factor: Invalid Type" to 1,
+            )
         assertEquals(expectedReasons, result.discardReasons)
     }
 
@@ -403,15 +405,16 @@ class ParserTest {
         assertEquals(1, result.successfulCount)
         assertEquals(3, result.discardedCount)
         assertEquals(25.0, result.successRate)
-        
-        val expectedReasons = mapOf(
-            "Missing required field: Brand" to 1,
-            "Missing required field: Device" to 1,
-            "Missing required field: RAM (TotalMem)" to 1,
-            "Unknown form factor: Unknown Form" to 1,
-            "Missing required field: Model Name" to 1,
-            "Missing required field: GPU" to 1
-        )
+
+        val expectedReasons =
+            mapOf(
+                "Missing required field: Brand" to 1,
+                "Missing required field: Device" to 1,
+                "Missing required field: RAM (TotalMem)" to 1,
+                "Unknown form factor: Unknown Form" to 1,
+                "Missing required field: Model Name" to 1,
+                "Missing required field: GPU" to 1,
+            )
         assertEquals(expectedReasons, result.discardReasons)
     }
 
