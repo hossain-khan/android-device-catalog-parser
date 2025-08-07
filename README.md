@@ -26,7 +26,7 @@ dependencies {
 ```
 
 #### Basic Usage
-The library provides a simple way to parse Android Device Catalog CSV files:
+<details><summary>The library provides a simple way to parse Android Device Catalog CSV files:</summary>
 
 ```kotlin
 import dev.hossain.android.catalogparser.Parser
@@ -40,8 +40,10 @@ val devices: List<AndroidDevice> = parser.parseDeviceCatalogData(csvContent)
 println("Successfully parsed ${devices.size} devices")
 ```
 
+</details>
+
 #### Enhanced Usage with Statistics
-For more insights into the parsing process, including information about discarded records:
+<details><summary>For more insights into the parsing process, including information about discarded records:</summary>
 
 ```kotlin
 import dev.hossain.android.catalogparser.Parser
@@ -87,7 +89,7 @@ Discard reasons:
   Unknown form factor: Desktop: 18
   Missing required field: RAM (TotalMem): 13
 ```
-
+</details>
 
 ### CSV Snapshot
 ![](https://user-images.githubusercontent.com/99822/99319610-cf3b1480-2837-11eb-8a60-532d974c2151.png)
