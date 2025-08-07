@@ -18,7 +18,7 @@ data class ParserConfig(
     val useDefaultsForMissingFields: Boolean = false,
     val defaultStringValue: String = "",
     val defaultIntValue: Int = 0,
-    val defaultFormFactor: FormFactor? = null,
+    val defaultFormFactor: FormFactor = FormFactor.UNKNOWN,
 ) {
     companion object {
         /**
@@ -40,7 +40,7 @@ data class ParserConfig(
         private var useDefaultsForMissingFields: Boolean = false
         private var defaultStringValue: String = ""
         private var defaultIntValue: Int = 0
-        private var defaultFormFactor: FormFactor? = null
+        private var defaultFormFactor: FormFactor = FormFactor.UNKNOWN
 
         /**
          * Configure the parser to use default values instead of discarding rows with missing fields.
@@ -66,10 +66,10 @@ data class ParserConfig(
         }
 
         /**
-         * Set the default integer value to use for missing integer fields.
-         * Only used when [useDefaultsForMissingFields] is enabled.
+         * Set the default integer value to use for missing or invalid integer fields
+         * (e.g., screen densities, SDK versions) when [useDefaultsForMissingFields] is enabled.
          *
-         * @param value Default integer value
+         * @param value Default integer value to use for missing or unparsable integer fields
          * @return This builder for method chaining
          */
         fun defaultIntValue(value: Int): Builder {

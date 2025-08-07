@@ -21,7 +21,7 @@ allprojects {
 
 // Step 2. Add the dependency
 dependencies {
-    implementation 'com.github.hossain-khan:android-device-catalog-parser:1.9'
+    implementation 'com.github.hossain-khan:android-device-catalog-parser:1.10'
 }
 ```
 
@@ -117,12 +117,12 @@ println("With defaults: ${result.successfulCount} devices parsed (${result.succe
 
 #### Configuration Options
 
-| Option | Default | Description |
-|--------|---------|-------------|
-| `useDefaultsForMissingFields` | `false` | Use default values instead of discarding rows with missing required fields |
-| `defaultStringValue` | `""` | Default value for missing string fields (e.g., "Unknown", "N/A") |
-| `defaultIntValue` | `0` | Default value for missing integer fields |
-| `defaultFormFactor` | `null` | Default form factor for unknown values. If `null`, unknown form factors are still discarded |
+| Option                        | Default | Description                                                                                 |
+|-------------------------------|---------|---------------------------------------------------------------------------------------------|
+| `useDefaultsForMissingFields` | `false` | Use default values instead of discarding rows with missing required fields                  |
+| `defaultStringValue`          | `""`    | Default value for missing string fields (e.g., "Unknown", "N/A")                            |
+| `defaultIntValue`             | `0`     | Default value for missing integer fields                                                    |
+| `defaultFormFactor`           | `null`  | Default form factor for unknown values. If `null`, unknown form factors are still discarded |
 
 #### Before vs After Configuration
 

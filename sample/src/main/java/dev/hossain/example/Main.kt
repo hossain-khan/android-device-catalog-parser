@@ -2,7 +2,9 @@ package dev.hossain.example
 
 import app.cash.sqldelight.db.SqlDriver
 import app.cash.sqldelight.driver.jdbc.sqlite.JdbcSqliteDriver
+import com.squareup.moshi.FromJson
 import com.squareup.moshi.Moshi
+import com.squareup.moshi.ToJson
 import com.squareup.moshi.Types
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dev.hossain.android.catalogparser.Parser
@@ -103,13 +105,13 @@ fun main() {
         ParserConfig
             .builder()
             .useDefaultsForMissingFields(true)
-            .defaultStringValue("N/A")
+            .defaultStringValue("Unknown")
             .defaultIntValue(0)
-            .defaultFormFactor(FormFactor.TABLET)
+            .defaultFormFactor(FormFactor.UNKNOWN)
             .build()
 
     val customResult = parser.parseDeviceCatalogDataWithStats(csvFileContent, customConfig)
-    println("\nWith custom defaults (N/A, 0, TABLET):")
+    println("\nWith custom defaults (N/A, 0, UNKNOWN):")
     println("  Successfully parsed: ${customResult.successfulCount}")
     println("  Success rate: ${"%.2f".format(customResult.successRate)}%")
 
@@ -164,8 +166,16 @@ fun main() {
     println("Unique screen densities:")
     uniqueScreenDensities.forEach { println("  \"$it\"") }
 
-    // Write the parsed AndroidDevice objects to a JSON file.
-    // writeDeviceListToJson(parsedDevices, "sample/src/main/resources/android-devices-catalog.json")
+//    // Write the parsed AndroidDevice objects to a JSON file.
+//    writeDeviceListToJson(
+//        deviceList = parsedDevices,
+//        filePath = "sample/src/main/resources/android-devices-catalog.json"
+//    )
+//    // Writes unfiltered devices to JSON file
+//    writeDeviceListToJson(
+//        deviceList = customResult.devices,
+//        filePath = "sample/src/main/resources/android-devices-catalog-unfiltered.json"
+//    )
 
     // Process the parsed devices into a SQLite database.
     // processRecordsToDb(parsedDevices)
@@ -283,9 +293,21 @@ fun writeDeviceListToJson(
     deviceList: List<AndroidDevice>,
     filePath: String,
 ) {
+    /**
+     * This is needed to maintain the source form factor name from the CSV file.
+     */
+    class FormFactorJsonAdapter {
+        @ToJson
+        fun toJson(formFactor: FormFactor): String = formFactor.value
+
+        @FromJson
+        fun fromJson(value: String): FormFactor = FormFactor.fromValueOrNull(value) ?: FormFactor.UNKNOWN
+    }
+
     val moshi =
         Moshi
             .Builder()
+            .add(FormFactorJsonAdapter()) // Register before KotlinJsonAdapterFactory
             .add(KotlinJsonAdapterFactory())
             .build()
 
@@ -321,7 +343,7 @@ fun validateJsonWithSchema(
     try {
         val jsonArray = JSONArray(jsonText)
         schema.validate(jsonArray) // Throws ValidationException if invalid
-        println("JSON validation passed successfully!")
+        println("JSON validation for '$jsonPath' passed successfully!")
     } catch (exception: JSONException) {
         System.err.println("Failed to parse JSON file '$jsonPath': ${exception.message}")
         throw exception

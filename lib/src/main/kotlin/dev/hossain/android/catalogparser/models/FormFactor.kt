@@ -115,6 +115,13 @@ enum class FormFactor(
      * - Larger screens and enhanced graphics capabilities
      */
     GOOGLE_PLAY_GAMES_ON_PC("Google Play Games on PC", "PC platform for Android games"),
+
+    /**
+     * Unknown or unrecognized form factor.
+     *
+     * Used as a fallback for future or unexpected values in the device catalog.
+     */
+    UNKNOWN("Unknown", "Unknown or unrecognized form factor"),
     ;
 
     companion object {
