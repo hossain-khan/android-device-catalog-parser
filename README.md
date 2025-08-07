@@ -32,11 +32,11 @@ dependencies {
 import dev.hossain.android.catalogparser.Parser
 import dev.hossain.android.catalogparser.models.AndroidDevice
 
-val parser = Parser()
+// Parser is now an object (no instantiation needed)
 val csvContent = // Your CSV content as String
 
 // Simple parsing - returns only successfully parsed devices
-val devices: List<AndroidDevice> = parser.parseDeviceCatalogData(csvContent)
+val devices: List<AndroidDevice> = Parser.parseDeviceCatalogData(csvContent)
 println("Successfully parsed ${devices.size} devices")
 ```
 
@@ -49,11 +49,10 @@ println("Successfully parsed ${devices.size} devices")
 import dev.hossain.android.catalogparser.Parser
 import dev.hossain.android.catalogparser.models.ParseResult
 
-val parser = Parser()
 val csvContent = // Your CSV content as String
 
 // Enhanced parsing - returns detailed statistics
-val result: ParseResult = parser.parseDeviceCatalogDataWithStats(csvContent)
+val result: ParseResult = Parser.parseDeviceCatalogDataWithStats(csvContent)
 
 println("Parsing Summary:")
 println("  Total rows processed: ${result.totalRows}")
@@ -89,6 +88,54 @@ Discard reasons:
   Unknown form factor: Desktop: 18
   Missing required field: RAM (TotalMem): 13
 ```
+</details>
+
+#### Advanced Configuration
+<details><summary>Configure parser behavior for missing data and unknown values:</summary>
+
+```kotlin
+import dev.hossain.android.catalogparser.Parser
+import dev.hossain.android.catalogparser.ParserConfig
+import dev.hossain.android.catalogparser.models.FormFactor
+
+val csvContent = // Your CSV content as String
+
+// Configure parser to use defaults instead of discarding rows
+val config = ParserConfig.builder()
+    .useDefaultsForMissingFields(true)
+    .defaultStringValue("Unknown")          // Use "Unknown" for missing string fields
+    .defaultIntValue(0)                     // Use 0 for missing integer fields  
+    .defaultFormFactor(FormFactor.PHONE)    // Use PHONE for unknown form factors
+    .build()
+
+// Parse with configuration
+val devices = Parser.parseDeviceCatalogData(csvContent, config)
+val result = Parser.parseDeviceCatalogDataWithStats(csvContent, config)
+
+println("With defaults: ${result.successfulCount} devices parsed (${result.successRate}% success)")
+```
+
+#### Configuration Options
+
+| Option | Default | Description |
+|--------|---------|-------------|
+| `useDefaultsForMissingFields` | `false` | Use default values instead of discarding rows with missing required fields |
+| `defaultStringValue` | `""` | Default value for missing string fields (e.g., "Unknown", "N/A") |
+| `defaultIntValue` | `0` | Default value for missing integer fields |
+| `defaultFormFactor` | `null` | Default form factor for unknown values. If `null`, unknown form factors are still discarded |
+
+#### Before vs After Configuration
+
+```kotlin
+// Default behavior (backward compatible)
+val defaultResult = Parser.parseDeviceCatalogDataWithStats(csvContent)
+// Result: 22,751 devices parsed (93.50% success rate)
+
+// With configuration to include all data
+val configResult = Parser.parseDeviceCatalogDataWithStats(csvContent, config)  
+// Result: 24,332 devices parsed (100% success rate)
+```
+
 </details>
 
 ### CSV Snapshot
