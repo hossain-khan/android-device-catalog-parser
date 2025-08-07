@@ -6,6 +6,7 @@ import com.squareup.moshi.Moshi
 import com.squareup.moshi.Types
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dev.hossain.android.catalogparser.Parser
+import dev.hossain.android.catalogparser.ParserConfig
 import dev.hossain.android.catalogparser.models.AndroidDevice
 import dev.hossain.android.catalogparser.models.FormFactor
 import org.everit.json.schema.Schema
@@ -30,7 +31,7 @@ fun main() {
     println("Application run on ${Date()}")
 
     // Create a new instance of the Parser class.
-    val parser = Parser()
+    val parser = Parser
 
     // Read the Android devices catalog CSV file from the resources directory.
     val csvFileContent =
@@ -66,6 +67,53 @@ fun main() {
             }
     }
     println("--- End Statistics ---\n")
+
+    // Demonstrate the new configuration feature
+    println("\n--- Parser Configuration Demo ---")
+
+    // Example 1: Use defaults for missing fields
+    val configWithDefaults =
+        ParserConfig
+            .builder()
+            .useDefaultsForMissingFields(true)
+            .defaultStringValue("Unknown")
+            .defaultFormFactor(FormFactor.PHONE)
+            .build()
+
+    val resultWithDefaults = parser.parseDeviceCatalogDataWithStats(csvFileContent, configWithDefaults)
+    println("With defaults for missing fields:")
+    println("  Total rows processed: ${resultWithDefaults.totalRows}")
+    println("  Successfully parsed: ${resultWithDefaults.successfulCount}")
+    println("  Discarded: ${resultWithDefaults.discardedCount}")
+    println("  Success rate: ${"%.2f".format(resultWithDefaults.successRate)}%")
+
+    if (resultWithDefaults.discardReasons.isNotEmpty()) {
+        println("  Remaining discard reasons:")
+        resultWithDefaults.discardReasons
+            .toList()
+            .sortedByDescending { it.second }
+            .take(5)
+            .forEach { (reason, count) ->
+                println("    $reason: $count")
+            }
+    }
+
+    // Example 2: Custom defaults
+    val customConfig =
+        ParserConfig
+            .builder()
+            .useDefaultsForMissingFields(true)
+            .defaultStringValue("N/A")
+            .defaultIntValue(0)
+            .defaultFormFactor(FormFactor.TABLET)
+            .build()
+
+    val customResult = parser.parseDeviceCatalogDataWithStats(csvFileContent, customConfig)
+    println("\nWith custom defaults (N/A, 0, TABLET):")
+    println("  Successfully parsed: ${customResult.successfulCount}")
+    println("  Success rate: ${"%.2f".format(customResult.successRate)}%")
+
+    println("--- End Configuration Demo ---\n")
 
     // Print all unique form factors from the parsed devices, each value in quotes.
     val formFactorCounts = parsedDevices.groupingBy { it.formFactor }.eachCount()
