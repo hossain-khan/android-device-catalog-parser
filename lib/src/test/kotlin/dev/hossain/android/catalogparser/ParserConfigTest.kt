@@ -16,7 +16,7 @@ class ParserConfigTest {
         assertEquals(false, config.useDefaultsForMissingFields)
         assertEquals("", config.defaultStringValue)
         assertEquals(0, config.defaultIntValue)
-        assertNull(config.defaultFormFactor)
+        assertEquals(FormFactor.UNKNOWN, config.defaultFormFactor)
     }
 
     @Test
@@ -26,7 +26,7 @@ class ParserConfigTest {
         assertEquals(false, config.useDefaultsForMissingFields)
         assertEquals("", config.defaultStringValue)
         assertEquals(0, config.defaultIntValue)
-        assertNull(config.defaultFormFactor)
+        assertEquals(FormFactor.UNKNOWN, config.defaultFormFactor)
     }
 
     @Test

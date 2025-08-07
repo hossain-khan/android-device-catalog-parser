@@ -18,6 +18,7 @@ class FormFactorTest {
         assertEquals(FormFactor.ANDROID_AUTOMOTIVE, FormFactor.fromValue("Android Automotive"))
         assertEquals(FormFactor.CHROMEBOOK, FormFactor.fromValue("Chromebook"))
         assertEquals(FormFactor.GOOGLE_PLAY_GAMES_ON_PC, FormFactor.fromValue("Google Play Games on PC"))
+        assertEquals(FormFactor.UNKNOWN, FormFactor.fromValue("Unknown"))
     }
 
     @Test
@@ -38,6 +39,7 @@ class FormFactorTest {
         assertEquals(FormFactor.ANDROID_AUTOMOTIVE, FormFactor.fromValueOrNull("Android Automotive"))
         assertEquals(FormFactor.CHROMEBOOK, FormFactor.fromValueOrNull("Chromebook"))
         assertEquals(FormFactor.GOOGLE_PLAY_GAMES_ON_PC, FormFactor.fromValueOrNull("Google Play Games on PC"))
+        assertEquals(FormFactor.UNKNOWN, FormFactor.fromValueOrNull("Unknown"))
     }
 
     @Test
@@ -58,6 +60,7 @@ class FormFactorTest {
                 "Android Automotive",
                 "Chromebook",
                 "Google Play Games on PC",
+                "Unknown",
             )
         assertEquals(expectedValues, FormFactor.getAllValues())
     }
@@ -84,6 +87,9 @@ class FormFactorTest {
 
         assertEquals("Google Play Games on PC", FormFactor.GOOGLE_PLAY_GAMES_ON_PC.value)
         assertEquals("PC platform for Android games", FormFactor.GOOGLE_PLAY_GAMES_ON_PC.description)
+
+        assertEquals("Unknown", FormFactor.UNKNOWN.value)
+        assertEquals("Unknown or unrecognized form factor", FormFactor.UNKNOWN.description)
     }
 
     @Test
@@ -98,6 +104,7 @@ class FormFactorTest {
                 FormFactor.ANDROID_AUTOMOTIVE,
                 FormFactor.CHROMEBOOK,
                 FormFactor.GOOGLE_PLAY_GAMES_ON_PC,
+                FormFactor.UNKNOWN,
             )
 
         val allFormFactors = FormFactor.values().toSet()
@@ -121,5 +128,6 @@ class FormFactorTest {
         assertEquals("ANDROID_AUTOMOTIVE", FormFactor.ANDROID_AUTOMOTIVE.name)
         assertEquals("CHROMEBOOK", FormFactor.CHROMEBOOK.name)
         assertEquals("GOOGLE_PLAY_GAMES_ON_PC", FormFactor.GOOGLE_PLAY_GAMES_ON_PC.name)
+        assertEquals("UNKNOWN", FormFactor.UNKNOWN.name)
     }
 }

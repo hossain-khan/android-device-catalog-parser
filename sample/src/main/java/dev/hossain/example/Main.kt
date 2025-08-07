@@ -301,8 +301,7 @@ fun writeDeviceListToJson(
         fun toJson(formFactor: FormFactor): String = formFactor.value
 
         @FromJson
-        fun fromJson(value: String): FormFactor =
-            FormFactor.fromValueOrNull(value) ?: FormFactor.UNKNOWN
+        fun fromJson(value: String): FormFactor = FormFactor.fromValueOrNull(value) ?: FormFactor.UNKNOWN
     }
 
     val moshi =

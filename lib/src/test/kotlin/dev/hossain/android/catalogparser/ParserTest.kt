@@ -259,53 +259,6 @@ class ParserTest {
         assertEquals(FormFactor.GOOGLE_PLAY_GAMES_ON_PC, actual[6].formFactor)
     }
 
-    @Test
-    fun `parseDeviceCatalogData handles unknown form factor gracefully`() {
-        val csvContent =
-            """
-            Brand,Device,Manufacturer,Model Name,RAM (TotalMem),Form Factor,System on Chip,GPU,Screen Sizes,Screen Densities,ABIs,Android SDK Versions,OpenGL ES Versions,Install base,User-perceived ANR rate,User-perceived crash rate
-            unknown,device1,Unknown,Unknown Device,1024MB,Unknown Form Factor,Unknown Chip,Unknown GPU,1920x1080,160,arm64-v8a,28,3.2,0,0.00%,0.00%
-            """.trimIndent()
-
-        val actual = Parser.parseDeviceCatalogData(csvContent)
-
-        // Should skip devices with unknown form factors
-        assertEquals(0, actual.size)
-    }
-
-    @Test
-    fun `parseDeviceCatalogData filters out devices with invalid form factors`() {
-        val csvContent =
-            """
-            Brand,Device,Manufacturer,Model Name,RAM (TotalMem),Form Factor,System on Chip,GPU,Screen Sizes,Screen Densities,ABIs,Android SDK Versions,OpenGL ES Versions,Install base,User-perceived ANR rate,User-perceived crash rate
-            google,coral,Google,Pixel 4 XL,5730MB,Phone,Qualcomm SDM855,Qualcomm Adreno 640 (585 MHz),1440x3040,560,arm64-v8a,33,3.2,0,0.00%,0.00%
-            unknown,device1,Unknown,Unknown Device,1024MB,Invalid Form Factor,Unknown Chip,Unknown GPU,1920x1080,160,arm64-v8a,28,3.2,0,0.00%,0.00%
-            samsung,tab1,Samsung,Galaxy Tab S7,8192MB,Tablet,Qualcomm SDM865+,Qualcomm Adreno 650,2560x1600,287,arm64-v8a,30,3.2,0,0.00%,0.00%
-            """.trimIndent()
-
-        val actual = Parser.parseDeviceCatalogData(csvContent)
-
-        // Should only parse valid form factors
-        assertEquals(2, actual.size)
-        assertEquals(FormFactor.PHONE, actual[0].formFactor)
-        assertEquals(FormFactor.TABLET, actual[1].formFactor)
-    }
-
-    @Test
-    fun `parseDeviceCatalogData maintains form factor case sensitivity`() {
-        val csvContent =
-            """
-            Brand,Device,Manufacturer,Model Name,RAM (TotalMem),Form Factor,System on Chip,GPU,Screen Sizes,Screen Densities,ABIs,Android SDK Versions,OpenGL ES Versions,Install base,User-perceived ANR rate,User-perceived crash rate
-            google,coral,Google,Pixel 4 XL,5730MB,phone,Qualcomm SDM855,Qualcomm Adreno 640 (585 MHz),1440x3040,560,arm64-v8a,33,3.2,0,0.00%,0.00%
-            samsung,tab1,Samsung,Galaxy Tab S7,8192MB,TABLET,Qualcomm SDM865+,Qualcomm Adreno 650,2560x1600,287,arm64-v8a,30,3.2,0,0.00%,0.00%
-            """.trimIndent()
-
-        val actual = Parser.parseDeviceCatalogData(csvContent)
-
-        // Should filter out case-mismatched form factors (FormFactor.fromCsvValueOrNull is case-sensitive)
-        assertEquals(0, actual.size)
-    }
-
     // endregion FormFactor Integration Tests
 
     // region Enhanced Parser Tests with Statistics
@@ -356,31 +309,6 @@ class ParserTest {
     }
 
     @Test
-    fun `parseDeviceCatalogDataWithStats tracks unknown form factors`() {
-        val csvContent =
-            """
-            Brand,Device,Manufacturer,Model Name,RAM (TotalMem),Form Factor,System on Chip,GPU,Screen Sizes,Screen Densities,ABIs,Android SDK Versions,OpenGL ES Versions,Install base,User-perceived ANR rate,User-perceived crash rate
-            google,coral,Google,Pixel 4 XL,5730MB,Phone,Qualcomm SDM855,Qualcomm Adreno 640 (585 MHz),1440x3040,560,arm64-v8a,33,3.2,0,0.00%,0.00%
-            unknown,device1,Unknown,Device 1,1024MB,Unknown Form,Unknown Chip,Unknown GPU,1920x1080,160,arm64-v8a,28,3.2,0,0.00%,0.00%
-            another,device2,Another,Device 2,2048MB,Invalid Type,Another Chip,Another GPU,1280x720,240,arm64-v8a,29,3.2,0,0.00%,0.00%
-            """.trimIndent()
-
-        val result = Parser.parseDeviceCatalogDataWithStats(csvContent)
-
-        assertEquals(3, result.totalRows)
-        assertEquals(1, result.successfulCount)
-        assertEquals(2, result.discardedCount)
-        assertEquals(33.33, result.successRate, 0.01)
-
-        val expectedReasons =
-            mapOf(
-                "Unknown form factor: Unknown Form" to 1,
-                "Unknown form factor: Invalid Type" to 1,
-            )
-        assertEquals(expectedReasons, result.discardReasons)
-    }
-
-    @Test
     fun `parseDeviceCatalogDataWithStats handles mixed validation failures`() {
         val csvContent =
             """
@@ -394,16 +322,15 @@ class ParserTest {
         val result = Parser.parseDeviceCatalogDataWithStats(csvContent)
 
         assertEquals(4, result.totalRows)
-        assertEquals(1, result.successfulCount)
-        assertEquals(3, result.discardedCount)
-        assertEquals(25.0, result.successRate)
+        assertEquals(2, result.successfulCount)
+        assertEquals(2, result.discardedCount)
+        assertEquals(50.0, result.successRate)
 
         val expectedReasons =
             mapOf(
                 "Missing required field: Brand" to 1,
                 "Missing required field: Device" to 1,
                 "Missing required field: RAM (TotalMem)" to 1,
-                "Unknown form factor: Unknown Form" to 1,
                 "Missing required field: Model Name" to 1,
                 "Missing required field: GPU" to 1,
             )
@@ -651,14 +578,11 @@ class ParserTest {
         val result = Parser.parseDeviceCatalogDataWithStats(csvContent, config)
 
         assertEquals(3, result.totalRows)
-        assertEquals(2, result.successfulCount) // Third row discarded due to unknown form factor
-        assertEquals(1, result.discardedCount)
-        assertEquals(66.67, result.successRate, 0.01)
+        assertEquals(3, result.successfulCount) // Third row discarded due to unknown form factor
+        assertEquals(0, result.discardedCount)
+        assertEquals(100.0, result.successRate, 0.01)
 
-        val expectedReasons =
-            mapOf(
-                "Unknown form factor: UnknownFormFactor" to 1,
-            )
+        val expectedReasons: Map<String, Int> = emptyMap()
         assertEquals(expectedReasons, result.discardReasons)
 
         // Verify the first row uses defaults for missing fields
