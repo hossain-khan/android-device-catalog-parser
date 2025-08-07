@@ -103,9 +103,9 @@ fun main() {
         ParserConfig
             .builder()
             .useDefaultsForMissingFields(true)
-            .defaultStringValue("N/A")
+            .defaultStringValue("Unknown")
             .defaultIntValue(0)
-            .defaultFormFactor(FormFactor.TABLET)
+            .defaultFormFactor(FormFactor.UNKNOWN)
             .build()
 
     val customResult = parser.parseDeviceCatalogDataWithStats(csvFileContent, customConfig)
@@ -165,7 +165,9 @@ fun main() {
     uniqueScreenDensities.forEach { println("  \"$it\"") }
 
     // Write the parsed AndroidDevice objects to a JSON file.
-    // writeDeviceListToJson(parsedDevices, "sample/src/main/resources/android-devices-catalog.json")
+    writeDeviceListToJson(parsedDevices, "sample/src/main/resources/android-devices-catalog.json")
+    // Writes unfiltered devices to JSON file
+    writeDeviceListToJson(parsedDevices, "sample/src/main/resources/android-devices-catalog-unfiltered.json")
 
     // Process the parsed devices into a SQLite database.
     // processRecordsToDb(parsedDevices)
@@ -321,7 +323,7 @@ fun validateJsonWithSchema(
     try {
         val jsonArray = JSONArray(jsonText)
         schema.validate(jsonArray) // Throws ValidationException if invalid
-        println("JSON validation passed successfully!")
+        println("JSON validation for '$jsonPath' passed successfully!")
     } catch (exception: JSONException) {
         System.err.println("Failed to parse JSON file '$jsonPath': ${exception.message}")
         throw exception
