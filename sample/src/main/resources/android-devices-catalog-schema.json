@@ -43,7 +43,17 @@
       },
       "formFactor": {
         "type": "string",
-        "description": "Device form factor (e.g., Phone, Tablet, TV, Wearable)."
+        "enum": [
+          "Phone",
+          "TV",
+          "Tablet",
+          "Android Automotive",
+          "Chromebook",
+          "Wearable",
+          "Google Play Games on PC",
+          "Unknown"
+        ],
+        "description": "Device form factor."
       },
       "processorName": {
         "type": "string",
@@ -67,6 +77,7 @@
         "type": "array",
         "items": {
           "type": "integer",
+          "minimum": 1,
           "description": "Screen density in dpi (e.g., 320)."
         },
         "minItems": 1,
@@ -76,6 +87,7 @@
         "type": "array",
         "items": {
           "type": "string",
+          "minLength": 1,
           "description": "Supported CPU ABIs (e.g., arm64-v8a, armeabi-v7a)."
         },
         "minItems": 1,
@@ -85,6 +97,7 @@
         "type": "array",
         "items": {
           "type": "integer",
+          "minimum": 1,
           "description": "Supported Android SDK versions (e.g., 30, 31)."
         },
         "minItems": 1,
