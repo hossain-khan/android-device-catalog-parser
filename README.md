@@ -160,10 +160,13 @@ Device catalog can always be downloaded from the [Google Play Console](https://p
 
 ### CSV
 Here is snapshot taken on August 2025
-* https://github.com/amardeshbd/android-device-catalog-parser/blob/main/lib/src/test/resources/android-devices-catalog.csv
+* `https://github.com/amardeshbd/android-device-catalog-parser/blob/main/lib/src/test/resources/android-devices-catalog.csv`
 
 ### JSON
 Here is the converted JSON of the snapshot above
 
-* https://github.com/amardeshbd/android-device-catalog-parser/blob/main/lib/src/test/resources/android-devices-catalog-min.json
-* https://github.com/amardeshbd/android-device-catalog-parser/blob/main/lib/src/test/resources/android-devices-catalog.json
+* `https://github.com/amardeshbd/android-device-catalog-parser/blob/main/lib/src/test/resources/android-devices-catalog-min.json`
+* `https://github.com/amardeshbd/android-device-catalog-parser/blob/main/lib/src/test/resources/android-devices-catalog.json`
+
+## 🌎 Sample App
+Take a look at [https://android-device.gohk.xyz/](https://android-device.gohk.xyz/) web app that loads device catalog and allows you to browse then and see some valiable stats 📊
