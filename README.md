@@ -90,6 +90,7 @@ Discard reasons:
   Unknown form factor: Desktop: 18
   Missing required field: RAM (TotalMem): 13
 ```
+
 </details>
 
 #### Advanced Configuration
