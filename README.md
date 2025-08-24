@@ -37,7 +37,7 @@ import dev.hossain.android.catalogparser.models.AndroidDevice
 val csvContent = // Your CSV content as String
 
 // Simple parsing - returns only successfully parsed devices
-val devices: List<AndroidDevice> = Parser.parseDeviceCatalogData(csvContent)
+val devices: List&lt;AndroidDevice&gt; = Parser.parseDeviceCatalogData(csvContent)
 println("Successfully parsed ${devices.size} devices")
 ```
 
