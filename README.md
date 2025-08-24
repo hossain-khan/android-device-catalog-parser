@@ -26,6 +26,7 @@ dependencies {
 ```
 
 #### Basic Usage
+
 <details><summary>The library provides a simple way to parse Android Device Catalog CSV files:</summary>
 
 ```kotlin
@@ -43,6 +44,7 @@ println("Successfully parsed ${devices.size} devices")
 </details>
 
 #### Enhanced Usage with Statistics
+
 <details><summary>For more insights into the parsing process, including information about discarded records:</summary>
 
 ```kotlin
@@ -91,6 +93,7 @@ Discard reasons:
 </details>
 
 #### Advanced Configuration
+
 <details><summary>Configure parser behavior for missing data and unknown values:</summary>
 
 ```kotlin
