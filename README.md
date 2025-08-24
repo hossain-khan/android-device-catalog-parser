@@ -45,7 +45,8 @@ println("Successfully parsed ${devices.size} devices")
 
 #### Enhanced Usage with Statistics
 
-<details><summary>For more insights into the parsing process, including information about discarded records:</summary>
+<details>
+<summary>For more insights into the parsing process, including information about discarded records:</summary>
 
 ```kotlin
 import dev.hossain.android.catalogparser.Parser
@@ -75,6 +76,7 @@ if (result.discardReasons.isNotEmpty()) {
 ```
 
 #### Example Output
+
 When parsing a CSV with mixed valid and invalid data:
 
 ```
@@ -95,7 +97,8 @@ Discard reasons:
 
 #### Advanced Configuration
 
-<details><summary>Configure parser behavior for missing data and unknown values:</summary>
+<details>
+<summary>Configure parser behavior for missing data and unknown values:</summary>
 
 ```kotlin
 import dev.hossain.android.catalogparser.Parser
