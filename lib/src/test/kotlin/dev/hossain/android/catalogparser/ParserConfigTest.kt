@@ -3,7 +3,6 @@ package dev.hossain.android.catalogparser
 import dev.hossain.android.catalogparser.models.FormFactor
 import kotlin.test.Test
 import kotlin.test.assertEquals
-import kotlin.test.assertNull
 
 /**
  * Tests the [ParserConfig] builder pattern and configuration options.

@@ -43,7 +43,7 @@ class ParserTest {
     }
 
     @Test
-    fun `given valid csv data with duplicate api levels - filters out duplicates`() {
+    fun `given valid csv data with multiple sdk versions - parses all sdk versions`() {
         val csvData: String =
             """
             Brand,Device,Manufacturer,Model Name,RAM (TotalMem),Form Factor,System on Chip,GPU,Screen Sizes,Screen Densities,ABIs,Android SDK Versions,OpenGL ES Versions,Install base,User-perceived ANR rate,User-perceived crash rate
@@ -58,7 +58,7 @@ class ParserTest {
     }
 
     @Test
-    fun `given valid csv data with duplicate abis - filters out duplicates`() {
+    fun `given valid csv data with multiple abis - parses all abis`() {
         val csvData: String =
             """
             Brand,Device,Manufacturer,Model Name,RAM (TotalMem),Form Factor,System on Chip,GPU,Screen Sizes,Screen Densities,ABIs,Android SDK Versions,OpenGL ES Versions,Install base,User-perceived ANR rate,User-perceived crash rate
@@ -74,6 +74,7 @@ class ParserTest {
 
     @Test
     fun `given valid csv data with duplicate opengl versions - filters out duplicates`() {
+        // This test verifies that duplicate OpenGL ES versions (3.1;3.2;3.1) are deduplicated
         val csvData: String =
             """
             Brand,Device,Manufacturer,Model Name,RAM (TotalMem),Form Factor,System on Chip,GPU,Screen Sizes,Screen Densities,ABIs,Android SDK Versions,OpenGL ES Versions,Install base,User-perceived ANR rate,User-perceived crash rate
@@ -117,7 +118,6 @@ class ParserTest {
 
         assertEquals("google", device.brand)
         assertEquals("coral", device.device)
-        assertEquals("Google", device.manufacturer)
         assertEquals("Google", device.manufacturer)
         assertEquals("Pixel 4 XL", device.modelName)
         assertEquals("5730MB", device.ram)
@@ -188,44 +188,6 @@ class ParserTest {
         val expected = emptyList<AndroidDevice>()
         val actual = Parser.parseDeviceCatalogData(csvContent)
         assertEquals(expected, actual)
-    }
-
-    @Test
-    fun `parseDeviceCatalogData returns list of AndroidDevice when csvContent is valid`() {
-        val csvContent =
-            """
-            Brand,Device,Manufacturer,Model Name,RAM (TotalMem),Form Factor,System on Chip,GPU,Screen Sizes,Screen Densities,ABIs,Android SDK Versions,OpenGL ES Versions,Install base,User-perceived ANR rate,User-perceived crash rate
-            google,coral,Google,Pixel 4 XL,5730MB,Phone,Qualcomm SDM855,Qualcomm Adreno 640 (585 MHz),1440x3040,560,arm64-v8a;armeabi;armeabi-v7a,33,3.2,0,0.00%,0.00%
-            """.trimIndent()
-        val actual = Parser.parseDeviceCatalogData(csvContent)
-        assertEquals(1, actual.size)
-    }
-
-    @Test
-    fun `parseDeviceCatalogData returns list of AndroidDevice with correct attributes when csvContent is valid`() {
-        val csvContent =
-            """
-            Brand,Device,Manufacturer,Model Name,RAM (TotalMem),Form Factor,System on Chip,GPU,Screen Sizes,Screen Densities,ABIs,Android SDK Versions,OpenGL ES Versions,Install base,User-perceived ANR rate,User-perceived crash rate
-            google,coral,Google,Pixel 4 XL,5730MB,Phone,Qualcomm SDM855,Qualcomm Adreno 640 (585 MHz),1440x3040,560,arm64-v8a;armeabi;armeabi-v7a,33,3.2,0,0.00%,0.00%
-            """.trimIndent()
-        val actual = Parser.parseDeviceCatalogData(csvContent)
-        val expectedDevice =
-            AndroidDevice(
-                brand = "google",
-                device = "coral",
-                manufacturer = "Google",
-                modelName = "Pixel 4 XL",
-                ram = "5730MB",
-                formFactor = FormFactor.PHONE,
-                processorName = "Qualcomm SDM855",
-                gpu = "Qualcomm Adreno 640 (585 MHz)",
-                screenSizes = listOf("1440x3040"),
-                screenDensities = listOf(560),
-                abis = listOf("arm64-v8a", "armeabi", "armeabi-v7a"),
-                sdkVersions = listOf(33),
-                openGlEsVersions = listOf("3.2"),
-            )
-        assertEquals(expectedDevice, actual[0])
     }
 
     // endregion Tests by AI

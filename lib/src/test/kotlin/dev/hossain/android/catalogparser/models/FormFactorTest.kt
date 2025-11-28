@@ -10,7 +10,7 @@ import kotlin.test.assertNull
  */
 class FormFactorTest {
     @Test
-    fun `fromCsvValue returns correct FormFactor for valid CSV values`() {
+    fun `fromValue returns correct FormFactor for valid values`() {
         assertEquals(FormFactor.PHONE, FormFactor.fromValue("Phone"))
         assertEquals(FormFactor.TABLET, FormFactor.fromValue("Tablet"))
         assertEquals(FormFactor.TV, FormFactor.fromValue("TV"))
@@ -23,6 +23,7 @@ class FormFactorTest {
 
     @Test
     fun `fromCsvValue throws IllegalArgumentException for invalid CSV value`() {
+        // Tests that fromValue throws for unknown values
         val exception =
             assertFailsWith<IllegalArgumentException> {
                 FormFactor.fromValue("Invalid Form Factor")
@@ -31,7 +32,7 @@ class FormFactorTest {
     }
 
     @Test
-    fun `fromCsvValueOrNull returns correct FormFactor for valid CSV values`() {
+    fun `fromValueOrNull returns correct FormFactor for valid values`() {
         assertEquals(FormFactor.PHONE, FormFactor.fromValueOrNull("Phone"))
         assertEquals(FormFactor.TABLET, FormFactor.fromValueOrNull("Tablet"))
         assertEquals(FormFactor.TV, FormFactor.fromValueOrNull("TV"))
@@ -44,13 +45,14 @@ class FormFactorTest {
 
     @Test
     fun `fromCsvValueOrNull returns null for invalid CSV value`() {
+        // Tests that fromValueOrNull returns null for unknown values
         assertNull(FormFactor.fromValueOrNull("Invalid Form Factor"))
         assertNull(FormFactor.fromValueOrNull(""))
         assertNull(FormFactor.fromValueOrNull("phone")) // case sensitive
     }
 
     @Test
-    fun `getAllCsvValues returns all CSV values`() {
+    fun `getAllValues returns all form factor values`() {
         val expectedValues =
             listOf(
                 "Phone",
@@ -66,7 +68,7 @@ class FormFactorTest {
     }
 
     @Test
-    fun `enum values have correct csvValue and description`() {
+    fun `enum values have correct value and description`() {
         assertEquals("Phone", FormFactor.PHONE.value)
         assertEquals("Smartphones and mobile phones", FormFactor.PHONE.description)
 
@@ -112,10 +114,10 @@ class FormFactorTest {
     }
 
     @Test
-    fun `CSV values are unique`() {
-        val csvValues = FormFactor.getAllValues()
-        val uniqueCsvValues = csvValues.toSet()
-        assertEquals(csvValues.size, uniqueCsvValues.size, "All CSV values should be unique")
+    fun `form factor values are unique`() {
+        val values = FormFactor.getAllValues()
+        val uniqueValues = values.toSet()
+        assertEquals(values.size, uniqueValues.size, "All form factor values should be unique")
     }
 
     @Test
