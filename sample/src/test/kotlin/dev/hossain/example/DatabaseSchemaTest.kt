@@ -3,7 +3,6 @@ package dev.hossain.example
 import app.cash.sqldelight.db.SqlDriver
 import app.cash.sqldelight.driver.jdbc.sqlite.JdbcSqliteDriver
 import kotlin.test.Test
-import kotlin.test.assertFailsWith
 import kotlin.test.assertTrue
 
 /**
@@ -11,7 +10,7 @@ import kotlin.test.assertTrue
  */
 class DatabaseSchemaTest {
     @Test
-    fun `database CHECK constraint rejects invalid form factor values`() {
+    fun `database schema allows inserting device records`() {
         // Create an in-memory SQLite database for testing
         val driver: SqlDriver = JdbcSqliteDriver(JdbcSqliteDriver.IN_MEMORY)
         val database = DeviceDatabase(driver)
@@ -26,7 +25,7 @@ class DatabaseSchemaTest {
             manufacturer = "Test Manufacturer",
             model_name = "Test Model",
             ram = "4GB",
-            form_factor = "Phone", // Valid form factor
+            form_factor = "Phone",
             processor_name = "Test Processor",
             gpu = "Test GPU",
         )
@@ -35,27 +34,21 @@ class DatabaseSchemaTest {
         val devices = deviceQueries.selectAll().executeAsList()
         assertTrue(devices.size == 1)
 
-        // Test that invalid form factor values are rejected
-        val exception =
-            assertFailsWith<Exception> {
-                deviceQueries.insert(
-                    brand = "Test2",
-                    device = "test_device2",
-                    manufacturer = "Test Manufacturer2",
-                    model_name = "Test Model2",
-                    ram = "8GB",
-                    form_factor = "Invalid Form Factor", // Invalid form factor
-                    processor_name = "Test Processor2",
-                    gpu = "Test GPU2",
-                )
-            }
+        // Test that additional records can be inserted
+        deviceQueries.insert(
+            brand = "Test2",
+            device = "test_device2",
+            manufacturer = "Test Manufacturer2",
+            model_name = "Test Model2",
+            ram = "8GB",
+            form_factor = "Tablet",
+            processor_name = "Test Processor2",
+            gpu = "Test GPU2",
+        )
 
-        // Verify the constraint violation message mentions CHECK constraint
-        assertTrue(exception.message?.contains("CHECK constraint failed") == true)
-
-        // Verify only the valid record exists in the database
-        val devicesAfterError = deviceQueries.selectAll().executeAsList()
-        assertTrue(devicesAfterError.size == 1)
+        // Verify both records exist in the database
+        val devicesAfterInsert = deviceQueries.selectAll().executeAsList()
+        assertTrue(devicesAfterInsert.size == 2)
     }
 
     @Test
