@@ -170,3 +170,5 @@ Here is the converted JSON of the snapshot above
 
 ## 🌎 Sample App
 Take a look at [https://android-device.gohk.xyz/](https://android-device.gohk.xyz/) web app that loads device catalog and allows you to browse then and see some valiable stats 📊
+
+You can also take a look into <img alt="google-play" src="https://github.com/user-attachments/assets/18725aa7-ea0b-4d6d-962a-e0358703041c" height="14"> [Android Device Universe](https://play.google.com/store/apps/details?id=dev.hossain.devicecatalog) app on the Google Play™
