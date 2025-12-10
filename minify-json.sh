@@ -1,6 +1,6 @@
 #!/bin/bash
 # minify-json.sh
-# Minifies JSON files in lib/src/test/resources/
+# Minifies JSON files in sample/src/main/resources/
 
 set -e
 
@@ -10,14 +10,14 @@ echo ""
 # Process android-devices-catalog.json
 echo "📄 Processing android-devices-catalog.json"
 echo "  🔍 Validating source JSON..."
-if jq empty lib/src/test/resources/android-devices-catalog.json 2>/dev/null; then
+if jq empty sample/src/main/resources/android-devices-catalog.json 2>/dev/null; then
     echo "  ✅ Source JSON is valid"
     echo "  🗜️  Minifying..."
-    jq -c . lib/src/test/resources/android-devices-catalog.json > lib/src/test/resources/android-devices-catalog-min.json
+    jq -c . sample/src/main/resources/android-devices-catalog.json > sample/src/main/resources/android-devices-catalog.min.json
     echo "  🔍 Validating minified JSON..."
-    if jq empty lib/src/test/resources/android-devices-catalog-min.json 2>/dev/null; then
+    if jq empty sample/src/main/resources/android-devices-catalog.min.json 2>/dev/null; then
         echo "  ✅ Minified JSON is valid"
-        echo "  ✅ Created android-devices-catalog-min.json"
+        echo "  ✅ Created android-devices-catalog.min.json"
     else
         echo "  ❌ ERROR: Minified JSON is invalid!"
         exit 1
@@ -32,14 +32,14 @@ echo ""
 # Process android-devices-catalog-unfiltered.json
 echo "📄 Processing android-devices-catalog-unfiltered.json"
 echo "  🔍 Validating source JSON..."
-if jq empty lib/src/test/resources/android-devices-catalog-unfiltered.json 2>/dev/null; then
+if jq empty sample/src/main/resources/android-devices-catalog-unfiltered.json 2>/dev/null; then
     echo "  ✅ Source JSON is valid"
     echo "  🗜️  Minifying..."
-    jq -c . lib/src/test/resources/android-devices-catalog-unfiltered.json > lib/src/test/resources/android-devices-catalog-unfiltered-min.json
+    jq -c . sample/src/main/resources/android-devices-catalog-unfiltered.json > sample/src/main/resources/android-devices-catalog-unfiltered.min.json
     echo "  🔍 Validating minified JSON..."
-    if jq empty lib/src/test/resources/android-devices-catalog-unfiltered-min.json 2>/dev/null; then
+    if jq empty sample/src/main/resources/android-devices-catalog-unfiltered.min.json 2>/dev/null; then
         echo "  ✅ Minified JSON is valid"
-        echo "  ✅ Created android-devices-catalog-unfiltered-min.json"
+        echo "  ✅ Created android-devices-catalog-unfiltered.min.json"
     else
         echo "  ❌ ERROR: Minified JSON is invalid!"
         exit 1
