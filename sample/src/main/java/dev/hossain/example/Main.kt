@@ -166,19 +166,22 @@ fun main() {
     println("Unique screen densities:")
     uniqueScreenDensities.forEach { println("  \"$it\"") }
 
-//    // Write the parsed AndroidDevice objects to a JSON file.
+//    /* Write the parsed AndroidDevice objects to a JSON file.*/
 //    writeDeviceListToJson(
 //        deviceList = parsedDevices,
 //        filePath = "sample/src/main/resources/android-devices-catalog.json"
 //    )
-//    // Writes unfiltered devices to JSON file
+//
+//    /* Writes unfiltered devices to JSON file */
 //    writeDeviceListToJson(
 //        deviceList = customResult.devices,
 //        filePath = "sample/src/main/resources/android-devices-catalog-unfiltered.json"
 //    )
-
-    // Process the parsed devices into a SQLite database.
-    // processRecordsToDb(parsedDevices)
+//
+//    println("\n⚠️  REMINDER: After generating JSON files, run './minify-json.sh' to create minified versions")
+//
+//     /* Process the parsed devices into a SQLite database. */
+//     processRecordsToDb(parsedDevices)
 }
 
 /**
