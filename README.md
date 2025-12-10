@@ -1,4 +1,4 @@
-![Kotlin CI with Gradle](https://github.com/amardeshbd/android-device-catalog-parser/workflows/Kotlin%20CI%20with%20Gradle/badge.svg) [![](https://jitpack.io/v/hossain-khan/android-device-catalog-parser.svg)](https://jitpack.io/#hossain-khan/android-device-catalog-parser)
+![Kotlin CI with Gradle](https://github.com/hossain-khan/android-device-catalog-parser/workflows/Kotlin%20CI%20with%20Gradle/badge.svg) [![](https://jitpack.io/v/hossain-khan/android-device-catalog-parser.svg)](https://jitpack.io/#hossain-khan/android-device-catalog-parser)
 
 
 # android-device-catalog-parser
@@ -149,9 +149,9 @@ val configResult = Parser.parseDeviceCatalogDataWithStats(csvContent, config)
 ![](https://user-images.githubusercontent.com/99822/99319610-cf3b1480-2837-11eb-8a60-532d974c2151.png)
 
 ### Java/Kotlin output
-The CSV is parsed into a list of `AndroidDevice` [class](https://github.com/amardeshbd/android-device-catalog-parser/blob/main/lib/src/main/kotlin/dev/hossain/android/catalogparser/models/AndroidDevice.kt).
+The CSV is parsed into a list of `AndroidDevice` [class](https://github.com/hossain-khan/android-device-catalog-parser/blob/main/lib/src/main/kotlin/dev/hossain/android/catalogparser/models/AndroidDevice.kt).
 
-Here is a snapshot of parsed [CSV file](https://github.com/amardeshbd/android-device-catalog-parser/blob/main/lib/src/test/resources/android-devices-catalog.csv)
+Here is a snapshot of parsed [CSV file](https://github.com/hossain-khan/android-device-catalog-parser/blob/main/lib/src/test/resources/android-devices-catalog.csv)
 ![](https://github.com/user-attachments/assets/616aaf39-c179-4847-b965-df226b266026)
 
 
@@ -160,13 +160,13 @@ Device catalog can always be downloaded from the [Google Play Console](https://p
 
 ### CSV
 Here is snapshot taken on August 2025
-* `https://github.com/amardeshbd/android-device-catalog-parser/blob/main/lib/src/test/resources/android-devices-catalog.csv`
+* https://hossain-khan.github.io/android-device-catalog-parser/lib/src/test/resources/android-devices-catalog.csv
 
 ### JSON
 Here is the converted JSON of the snapshot above
 
-* `https://github.com/amardeshbd/android-device-catalog-parser/blob/main/lib/src/test/resources/android-devices-catalog-min.json`
-* `https://github.com/amardeshbd/android-device-catalog-parser/blob/main/lib/src/test/resources/android-devices-catalog.json`
+* https://hossain-khan.github.io/android-device-catalog-parser/lib/src/test/resources/android-devices-catalog-min.json
+* https://hossain-khan.github.io/android-device-catalog-parser/lib/src/test/resources/android-devices-catalog.json
 
 ## 🌎 Sample App
 Take a look at [https://android-device.gohk.xyz/](https://android-device.gohk.xyz/) web app that loads device catalog and allows you to browse then and see some valiable stats 📊
