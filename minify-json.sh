@@ -5,12 +5,49 @@
 set -e
 
 echo "Minifying JSON files..."
+echo ""
 
-jq -c . lib/src/test/resources/android-devices-catalog.json > lib/src/test/resources/android-devices-catalog-min.json
-echo "✅ Created android-devices-catalog-min.json"
+# Process android-devices-catalog.json
+echo "📄 Processing android-devices-catalog.json"
+echo "  🔍 Validating source JSON..."
+if jq empty lib/src/test/resources/android-devices-catalog.json 2>/dev/null; then
+    echo "  ✅ Source JSON is valid"
+    echo "  🗜️  Minifying..."
+    jq -c . lib/src/test/resources/android-devices-catalog.json > lib/src/test/resources/android-devices-catalog-min.json
+    echo "  🔍 Validating minified JSON..."
+    if jq empty lib/src/test/resources/android-devices-catalog-min.json 2>/dev/null; then
+        echo "  ✅ Minified JSON is valid"
+        echo "  ✅ Created android-devices-catalog-min.json"
+    else
+        echo "  ❌ ERROR: Minified JSON is invalid!"
+        exit 1
+    fi
+else
+    echo "  ❌ ERROR: Source JSON is invalid!"
+    exit 1
+fi
 
-jq -c . lib/src/test/resources/android-devices-catalog-unfiltered.json > lib/src/test/resources/android-devices-catalog-unfiltered-min.json
-echo "✅ Created android-devices-catalog-unfiltered-min.json"
+echo ""
+
+# Process android-devices-catalog-unfiltered.json
+echo "📄 Processing android-devices-catalog-unfiltered.json"
+echo "  🔍 Validating source JSON..."
+if jq empty lib/src/test/resources/android-devices-catalog-unfiltered.json 2>/dev/null; then
+    echo "  ✅ Source JSON is valid"
+    echo "  🗜️  Minifying..."
+    jq -c . lib/src/test/resources/android-devices-catalog-unfiltered.json > lib/src/test/resources/android-devices-catalog-unfiltered-min.json
+    echo "  🔍 Validating minified JSON..."
+    if jq empty lib/src/test/resources/android-devices-catalog-unfiltered-min.json 2>/dev/null; then
+        echo "  ✅ Minified JSON is valid"
+        echo "  ✅ Created android-devices-catalog-unfiltered-min.json"
+    else
+        echo "  ❌ ERROR: Minified JSON is invalid!"
+        exit 1
+    fi
+else
+    echo "  ❌ ERROR: Source JSON is invalid!"
+    exit 1
+fi
 
 echo ""
 echo "✅ All JSON files minified successfully"
