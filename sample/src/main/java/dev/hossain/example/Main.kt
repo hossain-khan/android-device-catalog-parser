@@ -178,6 +178,8 @@ fun main() {
 //        filePath = "sample/src/main/resources/android-devices-catalog-unfiltered.json"
 //    )
 //
+//    println("\n⚠️  REMINDER: After generating JSON files, run './minify-json.sh' to create minified versions")
+//
 //     /* Process the parsed devices into a SQLite database. */
 //     processRecordsToDb(parsedDevices)
 }
