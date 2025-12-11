@@ -37,17 +37,8 @@ jobs:
 
       - name: Generate JSON files
         run: |
-          # Uncomment the JSON generation lines in Main.kt
-          sed -i 's|//    /\* Write the parsed AndroidDevice objects to a JSON file.\*/|    /* Write the parsed AndroidDevice objects to a JSON file.*/|' sample/src/main/java/dev/hossain/example/Main.kt
-          sed -i 's|//    writeDeviceListToJson(|    writeDeviceListToJson(|' sample/src/main/java/dev/hossain/example/Main.kt
-          sed -i 's|//        deviceList = parsedDevices,|        deviceList = parsedDevices,|' sample/src/main/java/dev/hossain/example/Main.kt
-          sed -i 's|//        filePath = "sample/src/main/resources/android-devices-catalog.json"|        filePath = "sample/src/main/resources/android-devices-catalog.json"|' sample/src/main/java/dev/hossain/example/Main.kt
-          sed -i 's|//    )|    )|' sample/src/main/java/dev/hossain/example/Main.kt
-          sed -i 's|//    /\* Writes unfiltered devices to JSON file \*/|    /* Writes unfiltered devices to JSON file */|' sample/src/main/java/dev/hossain/example/Main.kt
-          sed -i 's|//        deviceList = customResult.devices,|        deviceList = customResult.devices,|' sample/src/main/java/dev/hossain/example/Main.kt
-          sed -i 's|//        filePath = "sample/src/main/resources/android-devices-catalog-unfiltered.json"|        filePath = "sample/src/main/resources/android-devices-catalog-unfiltered.json"|' sample/src/main/java/dev/hossain/example/Main.kt
-          
           # Run the sample application to generate JSON files
+          # Note: The JSON generation code is enabled by default in Main.kt
           ./gradlew :sample:run
 
       - name: Minify JSON files
