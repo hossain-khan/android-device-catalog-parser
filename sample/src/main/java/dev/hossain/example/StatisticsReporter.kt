@@ -41,6 +41,12 @@ class StatisticsReporter {
         println("\n=== Device Catalog Summary ===")
         println("Total devices: ${devices.size}")
 
+        if (devices.isEmpty()) {
+            println("No devices to summarize.")
+            println("==============================\n")
+            return
+        }
+
         // Form factor distribution
         val formFactorCounts = devices.groupingBy { it.formFactor }.eachCount()
         println("\nForm Factor Distribution:")
@@ -98,9 +104,13 @@ class StatisticsReporter {
                 ),
             )
         println("\nScreen Size Range (${sortedScreenSizes.size} unique):")
-        if (sortedScreenSizes.isNotEmpty()) {
-            println("  • Smallest: ${sortedScreenSizes.first()}")
-            println("  • Largest: ${sortedScreenSizes.last()}")
+        when {
+            sortedScreenSizes.isEmpty() -> println("  • No screen sizes available")
+            sortedScreenSizes.size == 1 -> println("  • ${sortedScreenSizes.first()}")
+            else -> {
+                println("  • Smallest: ${sortedScreenSizes.first()}")
+                println("  • Largest: ${sortedScreenSizes.last()}")
+            }
         }
 
         // ABIs

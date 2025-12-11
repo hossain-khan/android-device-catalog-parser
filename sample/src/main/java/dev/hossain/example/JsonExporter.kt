@@ -94,7 +94,7 @@ class JsonExporter {
             schema.validate(jsonArray)
             println("✓ JSON validation passed: $jsonPath")
         } catch (exception: JSONException) {
-            System.err.println("✗ JSON validation failed for '$jsonPath': ${exception.message}")
+            System.err.println("✗ JSON validation failed for '$jsonPath' using schema '$schemaPath': ${exception.message}")
             throw exception
         }
     }

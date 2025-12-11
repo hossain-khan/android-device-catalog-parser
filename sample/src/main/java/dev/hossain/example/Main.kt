@@ -14,10 +14,15 @@ import java.util.Date
  * - Parser configuration options
  */
 fun main() {
-    println("╔═══════════════════════════════════════════════════════╗")
-    println("║   Android Device Catalog Parser - Sample App         ║")
-    println("║   Run on: ${Date()}   ║")
-    println("╚═══════════════════════════════════════════════════════╝\n")
+    val title = "Android Device Catalog Parser - Sample App"
+    val timestamp = "Run on: ${Date()}"
+    val boxWidth = maxOf(title.length, timestamp.length) + 4
+    val horizontalBorder = "═".repeat(boxWidth)
+
+    println("╔$horizontalBorder╗")
+    println("║  ${title.padEnd(boxWidth - 2)}║")
+    println("║  ${timestamp.padEnd(boxWidth - 2)}║")
+    println("╚$horizontalBorder╝\n")
 
     // Initialize components
     val parser = DeviceCatalogParser()

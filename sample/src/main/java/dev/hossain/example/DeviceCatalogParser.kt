@@ -41,11 +41,15 @@ class DeviceCatalogParser {
      *
      * @param resourcePath Path to the CSV file in resources
      * @return CSV content as string
+     * @throws IllegalArgumentException if resource file is not found
      */
-    fun loadCsvFromResources(resourcePath: String): String =
-        object {}
-            .javaClass
-            .getResourceAsStream(resourcePath)!!
-            .bufferedReader()
-            .readText()
+    fun loadCsvFromResources(resourcePath: String): String {
+        val inputStream =
+            object {}
+                .javaClass
+                .getResourceAsStream(resourcePath)
+                ?: throw IllegalArgumentException("Resource file not found: $resourcePath")
+
+        return inputStream.bufferedReader().readText()
+    }
 }
