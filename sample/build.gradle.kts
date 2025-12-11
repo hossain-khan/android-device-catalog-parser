@@ -46,6 +46,11 @@ application {
     mainClass.set("dev.hossain.example.MainKt")
 }
 
+// Configure the run task to use project root as working directory
+tasks.named<JavaExec>("run") {
+    workingDir = rootProject.projectDir
+}
+
 kotlinter {
     ktlintVersion = "1.7.1"
     // Due to generated code at sample/build/generated/sqldelight/code

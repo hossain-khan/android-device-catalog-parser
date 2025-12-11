@@ -166,19 +166,19 @@ fun main() {
     println("Unique screen densities:")
     uniqueScreenDensities.forEach { println("  \"$it\"") }
 
-   /* Write the parsed AndroidDevice objects to a JSON file.*/
-   writeDeviceListToJson(
-       deviceList = parsedDevices,
-       filePath = "sample/src/main/resources/android-devices-catalog.json"
-   )
+    // Write the parsed AndroidDevice objects to a JSON file.
+    writeDeviceListToJson(
+        deviceList = parsedDevices,
+        filePath = "sample/src/main/resources/android-devices-catalog.json",
+    )
 
-   /* Writes unfiltered devices to JSON file */
-   writeDeviceListToJson(
-       deviceList = customResult.devices,
-       filePath = "sample/src/main/resources/android-devices-catalog-unfiltered.json"
-   )
+    // Writes unfiltered devices to JSON file
+    writeDeviceListToJson(
+        deviceList = customResult.devices,
+        filePath = "sample/src/main/resources/android-devices-catalog-unfiltered.json",
+    )
 
-   println("\n⚠️  REMINDER: After generating JSON files, run './minify-json.sh' to create minified versions")
+    println("\n⚠️  REMINDER: After generating JSON files, run './minify-json.sh' to create minified versions")
 //
 //     /* Process the parsed devices into a SQLite database. */
 //     processRecordsToDb(parsedDevices)
@@ -318,7 +318,11 @@ fun writeDeviceListToJson(
     val adapter = moshi.adapter<List<AndroidDevice>>(type).indent("    ")
     val json = adapter.toJson(deviceList)
 
-    BufferedWriter(FileWriter(filePath)).use { out ->
+    // Ensure parent directory exists before writing
+    val file = File(filePath)
+    file.parentFile?.mkdirs()
+
+    BufferedWriter(FileWriter(file)).use { out ->
         out.write(json)
     }
 
@@ -329,8 +333,11 @@ fun validateJsonWithSchema(
     jsonPath: String,
     schemaPath: String,
 ) {
-    val jsonText = Files.readString(Paths.get(jsonPath))
-    val schemaText = Files.readString(Paths.get(schemaPath))
+    val jsonFile = File(jsonPath)
+    val schemaFile = File(schemaPath)
+
+    val jsonText = Files.readString(jsonFile.toPath())
+    val schemaText = Files.readString(schemaFile.toPath())
 
     // Load schema as JSONObject
     val schemaJson = JSONObject(schemaText)
