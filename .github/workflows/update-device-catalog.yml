@@ -136,6 +136,15 @@ jobs:
             ---
             
             **Please review the changes and merge if everything looks good.**
+            
+            ## ⚡ Trigger CI Workflows (Do This First)
+            
+            Since this PR was created by a bot, CI workflows won't trigger automatically. To trigger them:
+            
+            ```sh
+            git fetch && git checkout update-catalog-${{ steps.date.outputs.date }}
+            git commit --allow-empty -m "chore: trigger CI workflows" && git push
+            ```
           labels: |
             automated
             data-update
