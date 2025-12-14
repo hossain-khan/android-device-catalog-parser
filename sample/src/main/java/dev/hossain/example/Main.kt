@@ -2,6 +2,7 @@ package dev.hossain.example
 
 import dev.hossain.android.catalogparser.ParserConfig
 import dev.hossain.android.catalogparser.models.FormFactor
+import java.io.File
 import java.util.Date
 
 /**
@@ -76,6 +77,14 @@ fun main() {
 
     // Reminder for minification
     println("⚠️  REMINDER: Run './minify-json.sh' to create minified JSON versions\n")
+
+    // Generate DATA_SUMMARY.md
+    println("=== Generating DATA_SUMMARY.md ===")
+    val summaryGenerator = DataSummaryGenerator()
+    val summaryContent = summaryGenerator.generateSummary(devices)
+    File("DATA_SUMMARY.md").writeText(summaryContent)
+    println("✓ Generated DATA_SUMMARY.md")
+    println("==================================\n")
 
     println("✓ Sample application completed successfully!")
 }
