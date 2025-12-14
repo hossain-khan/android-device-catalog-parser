@@ -1,0 +1,29 @@
+{
+  "catalogExportDate": "2025-12-14T06:07:55Z",
+  "totalRecords": 23225,
+  "totalUnfilteredRecords": 24696,
+  "catalogs": {
+    "filtered": {
+      "json": "https://hossain-khan.github.io/android-device-catalog-parser/catalog-data/android-devices-catalog.json",
+      "minified": "https://hossain-khan.github.io/android-device-catalog-parser/catalog-data/android-devices-catalog.min.json",
+      "description": "Filtered catalog with only devices that have complete data"
+    },
+    "unfiltered": {
+      "json": "https://hossain-khan.github.io/android-device-catalog-parser/catalog-data/android-devices-catalog-unfiltered.json",
+      "minified": "https://hossain-khan.github.io/android-device-catalog-parser/catalog-data/android-devices-catalog-unfiltered.min.json",
+      "description": "Unfiltered catalog including devices with missing or incomplete data"
+    },
+    "csv": {
+      "url": "https://hossain-khan.github.io/android-device-catalog-parser/catalog-data/android-devices-catalog.csv",
+      "description": "Original CSV data from Google Play Console device catalog"
+    }
+  },
+  "schema": {
+    "url": "https://raw.githubusercontent.com/hossain-khan/android-device-catalog-parser/main/sample/src/main/resources/android-devices-catalog-schema.json",
+    "description": "JSON Schema for device catalog validation"
+  },
+  "repository": {
+    "url": "https://github.com/hossain-khan/android-device-catalog-parser",
+    "documentation": "https://github.com/hossain-khan/android-device-catalog-parser#readme"
+  }
+}

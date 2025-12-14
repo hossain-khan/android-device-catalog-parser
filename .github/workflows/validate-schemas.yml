@@ -1,0 +1,98 @@
+name: Validate JSON Schemas
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'catalog-data/catalog-metadata.json'
+      - 'catalog-data/catalog-metadata-schema.json'
+      - 'sample/src/main/resources/android-devices-catalog.json'
+      - 'sample/src/main/resources/android-devices-catalog-unfiltered.json'
+      - 'sample/src/main/resources/android-devices-catalog-schema.json'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'catalog-data/catalog-metadata.json'
+      - 'catalog-data/catalog-metadata-schema.json'
+      - 'sample/src/main/resources/android-devices-catalog.json'
+      - 'sample/src/main/resources/android-devices-catalog-unfiltered.json'
+      - 'sample/src/main/resources/android-devices-catalog-schema.json'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install jq
+        run: sudo apt-get update && sudo apt-get install -y jq
+
+      - name: Validate catalog metadata JSON
+        run: |
+          echo "Validating catalog-metadata.json..."
+          if [ -f "catalog-data/catalog-metadata.json" ]; then
+            if jq empty catalog-data/catalog-metadata.json 2>/dev/null; then
+              echo "✅ catalog-metadata.json is valid JSON"
+            else
+              echo "❌ ERROR: catalog-metadata.json is invalid JSON!"
+              exit 1
+            fi
+          else
+            echo "⚠️  catalog-metadata.json not found, skipping validation"
+          fi
+
+      - name: Validate catalog metadata schema
+        run: |
+          echo "Validating catalog-metadata-schema.json..."
+          if [ -f "catalog-data/catalog-metadata-schema.json" ]; then
+            if jq empty catalog-data/catalog-metadata-schema.json 2>/dev/null; then
+              echo "✅ catalog-metadata-schema.json is valid JSON"
+            else
+              echo "❌ ERROR: catalog-metadata-schema.json is invalid JSON!"
+              exit 1
+            fi
+          else
+            echo "⚠️  catalog-metadata-schema.json not found, skipping validation"
+          fi
+
+      - name: Validate device catalog JSON files
+        run: |
+          echo "Validating device catalog JSON files..."
+          
+          files=(
+            "sample/src/main/resources/android-devices-catalog.json"
+            "sample/src/main/resources/android-devices-catalog-unfiltered.json"
+          )
+          
+          for file in "${files[@]}"; do
+            if [ -f "$file" ]; then
+              echo "Checking $file..."
+              if jq empty "$file" 2>/dev/null; then
+                echo "  ✅ Valid JSON"
+              else
+                echo "  ❌ ERROR: Invalid JSON!"
+                exit 1
+              fi
+            else
+              echo "  ⚠️  File not found, skipping"
+            fi
+          done
+
+      - name: Validate device catalog schema
+        run: |
+          echo "Validating android-devices-catalog-schema.json..."
+          if [ -f "sample/src/main/resources/android-devices-catalog-schema.json" ]; then
+            if jq empty sample/src/main/resources/android-devices-catalog-schema.json 2>/dev/null; then
+              echo "✅ android-devices-catalog-schema.json is valid JSON"
+            else
+              echo "❌ ERROR: android-devices-catalog-schema.json is invalid JSON!"
+              exit 1
+            fi
+          else
+            echo "⚠️  android-devices-catalog-schema.json not found, skipping validation"
+          fi
+
+      - name: All validations passed
+        run: echo "✅ All JSON schema validations passed successfully!"

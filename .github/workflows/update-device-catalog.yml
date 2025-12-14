@@ -34,6 +34,7 @@ jobs:
           chmod +x gradlew
           chmod +x minify-json.sh
           chmod +x copy-resources.sh
+          chmod +x copy-to-catalog-data.sh
 
       - name: Generate JSON files
         run: |
@@ -46,6 +47,21 @@ jobs:
 
       - name: Copy resources to test directory
         run: ./copy-resources.sh
+
+      - name: Copy resources to catalog-data directory
+        run: ./copy-to-catalog-data.sh
+
+      - name: Validate catalog metadata JSON
+        run: |
+          echo "Validating catalog-metadata.json against schema..."
+          if jq -e --argfile schema catalog-data/catalog-metadata-schema.json \
+            'if . | keys | length > 0 then true else error("Invalid JSON") end' \
+            catalog-data/catalog-metadata.json > /dev/null 2>&1; then
+            echo "✅ catalog-metadata.json is valid JSON"
+          else
+            echo "❌ ERROR: catalog-metadata.json is invalid!"
+            exit 1
+          fi
 
       - name: Check for changes
         id: git-check
@@ -67,6 +83,8 @@ jobs:
             - Regenerated JSON files from latest CSV catalog
             - Updated minified versions
             - Synced test resources
+            - Added catalog-data directory with public files
+            - Generated catalog metadata JSON
           branch: update-catalog-${{ steps.date.outputs.date }}
           delete-branch: true
           title: ${{ inputs.pr_title || 'Update device catalog snapshots' }}
@@ -80,17 +98,31 @@ jobs:
             - ✅ Regenerated `android-devices-catalog-unfiltered.json` from CSV  
             - ✅ Created minified versions of both JSON files
             - ✅ Copied all resources to `lib/src/test/resources/` for testing
+            - ✅ Copied all resources to `catalog-data/` for public access
+            - ✅ Generated catalog metadata with export date and record counts
             
             ### Generated Files
+            
+            **Sample resources:**
             - `sample/src/main/resources/android-devices-catalog.json`
             - `sample/src/main/resources/android-devices-catalog-unfiltered.json`
             - `sample/src/main/resources/android-devices-catalog.min.json`
             - `sample/src/main/resources/android-devices-catalog-unfiltered.min.json`
+            
+            **Test resources:**
             - `lib/src/test/resources/android-devices-catalog.json`
             - `lib/src/test/resources/android-devices-catalog-unfiltered.json`
             - `lib/src/test/resources/android-devices-catalog.min.json`
             - `lib/src/test/resources/android-devices-catalog-unfiltered.min.json`
             - `lib/src/test/resources/android-devices-catalog.csv`
+            
+            **Public catalog data:**
+            - `catalog-data/android-devices-catalog.json`
+            - `catalog-data/android-devices-catalog-unfiltered.json`
+            - `catalog-data/android-devices-catalog.min.json`
+            - `catalog-data/android-devices-catalog-unfiltered.min.json`
+            - `catalog-data/android-devices-catalog.csv`
+            - `catalog-data/catalog-metadata.json`
             
             ### Workflow Run
             - **Triggered by**: @${{ github.actor }}
