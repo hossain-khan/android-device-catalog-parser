@@ -39,8 +39,8 @@ copy_file "android-devices-catalog.csv"
 echo ""
 echo "Generating catalog metadata..."
 
-# Get current date in ISO 8601 format
-EXPORT_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+# Get current date in ISO 8601 format (portable across Unix systems)
+EXPORT_DATE=$(TZ=UTC date +"%Y-%m-%dT%H:%M:%SZ")
 
 # Count total records in the main catalog JSON (array length)
 TOTAL_RECORDS=0

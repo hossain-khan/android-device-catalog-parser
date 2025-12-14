@@ -174,11 +174,11 @@ The `catalog-metadata.json` file provides information about the catalog includin
 For backward compatibility, catalog data is also available at:
 
 ### CSV
-Here is snapshot taken on August 2025
+Snapshot of device catalog from Google Play Console
 * https://hossain-khan.github.io/android-device-catalog-parser/lib/src/test/resources/android-devices-catalog.csv
 
 ### JSON
-Here is the converted JSON of the snapshot above
+Converted JSON format of the device catalog snapshot
 
 * https://hossain-khan.github.io/android-device-catalog-parser/lib/src/test/resources/android-devices-catalog-min.json
 * https://hossain-khan.github.io/android-device-catalog-parser/lib/src/test/resources/android-devices-catalog.json
