@@ -174,3 +174,7 @@ The `catalog-metadata.json` file provides information about the catalog includin
 Take a look at [https://android-device.gohk.xyz/](https://android-device.gohk.xyz/) web app that loads device catalog and allows you to browse then and see some valiable stats 📊
 
 You can also take a look into <img alt="google-play" src="https://github.com/user-attachments/assets/18725aa7-ea0b-4d6d-962a-e0358703041c" height="14"> [Android Device Universe](https://play.google.com/store/apps/details?id=dev.hossain.devicecatalog) app on the Google Play™
+
+## 📖 Updating Data Snapshot
+The update catalog to latest snapshot, ⬇️ download CSV and overwrite **`android-devices-catalog.csv`** located in [sample/src/main/resources](https://github.com/hossain-khan/android-device-catalog-parser/tree/main/sample/src/main/resources).
+Once done, run [Update Catalog](https://github.com/hossain-khan/android-device-catalog-parser/actions/workflows/update-device-catalog.yml) workflow 🪄
