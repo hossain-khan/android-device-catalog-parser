@@ -56,10 +56,14 @@ jobs:
       - name: Validate catalog metadata JSON
         run: |
           echo "Validating catalog-metadata.json against schema..."
+          echo ""
           if ajv validate -s catalog-data/catalog-metadata-schema.json -d catalog-data/catalog-metadata.json --strict=false; then
+            echo ""
             echo "✅ catalog-metadata.json is valid according to schema"
           else
+            echo ""
             echo "❌ ERROR: catalog-metadata.json validation failed!"
+            echo "See validation errors above ☝️"
             exit 1
           fi
 
