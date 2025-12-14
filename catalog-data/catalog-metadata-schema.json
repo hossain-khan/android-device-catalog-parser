@@ -1,0 +1,133 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CatalogMetadata",
+  "description": "Metadata about the Android Device Catalog including export information, record counts, and access URLs.",
+  "type": "object",
+  "required": [
+    "catalogExportDate",
+    "totalRecords",
+    "totalUnfilteredRecords",
+    "catalogs",
+    "schema",
+    "repository"
+  ],
+  "properties": {
+    "catalogExportDate": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 formatted date-time when the catalog was exported."
+    },
+    "totalRecords": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Total number of records in the filtered catalog."
+    },
+    "totalUnfilteredRecords": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Total number of records in the unfiltered catalog."
+    },
+    "catalogs": {
+      "type": "object",
+      "required": ["filtered", "unfiltered", "csv"],
+      "properties": {
+        "filtered": {
+          "type": "object",
+          "required": ["json", "minified", "description"],
+          "properties": {
+            "json": {
+              "type": "string",
+              "format": "uri",
+              "description": "URL to the filtered catalog JSON file."
+            },
+            "minified": {
+              "type": "string",
+              "format": "uri",
+              "description": "URL to the minified filtered catalog JSON file."
+            },
+            "description": {
+              "type": "string",
+              "description": "Description of the filtered catalog."
+            }
+          },
+          "additionalProperties": false
+        },
+        "unfiltered": {
+          "type": "object",
+          "required": ["json", "minified", "description"],
+          "properties": {
+            "json": {
+              "type": "string",
+              "format": "uri",
+              "description": "URL to the unfiltered catalog JSON file."
+            },
+            "minified": {
+              "type": "string",
+              "format": "uri",
+              "description": "URL to the minified unfiltered catalog JSON file."
+            },
+            "description": {
+              "type": "string",
+              "description": "Description of the unfiltered catalog."
+            }
+          },
+          "additionalProperties": false
+        },
+        "csv": {
+          "type": "object",
+          "required": ["url", "description"],
+          "properties": {
+            "url": {
+              "type": "string",
+              "format": "uri",
+              "description": "URL to the CSV catalog file."
+            },
+            "description": {
+              "type": "string",
+              "description": "Description of the CSV catalog."
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false,
+      "description": "URLs to different catalog format variations."
+    },
+    "schema": {
+      "type": "object",
+      "required": ["url", "description"],
+      "properties": {
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "description": "URL to the JSON Schema for device catalog validation."
+        },
+        "description": {
+          "type": "string",
+          "description": "Description of the schema."
+        }
+      },
+      "additionalProperties": false,
+      "description": "Schema information for the device catalog."
+    },
+    "repository": {
+      "type": "object",
+      "required": ["url", "documentation"],
+      "properties": {
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "description": "URL to the GitHub repository."
+        },
+        "documentation": {
+          "type": "string",
+          "format": "uri",
+          "description": "URL to the repository documentation."
+        }
+      },
+      "additionalProperties": false,
+      "description": "Repository information and documentation links."
+    }
+  },
+  "additionalProperties": false
+}
