@@ -6,6 +6,10 @@ on:
     paths:
       - 'catalog-data/catalog-metadata.json'
       - 'catalog-data/catalog-metadata-schema.json'
+      - 'catalog-data/android-devices-catalog.json'
+      - 'catalog-data/android-devices-catalog-unfiltered.json'
+      - 'catalog-data/android-devices-catalog.min.json'
+      - 'catalog-data/android-devices-catalog-unfiltered.min.json'
       - 'sample/src/main/resources/android-devices-catalog.json'
       - 'sample/src/main/resources/android-devices-catalog-unfiltered.json'
       - 'sample/src/main/resources/android-devices-catalog-schema.json'
@@ -14,6 +18,10 @@ on:
     paths:
       - 'catalog-data/catalog-metadata.json'
       - 'catalog-data/catalog-metadata-schema.json'
+      - 'catalog-data/android-devices-catalog.json'
+      - 'catalog-data/android-devices-catalog-unfiltered.json'
+      - 'catalog-data/android-devices-catalog.min.json'
+      - 'catalog-data/android-devices-catalog-unfiltered.min.json'
       - 'sample/src/main/resources/android-devices-catalog.json'
       - 'sample/src/main/resources/android-devices-catalog-unfiltered.json'
       - 'sample/src/main/resources/android-devices-catalog-schema.json'
@@ -64,6 +72,10 @@ jobs:
           files=(
             "sample/src/main/resources/android-devices-catalog.json"
             "sample/src/main/resources/android-devices-catalog-unfiltered.json"
+            "catalog-data/android-devices-catalog.json"
+            "catalog-data/android-devices-catalog-unfiltered.json"
+            "catalog-data/android-devices-catalog.min.json"
+            "catalog-data/android-devices-catalog-unfiltered.min.json"
           )
           
           for file in "${files[@]}"; do
