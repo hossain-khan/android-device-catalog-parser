@@ -158,6 +158,21 @@ Here is a snapshot of parsed [CSV file](https://github.com/hossain-khan/android-
 ## Snapshot Files
 Device catalog can always be downloaded from the [Google Play Console](https://play.google.com/console/about/devicecatalog/)
 
+### Catalog Data Directory (Recommended)
+The latest catalog data is available in the `catalog-data/` directory with metadata:
+
+* **Metadata**: https://hossain-khan.github.io/android-device-catalog-parser/catalog-data/catalog-metadata.json
+* **CSV**: https://hossain-khan.github.io/android-device-catalog-parser/catalog-data/android-devices-catalog.csv
+* **JSON (Filtered)**: https://hossain-khan.github.io/android-device-catalog-parser/catalog-data/android-devices-catalog.json
+* **JSON (Filtered, Minified)**: https://hossain-khan.github.io/android-device-catalog-parser/catalog-data/android-devices-catalog.min.json
+* **JSON (Unfiltered)**: https://hossain-khan.github.io/android-device-catalog-parser/catalog-data/android-devices-catalog-unfiltered.json
+* **JSON (Unfiltered, Minified)**: https://hossain-khan.github.io/android-device-catalog-parser/catalog-data/android-devices-catalog-unfiltered.min.json
+
+The `catalog-metadata.json` file provides information about the catalog including export date, total records, and URLs to all catalog variations.
+
+### Legacy Paths
+For backward compatibility, catalog data is also available at:
+
 ### CSV
 Here is snapshot taken on August 2025
 * https://hossain-khan.github.io/android-device-catalog-parser/lib/src/test/resources/android-devices-catalog.csv
