@@ -2,6 +2,7 @@ package dev.hossain.example
 
 import dev.hossain.android.catalogparser.ParserConfig
 import dev.hossain.android.catalogparser.models.FormFactor
+import java.io.File
 import java.util.Date
 
 /**
@@ -81,7 +82,7 @@ fun main() {
     println("=== Generating DATA_SUMMARY.md ===")
     val summaryGenerator = DataSummaryGenerator()
     val summaryContent = summaryGenerator.generateSummary(devices)
-    java.io.File("DATA_SUMMARY.md").writeText(summaryContent)
+    File("DATA_SUMMARY.md").writeText(summaryContent)
     println("✓ Generated DATA_SUMMARY.md")
     println("==================================\n")
 
