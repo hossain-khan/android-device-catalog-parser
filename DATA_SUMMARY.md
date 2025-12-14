@@ -1,45 +1,26 @@
-The data summarizes information from a catalog of devices, specifically **22,751 devices** were parsed from a CSV file.
+The data summarizes information from a catalog of devices, specifically **23206 devices** were parsed from a CSV file.
 
 The devices are categorized into several form factors:
-*   **Phones**: 14,297 devices
-*   **Tablets**: 6,015 devices
-*   **TVs**: 2,248 devices
-*   **Wearables**: 118 devices
+*   **Phones**: 14,130 devices
+*   **Tablets**: 6,360 devices
+*   **TVs**: 2,519 devices
+*   **Wearables**: 122 devices
 *   **Chromebooks**: 53 devices
-*   **Android Automotive**: 19 devices
-*   **Google Play Games on PC**: 1 device
+*   **Android Automotive**: 21 devices
+*   **Google Play Games on PC**: 1 devices
 
 The catalog includes a wide variety of components and specifications:
-*   **Unique Processors**: The data lists a comprehensive range of unique processors from various manufacturers. Prominent processor brands include:
-    *   **Mediatek**: This manufacturer has a very extensive list of unique processors, including numerous MT series (e.g., MT6570, MT6761, MT6833, MT8183, MT8768) and t-series (e.g., t30, t56).
-    *   **Qualcomm**: Many unique Snapdragon (SM, SDM, QCM, QCS) and MSM/APQ series processors are listed (e.g., MSM8974, SDM660, SM8550).
-    *   **Samsung**: Various Exynos series (e.g., Exynos 2100, Exynos 7885, Exynos 990) and S5E series processors are present (e.g., S5E5515, s5e8845).
-    *   **HiSilicon**: Features KIRIN series processors (e.g., KIRIN650, KIRIN970).
-    *   **Intel**: Includes a range of Intel Core i-series (e.g., i3-10110U, i7-5500U) and N-series processors (e.g., N100, N4500).
-    *   **Allwinner**: Several A-series and T-series processors are noted (e.g., A100, A523, T501).
-    *   **Rockchip**: Features RK series processors (e.g., RK3128, RK3399, RK3588).
-    *   **Spreadtrum**: A large number of SC, T, and UMS series processors are listed (e.g., SC7731, T616, UMS9230).
-    *   **Amlogic**: Includes AML series processors (e.g., AMLS905X, AMLT962X).
-    *   **NVidia**: Features Tegra series GPUs (e.g., Tegra 3 AP33, Tegra X1 T210).
-    *   Other less frequent manufacturers include AMD, Broadcom, Google (Tensor), Marvell, MStar, NXP, Realtek, Socionext, Synaptics, and TI.
+*   **Unique Processors**: 698
 
-*   **Unique GPUs**: A diverse array of GPUs from various manufacturers are identified. Key types include:
-    *   **ARM Mali**: This is the most prevalent GPU family, with numerous iterations and core configurations (e.g., ARM Mali G52, G57, G610, G710, G1-Ultra, T830) and varying frequencies (e.g., 2x ARM Mali G31 (600 MHz), ARM Mali G78 (848 MHz)). The data lists various core counts for some Mali GPUs, such as 2x, 3x, 4x, 5x, 6x, 7x, 9x, 10x, 11x, 12x, and 16x.
-    *   **Qualcomm Adreno**: A wide range of Adreno series GPUs are present, covering generations from Adreno 200 to Adreno 840, each with different clock speeds (e.g., Adreno 306 (465 MHz), Adreno 650 (670 MHz), Adreno 740 (818 MHz), Adreno 840 (1200 MHz)).
-    *   **Imagination Technologies PowerVR**: Several PowerVR series are listed, including GE, GM, GT, GX, and SGX, with varying frequencies (e.g., PowerVR GE8320 (600 MHz), PowerVR SGX544 (400 MHz)).
-    *   **Intel Graphics**: Includes HD Graphics and UHD Graphics from different generations (e.g., HD Graphics 400 (600 MHz), UHD Graphics 12gen (1100 MHz)).
-    *   **Samsung Xclipse**: Features Xclipse 530, 540, 920, 940, and 950 GPUs.
-    *   **AMD Radeon**: Includes Radeon GPUs like the 2x AMD Radeon 610M and 3x AMD Radeon Vega3.
-    *   **NVidia GeForce/Kepler/Maxwell**: Several GeForce, Kepler, and Maxwell GPUs are noted.
-    *   **Vivante**: Features various GC series GPUs (e.g., GC 1000, GC 7000UL).
+*   **Unique GPUs**: 350
 
-*   **Unique Screen Sizes**: The catalog contains a vast array of unique screen resolutions, ranging from small (e.g., 240x282) to very large (e.g., 2400x3392). This indicates support for a broad spectrum of display dimensions across devices.
+*   **Unique Screen Sizes**: The catalog contains 294 unique screen resolutions, ranging from small (e.g., 240x282) to very large (e.g., 2400x3392).
 
-*   **Unique ABIs (Application Binary Interfaces)**: The supported ABIs are "arm64-v8a", "armeabi", "armeabi-v7a", "x86", and "x86_64".
+*   **Unique ABIs (Application Binary Interfaces)**: The supported ABIs are "arm64-v8a", "armeabi", "armeabi-v7a", "x86", "x86_64".
 
 *   **Unique SDK Versions**: The devices support Android SDK versions from **16 to 36**.
 
-*   **Unique OpenGL ES Versions**: The graphics API versions include "3.2", "2.0", "3.0", "3.1", "1.0", and "3.964".
+*   **Unique OpenGL ES Versions**: The graphics API versions include "1.0", "2.0", "3.0", "3.1", "3.2".
 
 *   **Unique Screen Densities**: A wide range of screen densities are present, from **120 to 640**.
 
@@ -47,15 +28,15 @@ In essence, the data provides a detailed snapshot of the hardware and software d
 
 
 ```
-Parsed 22751 devices from the catalog CSV file.
+Parsed 23206 devices from the catalog CSV file.
 
 **Form factor counts:**
-"Phone": 14297
-"TV": 2248
-"Tablet": 6015
-"Wearable": 118
-"Android Automotive": 19
+"Phone": 14130
+"Tablet": 6360
+"TV": 2519
+"Wearable": 122
 "Chromebook": 53
+"Android Automotive": 21
 "Google Play Games on PC": 1
 
 
@@ -87,6 +68,7 @@ Parsed 22751 devices from the catalog CSV file.
 "Amlogic AMLS905X2"
 "Amlogic AMLS905X3"
 "Amlogic AMLS905X4"
+"Amlogic AMLS905X5"
 "Amlogic AMLS905X5M"
 "Amlogic AMLS905Y2"
 "Amlogic AMLS905Y4"
@@ -105,11 +87,13 @@ Parsed 22751 devices from the catalog CSV file.
 "Amlogic AMLT963D4"
 "Amlogic AMLT965D4"
 "Amlogic AMLT982"
+"Asr ASR8662"
 "Broadcom BCM72113"
 "Google Tensor"
 "Google Tensor G2"
 "Google Tensor G3"
 "Google Tensor G4"
+"Google Tensor G5"
 "HiSilicon Hi3620"
 "HiSilicon Hi3630"
 "HiSilicon Hi6220"
@@ -134,7 +118,6 @@ Parsed 22751 devices from the catalog CSV file.
 "HiSilicon hi3798mv200"
 "HiSilicon hi3798mv300"
 "Intel A3960"
-"Intel G5900E"
 "Intel N100"
 "Intel N3060"
 "Intel N3160"
@@ -176,9 +159,7 @@ Parsed 22751 devices from the catalog CSV file.
 "Mediatek MT6572W"
 "Mediatek MT6573"
 "Mediatek MT6575"
-"Mediatek MT6575M"
 "Mediatek MT6577"
-"Mediatek MT6577T"
 "Mediatek MT6580"
 "Mediatek MT6580WP"
 "Mediatek MT6582"
@@ -261,7 +242,6 @@ Parsed 22751 devices from the catalog CSV file.
 "Mediatek MT6769V/CZ"
 "Mediatek MT6769V/WA"
 "Mediatek MT6769V/WY"
-"Mediatek MT6769V/WZ"
 "Mediatek MT6769Z"
 "Mediatek MT6771"
 "Mediatek MT6771T"
@@ -331,11 +311,11 @@ Parsed 22751 devices from the catalog CSV file.
 "Mediatek MT6985"
 "Mediatek MT6989"
 "Mediatek MT6991"
+"Mediatek MT6993"
 "Mediatek MT8111"
 "Mediatek MT8117"
 "Mediatek MT8117M"
 "Mediatek MT8121"
-"Mediatek MT8123"
 "Mediatek MT8125"
 "Mediatek MT8127"
 "Mediatek MT8127T"
@@ -382,6 +362,7 @@ Parsed 22751 devices from the catalog CSV file.
 "Mediatek MT8766"
 "Mediatek MT8766A"
 "Mediatek MT8766B"
+"Mediatek MT8768"
 "Mediatek MT8768A"
 "Mediatek MT8768B"
 "Mediatek MT8768CA"
@@ -394,6 +375,7 @@ Parsed 22751 devices from the catalog CSV file.
 "Mediatek MT8768WT"
 "Mediatek MT8771"
 "Mediatek MT8771V/NZA"
+"Mediatek MT8775"
 "Mediatek MT8781V/CA"
 "Mediatek MT8781V/NA"
 "Mediatek MT8783"
@@ -444,6 +426,7 @@ Parsed 22751 devices from the catalog CSV file.
 "NXP i.MX8M-Mini"
 "QTI QCM4325"
 "QTI QCM6690"
+"QTI QCS6690"
 "QTI SG8175P"
 "QTI SM4375"
 "QTI SM4450"
@@ -464,6 +447,7 @@ Parsed 22751 devices from the catalog CSV file.
 "QTI SM8650"
 "QTI SM8735"
 "QTI SM8750"
+"QTI SM8850"
 "Qualcomm APQ8009"
 "Qualcomm APQ8016"
 "Qualcomm APQ8017"
@@ -502,13 +486,11 @@ Parsed 22751 devices from the catalog CSV file.
 "Qualcomm MSM8239"
 "Qualcomm MSM8260"
 "Qualcomm MSM8260A"
-"Qualcomm MSM8260AB"
 "Qualcomm MSM8610"
 "Qualcomm MSM8612"
 "Qualcomm MSM8625Q"
 "Qualcomm MSM8626"
 "Qualcomm MSM8628"
-"Qualcomm MSM8655"
 "Qualcomm MSM8660"
 "Qualcomm MSM8674"
 "Qualcomm MSM8909"
@@ -609,6 +591,7 @@ Parsed 22751 devices from the catalog CSV file.
 "Realtek RTD1319B"
 "Realtek RTD1319D"
 "Realtek RTD1325"
+"Realtek RTD1332"
 "Realtek RTD1611"
 "Realtek RTD2841"
 "Realtek RTD2841A"
@@ -620,7 +603,6 @@ Parsed 22751 devices from the catalog CSV file.
 "Realtek RTD2873A"
 "Realtek RTD2881"
 "Rockchip RK3026"
-"Rockchip RK3028"
 "Rockchip RK3066"
 "Rockchip RK3126"
 "Rockchip RK3126C"
@@ -642,7 +624,6 @@ Parsed 22751 devices from the catalog CSV file.
 "Rockchip RK3583"
 "Rockchip RK3588"
 "Samsung Exynos 2100"
-"Samsung Exynos 3110"
 "Samsung Exynos 3250"
 "Samsung Exynos 3470"
 "Samsung Exynos 3475"
@@ -714,8 +695,6 @@ Parsed 22751 devices from the catalog CSV file.
 "Spreadtrum SC7735"
 "Spreadtrum SC8810"
 "Spreadtrum SC8830"
-"Spreadtrum SC9830"
-"Spreadtrum SC9830"
 "Spreadtrum SC9830A"
 "Spreadtrum SC9830I"
 "Spreadtrum SC9832"
@@ -750,6 +729,7 @@ Parsed 22751 devices from the catalog CSV file.
 "Spreadtrum UMS9230"
 "Spreadtrum UMS9230E"
 "Spreadtrum UMS9230H"
+"Spreadtrum UMS9230S"
 "Spreadtrum UMS9230T"
 "Spreadtrum UMS9360"
 "Spreadtrum UMS9620"
@@ -993,7 +973,6 @@ Parsed 22751 devices from the catalog CSV file.
 "Imagination Tech PowerVR SGX531 (281 MHz)"
 "Imagination Tech PowerVR SGX531 (522 MHz)"
 "Imagination Tech PowerVR SGX531 Ultra (522 MHz)"
-"Imagination Tech PowerVR SGX540 (200 MHz)"
 "Imagination Tech PowerVR SGX540 (365 MHz)"
 "Imagination Tech PowerVR SGX540 (600 MHz)"
 "Imagination Tech PowerVR SGX544 (156 MHz)"
@@ -1015,7 +994,6 @@ Parsed 22751 devices from the catalog CSV file.
 "Intel UHD Graphics 11gen (1250 MHz)"
 "Intel UHD Graphics 12gen (1100 MHz)"
 "Intel UHD Graphics 12gen (750 MHz)"
-"Intel UHD Graphics 610 (1000 MHz)"
 "Intel UHD Graphics 620 (1000 MHz)"
 "Intel UHD Graphics 620 (1100 MHz)"
 "Intel UHD Graphics jsl (750 MHz)"
@@ -1026,7 +1004,6 @@ Parsed 22751 devices from the catalog CSV file.
 "NVidia Maxwell  (1000 MHz)"
 "Qualcomm Adreno 200 (245 MHz)"
 "Qualcomm Adreno 203 (300 MHz)"
-"Qualcomm Adreno 205 (245 MHz)"
 "Qualcomm Adreno 220 (266 MHz)"
 "Qualcomm Adreno 225 (400 MHz)"
 "Qualcomm Adreno 302 (400 MHz)"
@@ -1145,6 +1122,7 @@ Parsed 22751 devices from the catalog CSV file.
 "408x408"
 "412x502"
 "416x416"
+"426x426"
 "432x432"
 "438x438"
 "442x960"
@@ -1157,7 +1135,6 @@ Parsed 22751 devices from the catalog CSV file.
 "480x640"
 "480x720"
 "480x782"
-"480x788"
 "480x800"
 "480x844"
 "480x854"
@@ -1169,11 +1146,6 @@ Parsed 22751 devices from the catalog CSV file.
 "480x1016"
 "480x1120"
 "480x1170"
-"480x1467"
-"480x1503"
-"480x1553"
-"480x1570"
-"480x1576"
 "540x888"
 "540x960"
 "540x1080"
@@ -1204,17 +1176,21 @@ Parsed 22751 devices from the catalog CSV file.
 "720x1208"
 "720x1280"
 "720x1440"
+"720x1467"
 "720x1480"
 "720x1496"
 "720x1498"
 "720x1500"
+"720x1503"
 "720x1512"
 "720x1520"
 "720x1528"
 "720x1544"
 "720x1548"
-"720x1552"
+"720x1553"
 "720x1560"
+"720x1570"
+"720x1576"
 "720x1600"
 "720x1604"
 "720x1608"
@@ -1225,8 +1201,6 @@ Parsed 22751 devices from the catalog CSV file.
 "720x1650"
 "720x1680"
 "720x1920"
-"736x1280"
-"736x1280"
 "752x1280"
 "768x1024"
 "768x1280"
@@ -1275,7 +1249,9 @@ Parsed 22751 devices from the catalog CSV file.
 "1080x2312"
 "1080x2316"
 "1080x2340"
+"1080x2344"
 "1080x2348"
+"1080x2354"
 "1080x2372"
 "1080x2376"
 "1080x2388"
@@ -1313,6 +1289,7 @@ Parsed 22751 devices from the catalog CSV file.
 "1212x1940"
 "1216x2640"
 "1216x2688"
+"1220x2656"
 "1220x2712"
 "1224x2700"
 "1224x2720"
@@ -1328,6 +1305,7 @@ Parsed 22751 devices from the catalog CSV file.
 "1264x2736"
 "1264x2780"
 "1264x2800"
+"1272x2772"
 "1272x2800"
 "1280x1840"
 "1280x1920"
@@ -1338,13 +1316,11 @@ Parsed 22751 devices from the catalog CSV file.
 "1316x2560"
 "1320x2112"
 "1344x1892"
-"1344x2772"
 "1344x2992"
 "1350x1800"
 "1350x2160"
 "1368x3192"
 "1400x2240"
-"1404x1872"
 "1440x1440"
 "1440x2160"
 "1440x2200"
@@ -1356,10 +1332,12 @@ Parsed 22751 devices from the catalog CSV file.
 "1440x3040"
 "1440x3088"
 "1440x3120"
+"1440x3136"
 "1440x3168"
 "1440x3200"
 "1440x3216"
 "1504x2256"
+"1504x2400"
 "1504x2508"
 "1536x2048"
 "1536x2152"
@@ -1380,6 +1358,7 @@ Parsed 22751 devices from the catalog CSV file.
 "1812x2176"
 "1840x2208"
 "1840x2800"
+"1840x2880"
 "1840x2944"
 "1848x2960"
 "1856x2160"
@@ -1444,12 +1423,11 @@ Parsed 22751 devices from the catalog CSV file.
 
 
 **Unique OpenGL ES versions:**
-"3.2"
+"1.0"
 "2.0"
 "3.0"
 "3.1"
-"1.0"
-"3.964"
+"3.2"
 
 
 **Unique screen densities:**
@@ -1512,7 +1490,6 @@ Parsed 22751 devices from the catalog CSV file.
 "380"
 "390"
 "400"
-"403"
 "420"
 "428"
 "440"
@@ -1520,12 +1497,12 @@ Parsed 22751 devices from the catalog CSV file.
 "450"
 "460"
 "480"
+"484"
 "486"
 "520"
 "524"
 "530"
 "540"
-"556"
 "560"
 "600"
 "640"
