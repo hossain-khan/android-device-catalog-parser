@@ -3,7 +3,18 @@ package dev.hossain.example
 import dev.hossain.android.catalogparser.models.AndroidDevice
 
 /**
- * Generates detailed data summary for DATA_SUMMARY.md file.
+ * Data Summary Generator for Android Device Catalog.
+ *
+ * This class generates comprehensive markdown summaries of the Android device catalog data.
+ * It processes parsed device data to create the DATA_SUMMARY.md file, which includes:
+ * - Total device counts and form factor distributions
+ * - Complete lists of unique processors, GPUs, screen sizes, ABIs, SDK versions, etc.
+ * - Statistical summaries and ranges for various device attributes
+ *
+ * Usage: Call [generateSummary] with a list of parsed [AndroidDevice] objects to generate
+ * the complete markdown content for DATA_SUMMARY.md.
+ *
+ * @see AndroidDevice
  */
 class DataSummaryGenerator {
     /**
@@ -37,7 +48,8 @@ class DataSummaryGenerator {
                         "Google Play Games on PC" -> "Google Play Games on PC"
                         else -> "${formFactor.value}s"
                     }
-                sb.appendLine("*   **$label**: ${"%,d".format(count)} devices")
+                val deviceWord = if (count == 1) "device" else "devices"
+                sb.appendLine("*   **$label**: ${"%,d".format(count)} $deviceWord")
             }
         sb.appendLine()
 

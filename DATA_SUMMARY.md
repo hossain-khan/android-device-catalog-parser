@@ -7,7 +7,7 @@ The devices are categorized into several form factors:
 *   **Wearables**: 122 devices
 *   **Chromebooks**: 53 devices
 *   **Android Automotive**: 21 devices
-*   **Google Play Games on PC**: 1 devices
+*   **Google Play Games on PC**: 1 device
 
 The catalog includes a wide variety of components and specifications:
 *   **Unique Processors**: 698
