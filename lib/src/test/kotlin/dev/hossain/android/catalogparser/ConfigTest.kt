@@ -7,7 +7,6 @@ import kotlin.test.assertEquals
  * Tests for [Config] object to ensure constant values are not changed accidentally.
  */
 class ConfigTest {
-
     @Test
     fun `constants should have expected values`() {
         assertEquals(";", Config.CSV_MULTI_VALUE_SEPARATOR)

@@ -9,14 +9,13 @@ import kotlin.test.assertNotEquals
  * Tests for [AndroidDevice] data class.
  */
 class AndroidDeviceTest {
-
     private fun createDevice(
         brand: String = "Brand",
         device: String = "Device",
         manufacturer: String = "Manufacturer",
-        modelName: String = "Model"
-    ): AndroidDevice {
-        return AndroidDevice(
+        modelName: String = "Model",
+    ): AndroidDevice =
+        AndroidDevice(
             brand = brand,
             device = device,
             manufacturer = manufacturer,
@@ -29,9 +28,8 @@ class AndroidDeviceTest {
             screenDensities = listOf(480),
             abis = listOf("arm64-v8a"),
             sdkVersions = listOf(28),
-            openGlEsVersions = listOf("3.2")
+            openGlEsVersions = listOf("3.2"),
         )
-    }
 
     @Test
     fun `equals should return true for same object instance`() {
@@ -89,36 +87,38 @@ class AndroidDeviceTest {
 
     @Test
     fun `equals should return true if non-primary key fields are different`() {
-        val device1 = AndroidDevice(
-            brand = "Google",
-            device = "Pixel 4",
-            manufacturer = "Google",
-            modelName = "Pixel 4",
-            ram = "6GB",
-            formFactor = FormFactor.PHONE,
-            processorName = "Snapdragon 855",
-            gpu = "Adreno 640",
-            screenSizes = listOf("1080x2280"),
-            screenDensities = listOf(444),
-            abis = listOf("arm64-v8a"),
-            sdkVersions = listOf(29),
-            openGlEsVersions = listOf("3.2")
-        )
-        val device2 = AndroidDevice(
-            brand = "Google",
-            device = "Pixel 4",
-            manufacturer = "Google",
-            modelName = "Pixel 4",
-            ram = "8GB",
-            formFactor = FormFactor.TABLET,
-            processorName = "Snapdragon 865",
-            gpu = "Adreno 650",
-            screenSizes = listOf("1440x3040"),
-            screenDensities = listOf(537),
-            abis = listOf("armeabi-v7a"),
-            sdkVersions = listOf(30),
-            openGlEsVersions = listOf("3.1")
-        )
+        val device1 =
+            AndroidDevice(
+                brand = "Google",
+                device = "Pixel 4",
+                manufacturer = "Google",
+                modelName = "Pixel 4",
+                ram = "6GB",
+                formFactor = FormFactor.PHONE,
+                processorName = "Snapdragon 855",
+                gpu = "Adreno 640",
+                screenSizes = listOf("1080x2280"),
+                screenDensities = listOf(444),
+                abis = listOf("arm64-v8a"),
+                sdkVersions = listOf(29),
+                openGlEsVersions = listOf("3.2"),
+            )
+        val device2 =
+            AndroidDevice(
+                brand = "Google",
+                device = "Pixel 4",
+                manufacturer = "Google",
+                modelName = "Pixel 4",
+                ram = "8GB",
+                formFactor = FormFactor.TABLET,
+                processorName = "Snapdragon 865",
+                gpu = "Adreno 650",
+                screenSizes = listOf("1440x3040"),
+                screenDensities = listOf(537),
+                abis = listOf("armeabi-v7a"),
+                sdkVersions = listOf(30),
+                openGlEsVersions = listOf("3.1"),
+            )
         assertEquals(device1, device2)
     }
 
@@ -138,36 +138,38 @@ class AndroidDeviceTest {
 
     @Test
     fun `hashCode should be same for objects with different non-primary key fields`() {
-        val device1 = AndroidDevice(
-            brand = "Google",
-            device = "Pixel 4",
-            manufacturer = "Google",
-            modelName = "Pixel 4",
-            ram = "6GB",
-            formFactor = FormFactor.PHONE,
-            processorName = "Snapdragon 855",
-            gpu = "Adreno 640",
-            screenSizes = listOf("1080x2280"),
-            screenDensities = listOf(444),
-            abis = listOf("arm64-v8a"),
-            sdkVersions = listOf(29),
-            openGlEsVersions = listOf("3.2")
-        )
-        val device2 = AndroidDevice(
-            brand = "Google",
-            device = "Pixel 4",
-            manufacturer = "Google",
-            modelName = "Pixel 4",
-            ram = "8GB",
-            formFactor = FormFactor.TABLET,
-            processorName = "Snapdragon 865",
-            gpu = "Adreno 650",
-            screenSizes = listOf("1440x3040"),
-            screenDensities = listOf(537),
-            abis = listOf("armeabi-v7a"),
-            sdkVersions = listOf(30),
-            openGlEsVersions = listOf("3.1")
-        )
+        val device1 =
+            AndroidDevice(
+                brand = "Google",
+                device = "Pixel 4",
+                manufacturer = "Google",
+                modelName = "Pixel 4",
+                ram = "6GB",
+                formFactor = FormFactor.PHONE,
+                processorName = "Snapdragon 855",
+                gpu = "Adreno 640",
+                screenSizes = listOf("1080x2280"),
+                screenDensities = listOf(444),
+                abis = listOf("arm64-v8a"),
+                sdkVersions = listOf(29),
+                openGlEsVersions = listOf("3.2"),
+            )
+        val device2 =
+            AndroidDevice(
+                brand = "Google",
+                device = "Pixel 4",
+                manufacturer = "Google",
+                modelName = "Pixel 4",
+                ram = "8GB",
+                formFactor = FormFactor.TABLET,
+                processorName = "Snapdragon 865",
+                gpu = "Adreno 650",
+                screenSizes = listOf("1440x3040"),
+                screenDensities = listOf(537),
+                abis = listOf("armeabi-v7a"),
+                sdkVersions = listOf(30),
+                openGlEsVersions = listOf("3.1"),
+            )
         assertEquals(device1.hashCode(), device2.hashCode())
     }
 }
