@@ -5,7 +5,7 @@ The devices are categorized into several form factors:
 *   **Tablets**: 7,003 devices
 *   **TVs**: 2,840 devices
 *   **Wearables**: 135 devices
-*   **Unknowns**: 54 devices
+*   **Desktops**: 54 devices
 *   **Android Automotive**: 28 devices
 *   **Google Play Games on PC**: 1 device
 
@@ -35,7 +35,7 @@ Parsed 23997 devices from the catalog CSV file.
 "Tablet": 7003
 "TV": 2840
 "Wearable": 135
-"Unknown": 54
+"Desktop": 54
 "Android Automotive": 28
 "Google Play Games on PC": 1
 

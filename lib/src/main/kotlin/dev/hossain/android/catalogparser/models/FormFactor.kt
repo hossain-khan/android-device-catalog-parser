@@ -94,13 +94,37 @@ enum class FormFactor(
      * Laptop-style devices that can run Android applications alongside
      * Chrome OS, providing a desktop computing experience.
      *
+     * **Deprecation Note:** The Google Play Device Catalog previously used `"Chromebook"`
+     * for ChromeOS devices (`*_cheets`), but has transitioned to using `"Desktop"` ([DESKTOP])
+     * to represent Chromebooks, Chromeboxes, and other desktop-class devices. This enum entry
+     * is retained for backward compatibility with older catalog snapshots.
+     *
      * Typical characteristics:
      * - Laptop form factor with keyboard and trackpad
      * - Larger screens suitable for productivity
      * - Multi-window support
      * - Hybrid touch and traditional input methods
      */
+    @Deprecated(
+        message = "Google Play Device Catalog now categorizes Chromebook/ChromeOS devices as 'Desktop'. Use DESKTOP instead.",
+        replaceWith = ReplaceWith("DESKTOP"),
+    )
     CHROMEBOOK("Chromebook", "Chromebook devices running Android apps"),
+
+    /**
+     * Desktop and ChromeOS devices running Android apps.
+     *
+     * Replaces the legacy [CHROMEBOOK] form factor in newer Google Play Device Catalog
+     * exports. Encompasses Chromebooks, Chromeboxes, detachable ChromeOS tablets (`*_cheets`),
+     * and other desktop-class devices capable of running Android applications.
+     *
+     * Typical characteristics:
+     * - Laptop, all-in-one, or desktop form factor with keyboard, mouse, or trackpad
+     * - Larger screens suitable for productivity and multi-window layouts
+     * - Multi-window and freeform window management support
+     * - Hybrid touch and desktop input methods
+     */
+    DESKTOP("Desktop", "Desktop and ChromeOS devices running Android apps"),
 
     /**
      * Google Play Games on PC platform.

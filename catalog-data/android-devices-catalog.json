@@ -2804,7 +2804,7 @@
         "manufacturer": "Google",
         "modelName": "Mediatek MT8188G Detachable",
         "ram": "3221-7319MB",
-        "formFactor": "Unknown",
+        "formFactor": "Desktop",
         "processorName": "Mediatek MT8188AV/A",
         "gpu": "3x ARM Mali G57 (950 MHz)",
         "screenSizes": [
@@ -25020,7 +25020,7 @@
         "manufacturer": "Google",
         "modelName": "Mediatek MT8183 Tablet",
         "ram": "3362MB",
-        "formFactor": "Unknown",
+        "formFactor": "Desktop",
         "processorName": "Mediatek MT8183",
         "gpu": "ARM Mali G72 (800 MHz)",
         "screenSizes": [
@@ -33043,7 +33043,7 @@
         "manufacturer": "HP",
         "modelName": "Chromebook x2",
         "ram": "3381MB",
-        "formFactor": "Unknown",
+        "formFactor": "Desktop",
         "processorName": "Intel i7-7Y75",
         "gpu": "Intel HD Graphics 615 (1050 MHz)",
         "screenSizes": [
@@ -68277,7 +68277,7 @@
         "manufacturer": "Google",
         "modelName": "Chromebook 14 (CB3-431)",
         "ram": "4074MB",
-        "formFactor": "Unknown",
+        "formFactor": "Desktop",
         "processorName": "Intel N3160",
         "gpu": "Intel HD Graphics 400 (640 MHz)",
         "screenSizes": [
@@ -69877,7 +69877,7 @@
         "manufacturer": "Google",
         "modelName": "AMD Mendocino FT6 Chromebook",
         "ram": "7396MB",
-        "formFactor": "Unknown",
+        "formFactor": "Desktop",
         "processorName": "AMD Ryzen 3 7320C",
         "gpu": "2x AMD Radeon 610M (1900 MHz)",
         "screenSizes": [
@@ -73166,7 +73166,7 @@
         "manufacturer": "Google",
         "modelName": "Intel Alder Lake Chromebox",
         "ram": "7332MB",
-        "formFactor": "Unknown",
+        "formFactor": "Desktop",
         "processorName": "Intel i3-1215U",
         "gpu": "Intel UHD Graphics 12gen (1100 MHz)",
         "screenSizes": [
@@ -87681,7 +87681,7 @@
         "manufacturer": "Google",
         "modelName": "Qualcomm SC7180 Detachable",
         "ram": "3347-7481MB",
-        "formFactor": "Unknown",
+        "formFactor": "Desktop",
         "processorName": "Qualcomm SC7180",
         "gpu": "Qualcomm Adreno 618 (800 MHz)",
         "screenSizes": [
@@ -87814,7 +87814,7 @@
         "manufacturer": "Google",
         "modelName": "Mediatek MT8186 Chromebook",
         "ram": "3366-7500MB",
-        "formFactor": "Unknown",
+        "formFactor": "Desktop",
         "processorName": "Mediatek MT8186B",
         "gpu": "ARM Mali G52 (800 MHz)",
         "screenSizes": [
@@ -98871,7 +98871,7 @@
         "manufacturer": "Google",
         "modelName": "AMD Stoney Ridge Chromebook",
         "ram": "4055MB",
-        "formFactor": "Unknown",
+        "formFactor": "Desktop",
         "processorName": "AMD A4-9120C",
         "gpu": "3x AMD Radeon R4 (600 MHz)",
         "screenSizes": [
@@ -104268,7 +104268,7 @@
         "manufacturer": "Lenovo",
         "modelName": "ThinkPad 11e Chromebook 3rd Gen",
         "ram": "4074MB",
-        "formFactor": "Unknown",
+        "formFactor": "Desktop",
         "processorName": "Intel N3160",
         "gpu": "Intel HD Graphics 400 (640 MHz)",
         "screenSizes": [
@@ -105378,7 +105378,7 @@
         "manufacturer": "Google",
         "modelName": "Intel Amber Lake Y Chromebook",
         "ram": "3387-7468MB",
-        "formFactor": "Unknown",
+        "formFactor": "Desktop",
         "processorName": "Intel m3-8100Y",
         "gpu": "Intel HD Graphics 615 (900 MHz)",
         "screenSizes": [
@@ -111592,7 +111592,7 @@
         "manufacturer": "Dell",
         "modelName": "Dell Latitude Chromebook Enterprise",
         "ram": "7443MB",
-        "formFactor": "Unknown",
+        "formFactor": "Desktop",
         "processorName": "Intel i5-8265U",
         "gpu": "Intel UHD Graphics 620 (1100 MHz)",
         "screenSizes": [
@@ -111884,7 +111884,7 @@
         "manufacturer": "Dell",
         "modelName": "Chromebook 11 Model 3180",
         "ram": "4074MB",
-        "formFactor": "Unknown",
+        "formFactor": "Desktop",
         "processorName": "Intel N3060",
         "gpu": "Intel HD Graphics 400 (600 MHz)",
         "screenSizes": [
@@ -118607,7 +118607,7 @@
         "manufacturer": "Google",
         "modelName": "Intel Meteorlake-U Chromebook",
         "ram": "7129MB",
-        "formFactor": "Unknown",
+        "formFactor": "Desktop",
         "processorName": "Intel Ultra 7 155U",
         "gpu": "4x Intel Graphics 14gen (1950 MHz)",
         "screenSizes": [
@@ -126346,7 +126346,7 @@
         "manufacturer": "Google",
         "modelName": "Intel Comet Lake U Chromebook",
         "ram": "3362-7443MB",
-        "formFactor": "Unknown",
+        "formFactor": "Desktop",
         "processorName": "Intel i3-10110U",
         "gpu": "Intel UHD Graphics 620 (1000 MHz)",
         "screenSizes": [
@@ -161562,7 +161562,7 @@
         "manufacturer": "Acer",
         "modelName": "Chromebook Tab 10",
         "ram": "4053MB",
-        "formFactor": "Unknown",
+        "formFactor": "Desktop",
         "processorName": "Rockchip RK3399",
         "gpu": "ARM Mali T860 (600 MHz)",
         "screenSizes": [
@@ -169922,7 +169922,7 @@
         "manufacturer": "Lenovo",
         "modelName": "Lenovo N Series Chromebook",
         "ram": "4074MB",
-        "formFactor": "Unknown",
+        "formFactor": "Desktop",
         "processorName": "Intel N3060",
         "gpu": "Intel HD Graphics 400 (600 MHz)",
         "screenSizes": [
@@ -180816,7 +180816,7 @@
         "manufacturer": "Google",
         "modelName": "AMD Raven Ridge Chromebook",
         "ram": "3372-7453MB",
-        "formFactor": "Unknown",
+        "formFactor": "Desktop",
         "processorName": "AMD Ryzen 3 3250C",
         "gpu": "3x AMD Radeon Vega3 (1200 MHz)",
         "screenSizes": [
@@ -181398,7 +181398,7 @@
         "manufacturer": "Google",
         "modelName": "Intel Alder Lake Chromebook",
         "ram": "7330MB",
-        "formFactor": "Unknown",
+        "formFactor": "Desktop",
         "processorName": "Intel i3-1215U",
         "gpu": "Intel UHD Graphics 12gen (1100 MHz)",
         "screenSizes": [
@@ -193400,7 +193400,7 @@
         "manufacturer": "Google",
         "modelName": "Mediatek MT8186 Tablet",
         "ram": "7500MB",
-        "formFactor": "Unknown",
+        "formFactor": "Desktop",
         "processorName": "Mediatek MT8186",
         "gpu": "ARM Mali G52 (800 MHz)",
         "screenSizes": [
@@ -215314,7 +215314,7 @@
         "manufacturer": "Google",
         "modelName": "Mediatek MT8183 Chromebook",
         "ram": "3362MB",
-        "formFactor": "Unknown",
+        "formFactor": "Desktop",
         "processorName": "Mediatek MT8183",
         "gpu": "ARM Mali G72 (800 MHz)",
         "screenSizes": [
@@ -219732,7 +219732,7 @@
         "manufacturer": "Acer",
         "modelName": "Chromebook R11 (C738T)",
         "ram": "4074MB",
-        "formFactor": "Unknown",
+        "formFactor": "Desktop",
         "processorName": "Intel N3060",
         "gpu": "Intel HD Graphics 400 (600 MHz)",
         "screenSizes": [
@@ -249278,7 +249278,7 @@
         "manufacturer": "Google",
         "modelName": "Intel Jasper Lake Chromebook",
         "ram": "3338-7419MB",
-        "formFactor": "Unknown",
+        "formFactor": "Desktop",
         "processorName": "Intel N4500",
         "gpu": "Intel UHD Graphics jsl (750 MHz)",
         "screenSizes": [
@@ -249593,7 +249593,7 @@
         "manufacturer": "Acer",
         "modelName": "Chromebook 15 CB515-1HT/1H",
         "ram": "3989MB",
-        "formFactor": "Unknown",
+        "formFactor": "Desktop",
         "processorName": "Intel N3350",
         "gpu": "Intel HD Graphics 500 (650 MHz)",
         "screenSizes": [
@@ -272885,7 +272885,7 @@
         "manufacturer": "Acer",
         "modelName": "Chromebook 15 (CB3-532)",
         "ram": "2029-4074MB",
-        "formFactor": "Unknown",
+        "formFactor": "Desktop",
         "processorName": "Intel N3060",
         "gpu": "Intel HD Graphics 400 (600 MHz)",
         "screenSizes": [
@@ -273805,7 +273805,7 @@
         "manufacturer": "Google",
         "modelName": "Intel Alder Lake-N Chromebook",
         "ram": "3307-7338MB",
-        "formFactor": "Unknown",
+        "formFactor": "Desktop",
         "processorName": "Intel N100",
         "gpu": "Intel UHD Graphics 12gen (750 MHz)",
         "screenSizes": [
@@ -276898,7 +276898,7 @@
         "manufacturer": "Google",
         "modelName": "Intel Braswell Chromebook",
         "ram": "4074MB",
-        "formFactor": "Unknown",
+        "formFactor": "Desktop",
         "processorName": "Intel N3060",
         "gpu": "Intel HD Graphics 400 (600 MHz)",
         "screenSizes": [
@@ -283347,7 +283347,7 @@
         "manufacturer": "Google",
         "modelName": "Intel Apollo Lake Chromebook",
         "ram": "3990-8211MB",
-        "formFactor": "Unknown",
+        "formFactor": "Desktop",
         "processorName": "Intel N3350",
         "gpu": "Intel HD Graphics 500 (650 MHz)",
         "screenSizes": [
@@ -286797,7 +286797,7 @@
         "manufacturer": "Google",
         "modelName": "AMD FP6 Chromebook",
         "ram": "7419MB",
-        "formFactor": "Unknown",
+        "formFactor": "Desktop",
         "processorName": "AMD Ryzen 3 5425C",
         "gpu": "6x AMD Radeon Vega6 (1600 MHz)",
         "screenSizes": [
@@ -291723,7 +291723,7 @@
         "manufacturer": "AOpen",
         "modelName": "RK3288 Mini Chromebox",
         "ram": "4209MB",
-        "formFactor": "Unknown",
+        "formFactor": "Desktop",
         "processorName": "Rockchip RK3288",
         "gpu": "ARM Mali T760 (600 MHz)",
         "screenSizes": [
@@ -319668,7 +319668,7 @@
         "manufacturer": "Google",
         "modelName": "Intel Braswell Chromebook",
         "ram": "4074MB",
-        "formFactor": "Unknown",
+        "formFactor": "Desktop",
         "processorName": "Intel N3060",
         "gpu": "Intel HD Graphics 400 (600 MHz)",
         "screenSizes": [
@@ -320038,7 +320038,7 @@
         "manufacturer": "Google",
         "modelName": "Intel Apollo Lake Chromebook",
         "ram": "3990MB",
-        "formFactor": "Unknown",
+        "formFactor": "Desktop",
         "processorName": "Intel N3350",
         "gpu": "Intel HD Graphics 500 (650 MHz)",
         "screenSizes": [
@@ -332275,7 +332275,7 @@
         "manufacturer": "Samsung",
         "modelName": "Chromebook Plus",
         "ram": "4053MB",
-        "formFactor": "Unknown",
+        "formFactor": "Desktop",
         "processorName": "Rockchip RK3399",
         "gpu": "ARM Mali T860 (600 MHz)",
         "screenSizes": [
@@ -339124,7 +339124,7 @@
         "manufacturer": "Google",
         "modelName": "Rockchip RK3288 Chromebook",
         "ram": "2112MB",
-        "formFactor": "Unknown",
+        "formFactor": "Desktop",
         "processorName": "Rockchip RK3288",
         "gpu": "ARM Mali T760 (600 MHz)",
         "screenSizes": [
@@ -345921,7 +345921,7 @@
         "manufacturer": "HP",
         "modelName": "Chromebook x360 11 G1 EE",
         "ram": "3990MB",
-        "formFactor": "Unknown",
+        "formFactor": "Desktop",
         "processorName": "Intel N3350",
         "gpu": "Intel HD Graphics 500 (650 MHz)",
         "screenSizes": [
@@ -346884,7 +346884,7 @@
         "manufacturer": "Google",
         "modelName": "Intel Tiger Lake Chromebook",
         "ram": "7414MB",
-        "formFactor": "Unknown",
+        "formFactor": "Desktop",
         "processorName": "Intel i3-1115G4",
         "gpu": "Intel UHD Graphics 11gen (1250 MHz)",
         "screenSizes": [
@@ -373687,7 +373687,7 @@
         "manufacturer": "Google",
         "modelName": "Mediatek MT8189 Chromebook",
         "ram": "3347-7480MB",
-        "formFactor": "Unknown",
+        "formFactor": "Desktop",
         "processorName": "Mediatek MT8189",
         "gpu": "2x ARM Mali G57 (1100 MHz)",
         "screenSizes": [
@@ -379891,7 +379891,7 @@
         "manufacturer": "Google",
         "modelName": "Mediatek MT8195 Chromebook",
         "ram": "7477MB",
-        "formFactor": "Unknown",
+        "formFactor": "Desktop",
         "processorName": "Mediatek MT8195",
         "gpu": "ARM Mali G57 (800 MHz)",
         "screenSizes": [
@@ -380611,7 +380611,7 @@
         "manufacturer": "Google",
         "modelName": "Mediatek MT8192 Chromebook",
         "ram": "3294MB",
-        "formFactor": "Unknown",
+        "formFactor": "Desktop",
         "processorName": "Mediatek MT8192",
         "gpu": "ARM Mali G57 (800 MHz)",
         "screenSizes": [
@@ -381040,7 +381040,7 @@
         "manufacturer": "Google",
         "modelName": "Intel Gemini Lake Chromebook",
         "ram": "3354-7434MB",
-        "formFactor": "Unknown",
+        "formFactor": "Desktop",
         "processorName": "Intel N4000",
         "gpu": "Intel HD Graphics 600 (650 MHz)",
         "screenSizes": [
@@ -387290,7 +387290,7 @@
         "manufacturer": "Asus",
         "modelName": "Chromebook Flip C100PA",
         "ram": "4209MB",
-        "formFactor": "Unknown",
+        "formFactor": "Desktop",
         "processorName": "Rockchip RK3288",
         "gpu": "ARM Mali T760 (600 MHz)",
         "screenSizes": [
@@ -390009,7 +390009,7 @@
         "manufacturer": "Asus",
         "modelName": "Chromebook C202SA/C300SA/C301SA",
         "ram": "4074MB",
-        "formFactor": "Unknown",
+        "formFactor": "Desktop",
         "processorName": "Intel N3060",
         "gpu": "Intel HD Graphics 400 (600 MHz)",
         "screenSizes": [
@@ -407515,7 +407515,7 @@
         "manufacturer": "Google",
         "modelName": "Chromebox",
         "ram": "3362MB",
-        "formFactor": "Unknown",
+        "formFactor": "Desktop",
         "processorName": "Intel i3-10110U",
         "gpu": "Intel UHD Graphics 620 (1000 MHz)",
         "screenSizes": [
@@ -413546,7 +413546,7 @@
         "manufacturer": "AOpen",
         "modelName": "RK3288 10\" Chromebase",
         "ram": "4209MB",
-        "formFactor": "Unknown",
+        "formFactor": "Desktop",
         "processorName": "Rockchip RK3288",
         "gpu": "ARM Mali T760 (600 MHz)",
         "screenSizes": [
@@ -414150,7 +414150,7 @@
         "manufacturer": "Google",
         "modelName": "Qualcomm SC7180 Chromebook",
         "ram": "3348MB",
-        "formFactor": "Unknown",
+        "formFactor": "Desktop",
         "processorName": "Qualcomm SC7180",
         "gpu": "Qualcomm Adreno 618 (800 MHz)",
         "screenSizes": [
@@ -417200,7 +417200,7 @@
         "manufacturer": "Google",
         "modelName": "Chromebook Pixel (2015)",
         "ram": "16728MB",
-        "formFactor": "Unknown",
+        "formFactor": "Desktop",
         "processorName": "Intel i7-5500U",
         "gpu": "Intel HD Graphics 5500 (950 MHz)",
         "screenSizes": [
@@ -454670,7 +454670,7 @@
         "manufacturer": "HP",
         "modelName": "HP Chromebook 11 G5 / 11-vxxx",
         "ram": "4074MB",
-        "formFactor": "Unknown",
+        "formFactor": "Desktop",
         "processorName": "Intel N3060",
         "gpu": "Intel HD Graphics 400 (600 MHz)",
         "screenSizes": [
@@ -471745,7 +471745,7 @@
         "manufacturer": "Google",
         "modelName": "Mediatek MTK8173 Chromebook",
         "ram": "4106MB",
-        "formFactor": "Unknown",
+        "formFactor": "Desktop",
         "processorName": "Mediatek MT8173",
         "gpu": "Imagination Tech PowerVR GX6250 (600 MHz)",
         "screenSizes": [
@@ -485391,7 +485391,7 @@
         "manufacturer": "Google",
         "modelName": "Pixelbook",
         "ram": "7468MB",
-        "formFactor": "Unknown",
+        "formFactor": "Desktop",
         "processorName": "Intel m3-8100Y",
         "gpu": "Intel HD Graphics 615 (900 MHz)",
         "screenSizes": [
@@ -506109,7 +506109,7 @@
         "manufacturer": "Asus",
         "modelName": "Chromebook Flip C101PA",
         "ram": "4053MB",
-        "formFactor": "Unknown",
+        "formFactor": "Desktop",
         "processorName": "Rockchip RK3399",
         "gpu": "ARM Mali T860 (600 MHz)",
         "screenSizes": [
@@ -537407,7 +537407,7 @@
         "manufacturer": "Acer",
         "modelName": "Acer Chromebook R13",
         "ram": "4107MB",
-        "formFactor": "Unknown",
+        "formFactor": "Desktop",
         "processorName": "Mediatek MT8173",
         "gpu": "Imagination Tech PowerVR GX6250 (600 MHz)",
         "screenSizes": [
@@ -578827,7 +578827,7 @@
         "manufacturer": "Google",
         "modelName": "Mediatek MT8196 Chromebook",
         "ram": "15181MB",
-        "formFactor": "Unknown",
+        "formFactor": "Desktop",
         "processorName": "Mediatek MT8196",
         "gpu": "12x ARM Immortalis G925 (1300 MHz)",
         "screenSizes": [
@@ -586768,7 +586768,7 @@
         "manufacturer": "Dell",
         "modelName": "Latitude 7000",
         "ram": "15708MB",
-        "formFactor": "Unknown",
+        "formFactor": "Desktop",
         "processorName": "Intel i5-10210U",
         "gpu": "Intel UHD Graphics 620 (1100 MHz)",
         "screenSizes": [
@@ -633946,7 +633946,7 @@
         "manufacturer": "Google",
         "modelName": "Rockchip RK3288 Chromebook",
         "ram": "2112MB",
-        "formFactor": "Unknown",
+        "formFactor": "Desktop",
         "processorName": "Rockchip RK3288",
         "gpu": "ARM Mali T760 (600 MHz)",
         "screenSizes": [

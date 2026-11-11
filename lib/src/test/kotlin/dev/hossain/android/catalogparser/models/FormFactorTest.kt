@@ -8,6 +8,7 @@ import kotlin.test.assertNull
 /**
  * Test cases for [FormFactor] enum
  */
+@Suppress("DEPRECATION")
 class FormFactorTest {
     @Test
     fun `fromValue returns correct FormFactor for valid values`() {
@@ -17,6 +18,7 @@ class FormFactorTest {
         assertEquals(FormFactor.WEARABLE, FormFactor.fromValue("Wearable"))
         assertEquals(FormFactor.ANDROID_AUTOMOTIVE, FormFactor.fromValue("Android Automotive"))
         assertEquals(FormFactor.CHROMEBOOK, FormFactor.fromValue("Chromebook"))
+        assertEquals(FormFactor.DESKTOP, FormFactor.fromValue("Desktop"))
         assertEquals(FormFactor.GOOGLE_PLAY_GAMES_ON_PC, FormFactor.fromValue("Google Play Games on PC"))
         assertEquals(FormFactor.UNKNOWN, FormFactor.fromValue("Unknown"))
     }
@@ -39,6 +41,7 @@ class FormFactorTest {
         assertEquals(FormFactor.WEARABLE, FormFactor.fromValueOrNull("Wearable"))
         assertEquals(FormFactor.ANDROID_AUTOMOTIVE, FormFactor.fromValueOrNull("Android Automotive"))
         assertEquals(FormFactor.CHROMEBOOK, FormFactor.fromValueOrNull("Chromebook"))
+        assertEquals(FormFactor.DESKTOP, FormFactor.fromValueOrNull("Desktop"))
         assertEquals(FormFactor.GOOGLE_PLAY_GAMES_ON_PC, FormFactor.fromValueOrNull("Google Play Games on PC"))
         assertEquals(FormFactor.UNKNOWN, FormFactor.fromValueOrNull("Unknown"))
     }
@@ -61,6 +64,7 @@ class FormFactorTest {
                 "Wearable",
                 "Android Automotive",
                 "Chromebook",
+                "Desktop",
                 "Google Play Games on PC",
                 "Unknown",
             )
@@ -87,6 +91,9 @@ class FormFactorTest {
         assertEquals("Chromebook", FormFactor.CHROMEBOOK.value)
         assertEquals("Chromebook devices running Android apps", FormFactor.CHROMEBOOK.description)
 
+        assertEquals("Desktop", FormFactor.DESKTOP.value)
+        assertEquals("Desktop and ChromeOS devices running Android apps", FormFactor.DESKTOP.description)
+
         assertEquals("Google Play Games on PC", FormFactor.GOOGLE_PLAY_GAMES_ON_PC.value)
         assertEquals("PC platform for Android games", FormFactor.GOOGLE_PLAY_GAMES_ON_PC.description)
 
@@ -105,6 +112,7 @@ class FormFactorTest {
                 FormFactor.WEARABLE,
                 FormFactor.ANDROID_AUTOMOTIVE,
                 FormFactor.CHROMEBOOK,
+                FormFactor.DESKTOP,
                 FormFactor.GOOGLE_PLAY_GAMES_ON_PC,
                 FormFactor.UNKNOWN,
             )
@@ -129,6 +137,7 @@ class FormFactorTest {
         assertEquals("WEARABLE", FormFactor.WEARABLE.name)
         assertEquals("ANDROID_AUTOMOTIVE", FormFactor.ANDROID_AUTOMOTIVE.name)
         assertEquals("CHROMEBOOK", FormFactor.CHROMEBOOK.name)
+        assertEquals("DESKTOP", FormFactor.DESKTOP.name)
         assertEquals("GOOGLE_PLAY_GAMES_ON_PC", FormFactor.GOOGLE_PLAY_GAMES_ON_PC.name)
         assertEquals("UNKNOWN", FormFactor.UNKNOWN.name)
     }
