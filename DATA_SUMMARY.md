@@ -1,20 +1,20 @@
-The data summarizes information from a catalog of devices, specifically **23727 devices** were parsed from a CSV file.
+The data summarizes information from a catalog of devices, specifically **23997 devices** were parsed from a CSV file.
 
 The devices are categorized into several form factors:
-*   **Phones**: 13,971 devices
-*   **Tablets**: 6,790 devices
-*   **TVs**: 2,757 devices
-*   **Wearables**: 129 devices
-*   **Chromebooks**: 54 devices
-*   **Android Automotive**: 25 devices
+*   **Phones**: 13,936 devices
+*   **Tablets**: 7,003 devices
+*   **TVs**: 2,840 devices
+*   **Wearables**: 135 devices
+*   **Unknowns**: 54 devices
+*   **Android Automotive**: 28 devices
 *   **Google Play Games on PC**: 1 device
 
 The catalog includes a wide variety of components and specifications:
-*   **Unique Processors**: 706
+*   **Unique Processors**: 714
 
-*   **Unique GPUs**: 359
+*   **Unique GPUs**: 365
 
-*   **Unique Screen Sizes**: The catalog contains 321 unique screen resolutions, ranging from small (e.g., 240x282) to very large (e.g., 2512x3840).
+*   **Unique Screen Sizes**: The catalog contains 337 unique screen resolutions, ranging from small (e.g., 240x282) to very large (e.g., 2560x3840).
 
 *   **Unique ABIs (Application Binary Interfaces)**: The supported ABIs are "arm64-v8a", "armeabi", "armeabi-v7a", "x86", "x86_64".
 
@@ -28,15 +28,15 @@ In essence, the data provides a detailed snapshot of the hardware and software d
 
 
 ```
-Parsed 23727 devices from the catalog CSV file.
+Parsed 23997 devices from the catalog CSV file.
 
 **Form factor counts:**
-"Phone": 13971
-"Tablet": 6790
-"TV": 2757
-"Wearable": 129
-"Chromebook": 54
-"Android Automotive": 25
+"Phone": 13936
+"Tablet": 7003
+"TV": 2840
+"Wearable": 135
+"Unknown": 54
+"Android Automotive": 28
 "Google Play Games on PC": 1
 
 
@@ -232,6 +232,7 @@ Parsed 23727 devices from the catalog CSV file.
 "Mediatek MT6765V/XBA"
 "Mediatek MT6765X"
 "Mediatek MT6768"
+"Mediatek MT6768V/CB"
 "Mediatek MT6769"
 "Mediatek MT6769H"
 "Mediatek MT6769T"
@@ -313,6 +314,7 @@ Parsed 23727 devices from the catalog CSV file.
 "Mediatek MT6989"
 "Mediatek MT6991"
 "Mediatek MT6993"
+"Mediatek MT6995"
 "Mediatek MT8111"
 "Mediatek MT8117"
 "Mediatek MT8117M"
@@ -400,6 +402,7 @@ Parsed 23727 devices from the catalog CSV file.
 "Mediatek MT8791V/HZA"
 "Mediatek MT8791V/T"
 "Mediatek MT8792"
+"Mediatek MT8793"
 "Mediatek MT8797"
 "Mediatek MT8797Z/CZA"
 "Mediatek MT8798Z/CNZA"
@@ -437,6 +440,7 @@ Parsed 23727 devices from the catalog CSV file.
 "QTI SM4450"
 "QTI SM4450P"
 "QTI SM4635"
+"QTI SM4850"
 "QTI SM6225"
 "QTI SM6375"
 "QTI SM6650"
@@ -458,6 +462,8 @@ Parsed 23727 devices from the catalog CSV file.
 "QTI SM8845"
 "QTI SM8850"
 "QTI SM8850P"
+"QTI SM8950"
+"QTI SM8975"
 "Qualcomm APQ8009"
 "Qualcomm APQ8016"
 "Qualcomm APQ8017"
@@ -497,7 +503,6 @@ Parsed 23727 devices from the catalog CSV file.
 "Qualcomm MSM8610"
 "Qualcomm MSM8625Q"
 "Qualcomm MSM8626"
-"Qualcomm MSM8628"
 "Qualcomm MSM8660"
 "Qualcomm MSM8674"
 "Qualcomm MSM8909"
@@ -545,6 +550,7 @@ Parsed 23727 devices from the catalog CSV file.
 "Qualcomm QM215"
 "Qualcomm SA8155P"
 "Qualcomm SA8195P"
+"Qualcomm SA8255P"
 "Qualcomm SC7180"
 "Qualcomm SDA450"
 "Qualcomm SDA660"
@@ -674,6 +680,7 @@ Parsed 23727 devices from the catalog CSV file.
 "Samsung Exynos W920"
 "Samsung S5E5515"
 "Samsung S5E5535"
+"Samsung s5e8365"
 "Samsung s5e8535"
 "Samsung s5e8825"
 "Samsung s5e8835"
@@ -747,6 +754,7 @@ Parsed 23727 devices from the catalog CSV file.
 "Synaptics VS680"
 "TI OMAP4430"
 "XRing O1"
+"XRing O3"
 
 
 **Unique GPUs:**
@@ -758,8 +766,10 @@ Parsed 23727 devices from the catalog CSV file.
 "12x ARM Immortalis G925 (1434 MHz)"
 "12x ARM Immortalis G925 (1600 MHz)"
 "12x ARM Mali G1-Ultra (1600 MHz)"
+"12x ARM Mali G2-Ultra (1800 MHz)"
 "12x ARM Mali G720 (800 MHz)"
 "16x ARM Immortalis G925 (1200 MHz)"
+"16x ARM Mali G2-Ultra (1600 MHz)"
 "2x AMD Radeon 610M (1900 MHz)"
 "2x ARM Mali 400 (600 MHz)"
 "2x ARM Mali 470 (600 MHz)"
@@ -957,7 +967,7 @@ Parsed 23727 devices from the catalog CSV file.
 "ARM Mali T880 (900 MHz)"
 "Imagination Tech BXE 4-32 (700 MHz)"
 "Imagination Tech BXM 4-64 (750 MHz)"
-"Imagination Tech CXM 2-64 (700 MHz)"
+"Imagination Tech CXM 2-64 (750 MHz)"
 "Imagination Tech DXT 48-1536 (1300 MHz)"
 "Imagination Tech PowerVR G6110 (576 MHz)"
 "Imagination Tech PowerVR G6110 (600 MHz)"
@@ -1071,6 +1081,7 @@ Parsed 23727 devices from the catalog CSV file.
 "Qualcomm Adreno 619 (840 MHz)"
 "Qualcomm Adreno 620 (625 MHz)"
 "Qualcomm Adreno 621 (843 MHz)"
+"Qualcomm Adreno 629 (770 MHz)"
 "Qualcomm Adreno 630 (650 MHz)"
 "Qualcomm Adreno 640 (585 MHz)"
 "Qualcomm Adreno 640 (675 MHz)"
@@ -1083,6 +1094,7 @@ Parsed 23727 devices from the catalog CSV file.
 "Qualcomm Adreno 650 (670 MHz)"
 "Qualcomm Adreno 660 (840 MHz)"
 "Qualcomm Adreno 660 (900 MHz)"
+"Qualcomm Adreno 663 (840 MHz)"
 "Qualcomm Adreno 680 (670 MHz)"
 "Qualcomm Adreno 702 (1000 MHz)"
 "Qualcomm Adreno 702 (845 MHz)"
@@ -1099,6 +1111,8 @@ Parsed 23727 devices from the catalog CSV file.
 "Qualcomm Adreno 825 (1100 MHz)"
 "Qualcomm Adreno 830 (1100 MHz)"
 "Qualcomm Adreno 840 (1200 MHz)"
+"Qualcomm Adreno 845 (1450 MHz)"
+"Qualcomm Adreno 850 (1450 MHz)"
 "Samsung Xclipse 530 (1300 MHz)"
 "Samsung Xclipse 550 (1200 MHz)"
 "Samsung Xclipse 940 (1095 MHz)"
@@ -1130,14 +1144,15 @@ Parsed 23727 devices from the catalog CSV file.
 "330x360"
 "360x360"
 "360x640"
+"368x448"
 "384x384"
 "390x390"
 "396x396"
+"396x880"
 "400x400"
 "402x402"
 "402x476"
 "408x408"
-"408x494"
 "412x502"
 "416x416"
 "426x426"
@@ -1162,8 +1177,8 @@ Parsed 23727 devices from the catalog CSV file.
 "480x1010"
 "480x1014"
 "480x1016"
-"480x1120"
 "480x1170"
+"480x1280"
 "498x498"
 "540x960"
 "540x1080"
@@ -1203,6 +1218,7 @@ Parsed 23727 devices from the catalog CSV file.
 "720x1512"
 "720x1520"
 "720x1528"
+"720x1540"
 "720x1544"
 "720x1548"
 "720x1560"
@@ -1230,8 +1246,11 @@ Parsed 23727 devices from the catalog CSV file.
 "800x1332"
 "800x1333"
 "800x1340"
+"816x3003"
+"820x2240"
 "824x1648"
 "876x2142"
+"884x1912"
 "900x1440"
 "900x1600"
 "900x1920"
@@ -1248,7 +1267,6 @@ Parsed 23727 devices from the catalog CSV file.
 "1080x1240"
 "1080x1440"
 "1080x1620"
-"1080x1776"
 "1080x1920"
 "1080x1980"
 "1080x2032"
@@ -1260,7 +1278,9 @@ Parsed 23727 devices from the catalog CSV file.
 "1080x2244"
 "1080x2246"
 "1080x2248"
+"1080x2250"
 "1080x2256"
+"1080x2259"
 "1080x2260"
 "1080x2270"
 "1080x2280"
@@ -1295,9 +1315,11 @@ Parsed 23727 devices from the catalog CSV file.
 "1096x2560"
 "1116x2480"
 "1116x2484"
+"1120x2436"
 "1128x1920"
 "1134x2914"
 "1152x1536"
+"1152x2052"
 "1156x2510"
 "1188x2790"
 "1200x1600"
@@ -1309,9 +1331,11 @@ Parsed 23727 devices from the catalog CSV file.
 "1200x2652"
 "1200x2664"
 "1200x2670"
+"1208x2624"
 "1208x2644"
 "1212x1940"
 "1216x2640"
+"1216x2660"
 "1216x2688"
 "1220x2656"
 "1220x2712"
@@ -1332,6 +1356,8 @@ Parsed 23727 devices from the catalog CSV file.
 "1264x2780"
 "1264x2800"
 "1268x2756"
+"1272x2756"
+"1272x2768"
 "1272x2772"
 "1272x2800"
 "1280x1752"
@@ -1350,7 +1376,7 @@ Parsed 23727 devices from the catalog CSV file.
 "1350x2160"
 "1368x3192"
 "1400x2240"
-"1404x1872"
+"1416x2640"
 "1440x1440"
 "1440x2160"
 "1440x2200"
@@ -1366,7 +1392,6 @@ Parsed 23727 devices from the catalog CSV file.
 "1440x3168"
 "1440x3200"
 "1440x3216"
-"1504x2256"
 "1504x2400"
 "1504x2508"
 "1536x2048"
@@ -1381,6 +1406,7 @@ Parsed 23727 devices from the catalog CSV file.
 "1600x2464"
 "1600x2560"
 "1664x2496"
+"1672x2364"
 "1680x2520"
 "1700x2560"
 "1720x2408"
@@ -1395,6 +1421,7 @@ Parsed 23727 devices from the catalog CSV file.
 "1840x2880"
 "1840x2944"
 "1848x2448"
+"1848x2512"
 "1848x2960"
 "1856x2160"
 "1860x2480"
@@ -1406,6 +1433,7 @@ Parsed 23727 devices from the catalog CSV file.
 "1916x2160"
 "1920x2160"
 "1920x2560"
+"1920x2880"
 "1920x3000"
 "1968x2184"
 "1968x2800"
@@ -1430,9 +1458,11 @@ Parsed 23727 devices from the catalog CSV file.
 "2248x2480"
 "2256x2504"
 "2268x2440"
+"2272x3408"
 "2312x2504"
 "2400x3392"
 "2512x3840"
+"2560x3840"
 
 
 **Unique ABIs:**
@@ -1482,7 +1512,6 @@ Parsed 23727 devices from the catalog CSV file.
 "132"
 "140"
 "150"
-"155"
 "160"
 "164"
 "165"
@@ -1506,8 +1535,10 @@ Parsed 23727 devices from the catalog CSV file.
 "212"
 "213"
 "214"
+"215"
 "216"
 "220"
+"224"
 "230"
 "232"
 "238"
@@ -1516,6 +1547,7 @@ Parsed 23727 devices from the catalog CSV file.
 "248"
 "252"
 "260"
+"264"
 "265"
 "269"
 "270"
@@ -1530,7 +1562,6 @@ Parsed 23727 devices from the catalog CSV file.
 "306"
 "310"
 "314"
-"315"
 "318"
 "320"
 "321"
@@ -1545,10 +1576,9 @@ Parsed 23727 devices from the catalog CSV file.
 "440"
 "445"
 "450"
+"458"
 "460"
 "480"
-"484"
-"486"
 "520"
 "524"
 "530"
