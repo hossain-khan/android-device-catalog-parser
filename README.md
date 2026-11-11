@@ -89,7 +89,7 @@ Parsing Summary:
 Discard reasons:
   Missing required field: Brand: 45
   Missing required field: GPU: 32
-  Unknown form factor: Desktop: 18
+  Unknown form factor: Foldable: 18
   Missing required field: RAM (TotalMem): 13
 ```
 
