@@ -6,13 +6,13 @@ import dev.hossain.android.catalogparser.models.FormFactor
  * Configuration for the Android Device Catalog Parser.
  *
  * This class controls how the parser handles missing or invalid data during CSV parsing.
- * By default, the parser discards rows with missing required fields or unknown form factors.
+ * By default, the parser discards rows with missing required fields and maps unrecognized form factors to [FormFactor.UNKNOWN].
  * With configuration, you can choose to use default values instead.
  *
  * @param useDefaultsForMissingFields Whether to use default values instead of discarding rows with missing fields
  * @param defaultStringValue Default value to use for missing string fields when [useDefaultsForMissingFields] is true
  * @param defaultIntValue Default value to use for missing integer fields when [useDefaultsForMissingFields] is true
- * @param defaultFormFactor Default form factor to use for unknown form factors. If null, unknown form factors are still discarded
+ * @param defaultFormFactor Default form factor to use for unrecognized form factors. Defaults to [FormFactor.UNKNOWN]
  */
 data class ParserConfig(
     val useDefaultsForMissingFields: Boolean = false,
@@ -23,7 +23,7 @@ data class ParserConfig(
     companion object {
         /**
          * Default configuration that maintains backward compatibility.
-         * Discards rows with missing fields or unknown form factors.
+         * Discards rows with missing fields; unrecognized form factors become [FormFactor.UNKNOWN].
          */
         val DEFAULT = ParserConfig()
 
@@ -78,8 +78,8 @@ data class ParserConfig(
         }
 
         /**
-         * Set the default form factor to use for unknown form factors.
-         * If not set (null), unknown form factors will still be discarded.
+         * Set the default form factor to use for unrecognized form factors.
+         * If not set, [FormFactor.UNKNOWN] is used.
          *
          * @param formFactor Default form factor to use for unknown values
          * @return This builder for method chaining
