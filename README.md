@@ -2,7 +2,7 @@
 
 
 # android-device-catalog-parser
-Android Device catalog CSV parser that is available from Google Play developer [console](https://play.google.com/console/about/devicecatalog/).
+Android Device catalog CSV parser that is available from Google Play developer [console](https://play.google.com/console/about/devicecatalog/) under Monitor & Improve.
 
 [![](https://user-images.githubusercontent.com/99822/99319347-5e93f800-2837-11eb-9600-779663f580e3.png)](https://play.google.com/console/about/devicecatalog/)
 ![](https://user-images.githubusercontent.com/99822/263503515-f5910fb5-02c1-4bef-bdc7-1328085b32d9.png)
@@ -176,5 +176,5 @@ Take a look at [https://android-device.gohk.xyz/](https://android-device.gohk.xy
 You can also take a look into <img alt="google-play" src="https://github.com/user-attachments/assets/18725aa7-ea0b-4d6d-962a-e0358703041c" height="14"> [Android Device Universe](https://play.google.com/store/apps/details?id=dev.hossain.devicecatalog) app on the Google Play™
 
 ## 📖 Updating Data Snapshot
-The update catalog to latest snapshot, ⬇️ download CSV and overwrite **`android-devices-catalog.csv`** located in [sample/src/main/resources](https://github.com/hossain-khan/android-device-catalog-parser/tree/main/sample/src/main/resources).
+The update catalog to latest snapshot, ⬇️ download CSV  under Google Play Monitor & Improve and overwrite **`android-devices-catalog.csv`** located in [sample/src/main/resources](https://github.com/hossain-khan/android-device-catalog-parser/tree/main/sample/src/main/resources).
 Once done, run [Update Catalog](https://github.com/hossain-khan/android-device-catalog-parser/actions/workflows/update-device-catalog.yml) workflow 🪄
