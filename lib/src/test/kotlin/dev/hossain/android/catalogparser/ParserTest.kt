@@ -12,6 +12,7 @@ import kotlin.test.assertTrue
 /**
  * Tests the Android device catalog CSV [Parser].
  */
+@Suppress("DEPRECATION")
 class ParserTest {
     @Test
     fun `given no csv header fails to parse devices`() {
@@ -206,10 +207,11 @@ class ParserTest {
             volvo,car1,Volvo,XC90,4096MB,Android Automotive,Qualcomm SDM820,Qualcomm Adreno 530,1920x1200,160,arm64-v8a,28,3.2,0,0.00%,0.00%
             google,chromebook1,Google,Pixelbook Go,8192MB,Chromebook,Intel Core m3,Intel UHD Graphics 615,1920x1080,166,x86_64,28,3.2,0,0.00%,0.00%
             google,pc1,Google,Play Games on PC,16384MB,Google Play Games on PC,Intel i7,NVIDIA RTX,1920x1080,96,x86_64,30,3.2,0,0.00%,0.00%
+            google,soraka_cheets,HP,Chromebook x2,4096MB,Desktop,Intel m3,Intel UHD Graphics 615,1920x1080,166,x86_64,28,3.2,0,0.00%,0.00%
             """.trimIndent()
 
         val actual = Parser.parseDeviceCatalogData(csvContent)
-        assertEquals(7, actual.size)
+        assertEquals(8, actual.size)
 
         // Verify each form factor is parsed correctly
         assertEquals(FormFactor.PHONE, actual[0].formFactor)
@@ -219,6 +221,7 @@ class ParserTest {
         assertEquals(FormFactor.ANDROID_AUTOMOTIVE, actual[4].formFactor)
         assertEquals(FormFactor.CHROMEBOOK, actual[5].formFactor)
         assertEquals(FormFactor.GOOGLE_PLAY_GAMES_ON_PC, actual[6].formFactor)
+        assertEquals(FormFactor.DESKTOP, actual[7].formFactor)
     }
 
     // endregion FormFactor Integration Tests

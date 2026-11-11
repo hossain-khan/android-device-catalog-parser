@@ -68,6 +68,7 @@ class DatabaseSchemaTest {
                 "Wearable",
                 "Android Automotive",
                 "Chromebook",
+                "Desktop",
                 "Google Play Games on PC",
             )
 

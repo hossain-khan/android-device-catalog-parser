@@ -44,6 +44,7 @@ class DataSummaryGenerator {
                         "TV" -> "TVs"
                         "Wearable" -> "Wearables"
                         "Chromebook" -> "Chromebooks"
+                        "Desktop" -> "Desktops"
                         "Android Automotive" -> "Android Automotive"
                         "Google Play Games on PC" -> "Google Play Games on PC"
                         else -> "${formFactor.value}s"
