@@ -94,10 +94,11 @@ enum class FormFactor(
      * Laptop-style devices that can run Android applications alongside
      * Chrome OS, providing a desktop computing experience.
      *
-     * **Deprecation Note:** The Google Play Device Catalog previously used `"Chromebook"`
-     * for ChromeOS devices (`*_cheets`), but has transitioned to using `"Desktop"` ([DESKTOP])
-     * to represent Chromebooks, Chromeboxes, and other desktop-class devices. This enum entry
-     * is retained for backward compatibility with older catalog snapshots.
+     * **Deprecation Note:** Older Google Play Device Catalog exports labelled ChromeOS devices
+     * as `"Chromebook"`. Current exports report them as `"Desktop"` ([DESKTOP]) instead, and no
+     * longer contain `"Chromebook"` rows. This entry is retained so older catalog snapshots
+     * still parse. Note that the same kind of device may therefore appear as [CHROMEBOOK] in old
+     * data and [DESKTOP] in new data.
      *
      * Typical characteristics:
      * - Laptop form factor with keyboard and trackpad
@@ -106,7 +107,7 @@ enum class FormFactor(
      * - Hybrid touch and traditional input methods
      */
     @Deprecated(
-        message = "Google Play Device Catalog now categorizes Chromebook/ChromeOS devices as 'Desktop'. Use DESKTOP instead.",
+        message = "Current Google Play Device Catalog exports report ChromeOS devices as 'Desktop'. Use DESKTOP instead.",
         replaceWith = ReplaceWith("DESKTOP"),
     )
     CHROMEBOOK("Chromebook", "Chromebook devices running Android apps"),
@@ -114,9 +115,10 @@ enum class FormFactor(
     /**
      * Desktop and ChromeOS devices running Android apps.
      *
-     * Replaces the legacy [CHROMEBOOK] form factor in newer Google Play Device Catalog
-     * exports. Encompasses Chromebooks, Chromeboxes, detachable ChromeOS tablets (`*_cheets`),
-     * and other desktop-class devices capable of running Android applications.
+     * Used in current Google Play Device Catalog exports in place of the legacy [CHROMEBOOK]
+     * form factor. In current data it covers ChromeOS devices (`*_cheets`) such as Chromebooks,
+     * Chromeboxes and detachables. It is a generic desktop-class label, so it may also include
+     * non-ChromeOS devices in the future.
      *
      * Typical characteristics:
      * - Laptop, all-in-one, or desktop form factor with keyboard, mouse, or trackpad
