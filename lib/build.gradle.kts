@@ -55,7 +55,7 @@ publishing {
         create<MavenPublication>("maven") {
             groupId = "dev.hossain.android"
             artifactId = "catalogparser"
-            version = "1.11"
+            version = "1.12"
 
             from(components["java"])
         }
