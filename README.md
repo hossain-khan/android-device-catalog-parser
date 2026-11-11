@@ -129,18 +129,18 @@ println("With defaults: ${result.successfulCount} devices parsed (${result.succe
 | `useDefaultsForMissingFields` | `false` | Use default values instead of discarding rows with missing required fields                  |
 | `defaultStringValue`          | `""`    | Default value for missing string fields (e.g., "Unknown", "N/A")                            |
 | `defaultIntValue`             | `0`     | Default value for missing integer fields                                                    |
-| `defaultFormFactor`           | `null`  | Default form factor for unknown values. If `null`, unknown form factors are still discarded |
+| `defaultFormFactor`           | `FormFactor.UNKNOWN` | Default form factor used when the CSV value is not recognized                  |
 
 #### Before vs After Configuration
 
 ```kotlin
 // Default behavior (backward compatible)
 val defaultResult = Parser.parseDeviceCatalogDataWithStats(csvContent)
-// Result: 22,751 devices parsed (93.50% success rate)
+// Result: 23,997 devices parsed (94.97% success rate)
 
 // With configuration to include all data
 val configResult = Parser.parseDeviceCatalogDataWithStats(csvContent, config)  
-// Result: 24,332 devices parsed (100% success rate)
+// Result: 25,268 devices parsed (100% success rate)
 ```
 
 </details>
