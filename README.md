@@ -176,5 +176,15 @@ Take a look at [https://android-device.gohk.xyz/](https://android-device.gohk.xy
 You can also take a look into <img alt="google-play" src="https://github.com/user-attachments/assets/18725aa7-ea0b-4d6d-962a-e0358703041c" height="14"> [Android Device Universe](https://play.google.com/store/apps/details?id=dev.hossain.devicecatalog) app on the Google Play™
 
 ## 📖 Updating Data Snapshot
-The update catalog to latest snapshot, ⬇️ download CSV  under Google Play Monitor & Improve and overwrite **`android-devices-catalog.csv`** located in [sample/src/main/resources](https://github.com/hossain-khan/android-device-catalog-parser/tree/main/sample/src/main/resources).
-Once done, run [Update Catalog](https://github.com/hossain-khan/android-device-catalog-parser/actions/workflows/update-device-catalog.yml) workflow 🪄
+To update the catalog to the latest snapshot, ⬇️ download the CSV under Google Play Monitor & Improve and overwrite **`android-devices-catalog.csv`** located in [sample/src/main/resources](https://github.com/hossain-khan/android-device-catalog-parser/tree/main/sample/src/main/resources).
+
+Once done, run the [Update Catalog](https://github.com/hossain-khan/android-device-catalog-parser/actions/workflows/update-device-catalog.yml) workflow 🪄 — it will automatically regenerate:
+* JSON snapshots (filtered, unfiltered, and minified) in `sample/src/main/resources/`, `lib/src/test/resources/`, and `catalog-data/`
+* `DATA_SUMMARY.md` and `catalog-data/catalog-metadata.json`
+* SQLite database snapshot at [sample/resources/device-catalog.db](https://github.com/hossain-khan/android-device-catalog-parser/blob/main/sample/resources/device-catalog.db)
+
+To regenerate the SQLite database locally instead (using JDK 17):
+```sh
+./gradlew :sample:run
+cp sample/src/main/resources/devices.db sample/resources/device-catalog.db
+```
