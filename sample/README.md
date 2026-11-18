@@ -101,7 +101,15 @@ The sample includes SQLDelight integration for SQLite database operations. The `
 - Retrieve devices back from the database
 - Validate data integrity
 
-To enable database operations, uncomment the relevant code in `Main.kt`.
+Running `./gradlew :sample:run` automatically populates `sample/src/main/resources/devices.db` (which is gitignored) and validates its integrity against the parsed CSV records.
+
+To update the tracked database snapshot at `sample/resources/device-catalog.db`:
+- **Automated (Recommended)**: Run the [Update Device Catalog Snapshots](../.github/workflows/update-device-catalog.yml) GitHub Actions workflow.
+- **Local**:
+  ```bash
+  ./gradlew :sample:run
+  cp sample/src/main/resources/devices.db sample/resources/device-catalog.db
+  ```
 
 ## Dependencies
 

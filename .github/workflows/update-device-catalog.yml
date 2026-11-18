@@ -38,11 +38,13 @@ jobs:
           chmod +x copy-resources.sh
           chmod +x copy-to-catalog-data.sh
 
-      - name: Generate JSON files
+      - name: Generate JSON, summary, and SQLite database
         run: |
-          # Run the sample application to generate JSON files
-          # Note: The JSON generation code is enabled by default in Main.kt
+          # Run the sample application to generate JSON files, DATA_SUMMARY.md, and devices.db
           ./gradlew :sample:run
+
+      - name: Update device-catalog.db snapshot
+        run: cp sample/src/main/resources/devices.db sample/resources/device-catalog.db
 
       - name: Minify JSON files
         run: ./minify-json.sh
@@ -86,6 +88,7 @@ jobs:
             
             - Regenerated JSON files from latest CSV catalog
             - Updated minified versions
+            - Updated sample/resources/device-catalog.db snapshot
             - Synced test resources
             - Added catalog-data directory with public files
             - Generated catalog metadata JSON
@@ -101,6 +104,7 @@ jobs:
             - ✅ Regenerated `android-devices-catalog.json` from CSV
             - ✅ Regenerated `android-devices-catalog-unfiltered.json` from CSV  
             - ✅ Created minified versions of both JSON files
+            - ✅ Updated `sample/resources/device-catalog.db` SQLite database snapshot
             - ✅ Copied all resources to `lib/src/test/resources/` for testing
             - ✅ Copied all resources to `catalog-data/` for public access
             - ✅ Generated catalog metadata with export date and record counts
@@ -112,6 +116,7 @@ jobs:
             - `sample/src/main/resources/android-devices-catalog-unfiltered.json`
             - `sample/src/main/resources/android-devices-catalog.min.json`
             - `sample/src/main/resources/android-devices-catalog-unfiltered.min.json`
+            - `sample/resources/device-catalog.db`
             
             **Test resources:**
             - `lib/src/test/resources/android-devices-catalog.json`
