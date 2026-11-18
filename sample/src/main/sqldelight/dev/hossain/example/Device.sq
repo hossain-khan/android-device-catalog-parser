@@ -7,13 +7,31 @@ CREATE TABLE device (
   ram TEXT NOT NULL,
   form_factor TEXT NOT NULL,
   processor_name TEXT NOT NULL,
-  gpu TEXT NOT NULL
+  gpu TEXT NOT NULL,
+  min_sdk INTEGER NOT NULL,
+  max_sdk INTEGER NOT NULL,
+  ram_min_mb INTEGER NOT NULL,
+  ram_max_mb INTEGER NOT NULL,
+  sort_score INTEGER NOT NULL
 );
 
 CREATE INDEX index_device_manufacturer ON device (manufacturer);
 CREATE INDEX index_device_model_name ON device (model_name);
 CREATE INDEX index_device_brand ON device (brand);
 CREATE INDEX index_device_form_factor ON device (form_factor);
+CREATE INDEX index_device_min_sdk ON device (min_sdk);
+CREATE INDEX index_device_max_sdk ON device (max_sdk);
+CREATE INDEX index_device_ram_min_mb ON device (ram_min_mb);
+CREATE INDEX index_device_ram_max_mb ON device (ram_max_mb);
+CREATE INDEX index_device_sort_score ON device (sort_score DESC, manufacturer ASC, model_name ASC);
+
+CREATE VIRTUAL TABLE device_fts USING fts4(
+  manufacturer,
+  model_name,
+  brand,
+  device,
+  content="device"
+);
 
 CREATE TABLE device_abi (
   device_id INTEGER NOT NULL,
@@ -64,12 +82,39 @@ selectAll:
 SELECT *
 FROM device;
 
+selectBySortScore:
+SELECT *
+FROM device
+ORDER BY sort_score DESC, manufacturer ASC, model_name ASC
+LIMIT ? OFFSET ?;
+
+searchFts:
+SELECT device.*
+FROM device
+JOIN device_fts ON device._id = device_fts.rowid
+WHERE device_fts MATCH ?
+ORDER BY device.sort_score DESC, device.manufacturer ASC, device.model_name ASC;
+
 lastInsertRowId:
 SELECT last_insert_rowid();
 
 insert:
-INSERT INTO device(brand, device, manufacturer, model_name, ram, form_factor, processor_name, gpu)
-VALUES (?, ?, ?, ?, ?, ?, ?, ?);
+INSERT INTO device(
+  brand,
+  device,
+  manufacturer,
+  model_name,
+  ram,
+  form_factor,
+  processor_name,
+  gpu,
+  min_sdk,
+  max_sdk,
+  ram_min_mb,
+  ram_max_mb,
+  sort_score
+)
+VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
 
 insertAbi:
 INSERT INTO device_abi(device_id, abi)
