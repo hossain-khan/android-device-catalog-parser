@@ -1,5 +1,5 @@
-# This workflow will build a Java project with Gradle
-# For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-gradle
+# This workflow will build and test the Kotlin library and sample project with Gradle
+# For more information see: https://docs.gradle.org/current/userguide/github_actions.html
 
 name: Kotlin CI with Gradle
 
@@ -11,20 +11,47 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
-    - name: set up JDK 17
-      uses: actions/setup-java@v4
-      with:
-        java-version: '17'
-        distribution: 'temurin'
-        cache: gradle
-    - name: Grant execute permission for gradlew
-      run: chmod +x gradlew
-    - name: Run unit tests
-      run: ./gradlew test
-    - name: Build with Gradle
-      run: ./gradlew build
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          cache: gradle
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+
+      - name: Build and run tests
+        run: ./gradlew build
+
+      - name: Verify Maven publication
+        run: ./gradlew :lib:publishToMavenLocal
+
+      - name: Run sample app end-to-end
+        run: ./gradlew :sample:run
+
+      - name: Verify device-catalog.db snapshot
+        run: |
+          if ! command -v sqlite3 >/dev/null 2>&1; then
+            sudo apt-get update && sudo apt-get install -y sqlite3
+          fi
+          INTEGRITY=$(sqlite3 sample/resources/device-catalog.db "PRAGMA integrity_check;")
+          echo "SQLite integrity_check: $INTEGRITY"
+          test "$INTEGRITY" = "ok"
+          DEVICE_COUNT=$(sqlite3 sample/resources/device-catalog.db "SELECT COUNT(*) FROM device;")
+          echo "device rows: $DEVICE_COUNT"
+          test "$DEVICE_COUNT" -gt 0
+
+      - name: Upload test reports on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gradle-test-reports
+          path: |
+            lib/build/reports/tests/
+            sample/build/reports/tests/
