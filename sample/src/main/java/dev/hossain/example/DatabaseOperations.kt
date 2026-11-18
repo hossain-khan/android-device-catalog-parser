@@ -35,9 +35,20 @@ class DatabaseOperations {
 
             val deviceQueries = database.deviceQueries
 
-            // Insert all devices
-            devices.forEachIndexed { index, androidDevice ->
-                deviceQueries.transaction {
+            // Insert all devices in a single transaction for fast bulk loading
+            deviceQueries.transaction {
+                devices.forEach { androidDevice ->
+                    val minSdk = androidDevice.sdkVersions.minOrNull() ?: 0
+                    val maxSdk = androidDevice.sdkVersions.maxOrNull() ?: 0
+                    val (ramMinMb, ramMaxMb) = DeviceMetadataCalculator.parseRamMb(androidDevice.ram)
+                    val sortScore =
+                        DeviceMetadataCalculator.computeSortScore(
+                            device = androidDevice,
+                            minSdk = minSdk,
+                            maxSdk = maxSdk,
+                            ramMaxMb = ramMaxMb,
+                        )
+
                     deviceQueries.insert(
                         brand = androidDevice.brand,
                         device = androidDevice.device,
@@ -47,6 +58,11 @@ class DatabaseOperations {
                         form_factor = androidDevice.formFactor.value,
                         processor_name = androidDevice.processorName,
                         gpu = androidDevice.gpu,
+                        min_sdk = minSdk.toLong(),
+                        max_sdk = maxSdk.toLong(),
+                        ram_min_mb = ramMinMb.toLong(),
+                        ram_max_mb = ramMaxMb.toLong(),
+                        sort_score = sortScore.toLong(),
                     )
 
                     val deviceId: Long = deviceQueries.lastInsertRowId().executeAsOne()
@@ -69,6 +85,9 @@ class DatabaseOperations {
                     }
                 }
             }
+
+            // Rebuild FTS4 index for external-content device_fts table
+            driver.execute(null, "INSERT INTO device_fts(device_fts) VALUES ('rebuild')", 0)
 
             // Compact the database file to reclaim unused space
             driver.execute(null, "VACUUM", 0)
