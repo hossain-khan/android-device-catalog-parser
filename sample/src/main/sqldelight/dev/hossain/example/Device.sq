@@ -30,7 +30,7 @@ CREATE VIRTUAL TABLE device_fts USING fts4(
   model_name,
   brand,
   device,
-  content="device"
+  content=`device`
 );
 
 CREATE TABLE device_abi (
