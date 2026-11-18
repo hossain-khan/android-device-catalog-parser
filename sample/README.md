@@ -105,6 +105,7 @@ Running `./gradlew :sample:run` automatically populates `sample/src/main/resourc
 
 To update the tracked database snapshot at `sample/resources/device-catalog.db`:
 - **Automated (Recommended)**: Run the [Update Device Catalog Snapshots](../.github/workflows/update-device-catalog.yml) GitHub Actions workflow.
+- **Attach to GitHub Release**: Run the [Publish Device Catalog DB to Release](../.github/workflows/publish-device-catalog-db.yml) workflow with a `tag` input (`main` publishes `device-catalog-SNAPSHOT.db`; a release tag publishes `device-catalog-v<TAG>.db`).
 - **Local**:
   ```bash
   ./gradlew :sample:run

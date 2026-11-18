@@ -188,3 +188,5 @@ To regenerate the SQLite database locally instead (using JDK 17):
 ./gradlew :sample:run
 cp sample/src/main/resources/devices.db sample/resources/device-catalog.db
 ```
+
+To build and attach the database to a GitHub Release (`device-catalog-SNAPSHOT.db` for `main`, or `device-catalog-v<TAG>.db` for a release tag), run the [Publish Device Catalog DB to Release](https://github.com/hossain-khan/android-device-catalog-parser/actions/workflows/publish-device-catalog-db.yml) workflow.
