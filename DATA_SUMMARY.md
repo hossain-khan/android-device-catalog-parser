@@ -1,20 +1,20 @@
-The data summarizes information from a catalog of devices, specifically **23997 devices** were parsed from a CSV file.
+The data summarizes information from a catalog of devices, specifically **24006 devices** were parsed from a CSV file.
 
 The devices are categorized into several form factors:
-*   **Phones**: 13,936 devices
-*   **Tablets**: 7,003 devices
-*   **TVs**: 2,840 devices
+*   **Phones**: 13,930 devices
+*   **Tablets**: 7,010 devices
+*   **TVs**: 2,847 devices
 *   **Wearables**: 135 devices
 *   **Desktops**: 54 devices
-*   **Android Automotive**: 28 devices
+*   **Android Automotive**: 29 devices
 *   **Google Play Games on PC**: 1 device
 
 The catalog includes a wide variety of components and specifications:
-*   **Unique Processors**: 714
+*   **Unique Processors**: 715
 
-*   **Unique GPUs**: 365
+*   **Unique GPUs**: 366
 
-*   **Unique Screen Sizes**: The catalog contains 337 unique screen resolutions, ranging from small (e.g., 240x282) to very large (e.g., 2560x3840).
+*   **Unique Screen Sizes**: The catalog contains 336 unique screen resolutions, ranging from small (e.g., 240x282) to very large (e.g., 2560x3840).
 
 *   **Unique ABIs (Application Binary Interfaces)**: The supported ABIs are "arm64-v8a", "armeabi", "armeabi-v7a", "x86", "x86_64".
 
@@ -28,15 +28,15 @@ In essence, the data provides a detailed snapshot of the hardware and software d
 
 
 ```
-Parsed 23997 devices from the catalog CSV file.
+Parsed 24006 devices from the catalog CSV file.
 
 **Form factor counts:**
-"Phone": 13936
-"Tablet": 7003
-"TV": 2840
+"Phone": 13930
+"Tablet": 7010
+"TV": 2847
 "Wearable": 135
 "Desktop": 54
-"Android Automotive": 28
+"Android Automotive": 29
 "Google Play Games on PC": 1
 
 
@@ -625,6 +625,7 @@ Parsed 23997 devices from the catalog CSV file.
 "Rockchip RK3190"
 "Rockchip RK3288"
 "Rockchip RK3326"
+"Rockchip RK3328"
 "Rockchip RK3368"
 "Rockchip RK3368H"
 "Rockchip RK3368a"
@@ -772,6 +773,7 @@ Parsed 23997 devices from the catalog CSV file.
 "16x ARM Mali G2-Ultra (1600 MHz)"
 "2x AMD Radeon 610M (1900 MHz)"
 "2x ARM Mali 400 (600 MHz)"
+"2x ARM Mali 450 (500 MHz)"
 "2x ARM Mali 470 (600 MHz)"
 "2x ARM Mali G31 (600 MHz)"
 "2x ARM Mali G31 (650 MHz)"
@@ -1246,7 +1248,6 @@ Parsed 23997 devices from the catalog CSV file.
 "800x1332"
 "800x1333"
 "800x1340"
-"816x3003"
 "820x2240"
 "824x1648"
 "876x2142"
@@ -1280,7 +1281,6 @@ Parsed 23997 devices from the catalog CSV file.
 "1080x2248"
 "1080x2250"
 "1080x2256"
-"1080x2259"
 "1080x2260"
 "1080x2270"
 "1080x2280"
@@ -1370,6 +1370,7 @@ Parsed 23997 devices from the catalog CSV file.
 "1312x2848"
 "1316x2560"
 "1320x2112"
+"1320x2868"
 "1344x1892"
 "1344x2992"
 "1350x1800"
